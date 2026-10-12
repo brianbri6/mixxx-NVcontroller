@@ -1,0 +1,45 @@
+#!/bin/busybox sh
+# Pi 4: route xHCI MSI IRQs and their RT threads to housekeeping core 2.
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+export PATH
+LOG=/var/log/usb-irq-pin.log
+CORE=2
+PRIORITY=85
+log() { printf 'pi4-usb-irq: %s\n' "$*" >> "$LOG"; }
+: > "$LOG"
+MODEL=$(tr '\000' ' ' < /sys/firmware/devicetree/base/model 2>/dev/null)
+case "$MODEL" in
+    *"Raspberry Pi 4 Model B"*) ;;
+    *) log "Unexpected board: $MODEL. No IRQ changes applied."; exit 1 ;;
+esac
+found=0
+for irq in $(awk '/xhci/ { sub(":", "", $1); print $1 }' /proc/interrupts); do
+    found=$((found + 1))
+    if [ -w "/proc/irq/$irq/smp_affinity_list" ]; then
+        if echo "$CORE" > "/proc/irq/$irq/smp_affinity_list" 2>/dev/null; then
+            log "IRQ $irq requested CPU $CORE; effective $(cat /proc/irq/$irq/effective_affinity_list 2>/dev/null)"
+        else
+            log "IRQ $irq affinity refused; effective $(cat /proc/irq/$irq/effective_affinity_list 2>/dev/null)"
+        fi
+    else
+        log "IRQ $irq has no writable affinity; inspect effective_affinity_list"
+    fi
+done
+threads=0
+for comm in /proc/[0-9]*/comm; do
+    [ -r "$comm" ] || continue
+    read -r name < "$comm" 2>/dev/null || continue
+    case "$name" in
+        irq/*xhci*)
+            pid=${comm#/proc/}; pid=${pid%/comm}; threads=$((threads + 1))
+            taskset -c -p "$CORE" "$pid" >/dev/null 2>&1 || log "CPU pin failed for $name ($pid)"
+            chrt -f -p "$PRIORITY" "$pid" >/dev/null 2>&1 || log "FIFO priority failed for $name ($pid)"
+            allowed=$(awk '/^Cpus_allowed_list:/ { print $2 }' "/proc/$pid/status" 2>/dev/null)
+            priority=$(chrt -p "$pid" 2>/dev/null | tr '\n' ';')
+            log "$name pid=$pid cpus=$allowed $priority"
+            ;;
+    esac
+done
+log "$found xHCI IRQ(s), $threads threaded handler(s). Audio retains core 3 / FIFO 70."
+[ "$found" -gt 0 ] || log "No xHCI interrupt found; check the PCIe/USB boot report."
+exit 0

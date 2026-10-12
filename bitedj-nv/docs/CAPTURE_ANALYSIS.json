@@ -1,0 +1,618 @@
+[
+  {
+    "file": "project_sources/03-numarknvplatterwithaudio.pcapng",
+    "sha256": "cac692430f2f0729e730c95061fec6fedcc20eb128cc1ed5514c7be6053b66b5",
+    "validated": 2154,
+    "bpm_strings": [],
+    "angle_fits": [
+      {
+        "side": "left",
+        "selector": 0,
+        "samples": 1952,
+        "position_span_ms": 25320,
+        "period_ms": 1799.152954329938,
+        "correlation": 0.9999969397281911,
+        "sufficient_rotation_span": true
+      }
+    ],
+    "selectors": {
+      "left": [
+        0
+      ]
+    },
+    "command31": [],
+    "records": [
+      {
+        "side": "left",
+        "command": "0x5",
+        "bytes": 15,
+        "count": 1952
+      },
+      {
+        "side": "left",
+        "command": "0x9",
+        "bytes": 2170,
+        "count": 202
+      }
+    ]
+  },
+  {
+    "file": "project_sources/04-numarknvplatter.pcapng",
+    "sha256": "9597d4456c326785823af1174c495c6a7a0dc519db6281a450a79022434fd100",
+    "validated": 1377,
+    "bpm_strings": [
+      "0.0",
+      "96",
+      "96.0"
+    ],
+    "angle_fits": [
+      {
+        "side": "left",
+        "selector": 0,
+        "samples": 1053,
+        "position_span_ms": 380,
+        "period_ms": 1713.9538048771037,
+        "correlation": 0.9780415620259985,
+        "sufficient_rotation_span": false
+      },
+      {
+        "side": "left",
+        "selector": 2,
+        "samples": 1,
+        "position_span_ms": 0,
+        "period_ms": null,
+        "correlation": null,
+        "sufficient_rotation_span": false
+      },
+      {
+        "side": "right",
+        "selector": 1,
+        "samples": 2,
+        "position_span_ms": 0,
+        "period_ms": null,
+        "correlation": null,
+        "sufficient_rotation_span": false
+      },
+      {
+        "side": "right",
+        "selector": 3,
+        "samples": 2,
+        "position_span_ms": 0,
+        "period_ms": null,
+        "correlation": null,
+        "sufficient_rotation_span": false
+      }
+    ],
+    "selectors": {
+      "right": [
+        1,
+        3
+      ],
+      "left": [
+        0,
+        2
+      ]
+    },
+    "command31": [
+      {
+        "side": "left",
+        "selector": 0,
+        "nonzero_uint32_float32_pairs": [
+          [
+            1801,
+            96.01000213623047
+          ]
+        ]
+      },
+      {
+        "side": "left",
+        "selector": 2,
+        "nonzero_uint32_float32_pairs": []
+      },
+      {
+        "side": "right",
+        "selector": 1,
+        "nonzero_uint32_float32_pairs": []
+      },
+      {
+        "side": "right",
+        "selector": 3,
+        "nonzero_uint32_float32_pairs": []
+      }
+    ],
+    "records": [
+      {
+        "side": "left",
+        "command": "0x1",
+        "bytes": 249,
+        "count": 4
+      },
+      {
+        "side": "left",
+        "command": "0x2",
+        "bytes": 65,
+        "count": 4
+      },
+      {
+        "side": "left",
+        "command": "0x3",
+        "bytes": 9,
+        "count": 6
+      },
+      {
+        "side": "left",
+        "command": "0x4",
+        "bytes": 19,
+        "count": 6
+      },
+      {
+        "side": "left",
+        "command": "0x5",
+        "bytes": 15,
+        "count": 1054
+      },
+      {
+        "side": "left",
+        "command": "0x6",
+        "bytes": 7,
+        "count": 1
+      },
+      {
+        "side": "left",
+        "command": "0x7",
+        "bytes": 517,
+        "count": 16
+      },
+      {
+        "side": "left",
+        "command": "0x8",
+        "bytes": 7,
+        "count": 1
+      },
+      {
+        "side": "left",
+        "command": "0x9",
+        "bytes": 2170,
+        "count": 103
+      },
+      {
+        "side": "left",
+        "command": "0xa",
+        "bytes": 97,
+        "count": 2
+      },
+      {
+        "side": "left",
+        "command": "0x10",
+        "bytes": 10,
+        "count": 2
+      },
+      {
+        "side": "left",
+        "command": "0x22",
+        "bytes": 129,
+        "count": 1
+      },
+      {
+        "side": "left",
+        "command": "0x23",
+        "bytes": 10,
+        "count": 2
+      },
+      {
+        "side": "left",
+        "command": "0x24",
+        "bytes": 361,
+        "count": 14
+      },
+      {
+        "side": "left",
+        "command": "0x30",
+        "bytes": 1024,
+        "count": 1
+      },
+      {
+        "side": "left",
+        "command": "0x31",
+        "bytes": 2049,
+        "count": 2
+      },
+      {
+        "side": "right",
+        "command": "0x1",
+        "bytes": 249,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x2",
+        "bytes": 65,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x3",
+        "bytes": 9,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x4",
+        "bytes": 19,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x5",
+        "bytes": 15,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x6",
+        "bytes": 7,
+        "count": 1
+      },
+      {
+        "side": "right",
+        "command": "0x7",
+        "bytes": 517,
+        "count": 16
+      },
+      {
+        "side": "right",
+        "command": "0x8",
+        "bytes": 7,
+        "count": 1
+      },
+      {
+        "side": "right",
+        "command": "0x9",
+        "bytes": 2170,
+        "count": 102
+      },
+      {
+        "side": "right",
+        "command": "0xa",
+        "bytes": 97,
+        "count": 2
+      },
+      {
+        "side": "right",
+        "command": "0x10",
+        "bytes": 10,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x22",
+        "bytes": 129,
+        "count": 1
+      },
+      {
+        "side": "right",
+        "command": "0x23",
+        "bytes": 10,
+        "count": 1
+      },
+      {
+        "side": "right",
+        "command": "0x24",
+        "bytes": 361,
+        "count": 7
+      },
+      {
+        "side": "right",
+        "command": "0x30",
+        "bytes": 1024,
+        "count": 1
+      },
+      {
+        "side": "right",
+        "command": "0x31",
+        "bytes": 2049,
+        "count": 2
+      }
+    ]
+  },
+  {
+    "file": "project_sources/05-NumarkNVVDJ.pcapng",
+    "sha256": "f7ef49c90e1ae023643a16555ed3d30ad7e1ea9f15dd65d5abd421525587cb6c",
+    "validated": 797,
+    "bpm_strings": [
+      "0.00",
+      "127"
+    ],
+    "angle_fits": [
+      {
+        "side": "left",
+        "selector": 1,
+        "samples": 334,
+        "position_span_ms": 5364,
+        "period_ms": 1801.42805030788,
+        "correlation": 0.9999800154687861,
+        "sufficient_rotation_span": true
+      },
+      {
+        "side": "left",
+        "selector": 3,
+        "samples": 5,
+        "position_span_ms": 0,
+        "period_ms": null,
+        "correlation": null,
+        "sufficient_rotation_span": false
+      },
+      {
+        "side": "right",
+        "selector": 1,
+        "samples": 2,
+        "position_span_ms": 0,
+        "period_ms": null,
+        "correlation": null,
+        "sufficient_rotation_span": false
+      },
+      {
+        "side": "right",
+        "selector": 3,
+        "samples": 2,
+        "position_span_ms": 0,
+        "period_ms": null,
+        "correlation": null,
+        "sufficient_rotation_span": false
+      }
+    ],
+    "selectors": {
+      "left": [
+        1,
+        3
+      ],
+      "right": [
+        1,
+        3
+      ]
+    },
+    "command31": [
+      {
+        "side": "left",
+        "selector": 1,
+        "nonzero_uint32_float32_pairs": []
+      },
+      {
+        "side": "left",
+        "selector": 3,
+        "nonzero_uint32_float32_pairs": []
+      },
+      {
+        "side": "right",
+        "selector": 1,
+        "nonzero_uint32_float32_pairs": []
+      },
+      {
+        "side": "right",
+        "selector": 3,
+        "nonzero_uint32_float32_pairs": []
+      },
+      {
+        "side": "left",
+        "selector": 1,
+        "nonzero_uint32_float32_pairs": [
+          [
+            18937,
+            127.00078582763672
+          ]
+        ]
+      },
+      {
+        "side": "left",
+        "selector": 1,
+        "nonzero_uint32_float32_pairs": []
+      }
+    ],
+    "records": [
+      {
+        "side": "left",
+        "command": "0x1",
+        "bytes": 249,
+        "count": 6
+      },
+      {
+        "side": "left",
+        "command": "0x2",
+        "bytes": 65,
+        "count": 2
+      },
+      {
+        "side": "left",
+        "command": "0x3",
+        "bytes": 9,
+        "count": 2
+      },
+      {
+        "side": "left",
+        "command": "0x4",
+        "bytes": 19,
+        "count": 5
+      },
+      {
+        "side": "left",
+        "command": "0x5",
+        "bytes": 15,
+        "count": 340
+      },
+      {
+        "side": "left",
+        "command": "0x6",
+        "bytes": 7,
+        "count": 1
+      },
+      {
+        "side": "left",
+        "command": "0x7",
+        "bytes": 517,
+        "count": 48
+      },
+      {
+        "side": "left",
+        "command": "0x8",
+        "bytes": 7,
+        "count": 1
+      },
+      {
+        "side": "left",
+        "command": "0x9",
+        "bytes": 2170,
+        "count": 214
+      },
+      {
+        "side": "left",
+        "command": "0xa",
+        "bytes": 97,
+        "count": 3
+      },
+      {
+        "side": "left",
+        "command": "0x10",
+        "bytes": 10,
+        "count": 2
+      },
+      {
+        "side": "left",
+        "command": "0x20",
+        "bytes": 10,
+        "count": 2
+      },
+      {
+        "side": "left",
+        "command": "0x21",
+        "bytes": 131,
+        "count": 16
+      },
+      {
+        "side": "left",
+        "command": "0x22",
+        "bytes": 129,
+        "count": 2
+      },
+      {
+        "side": "left",
+        "command": "0x23",
+        "bytes": 10,
+        "count": 4
+      },
+      {
+        "side": "left",
+        "command": "0x24",
+        "bytes": 361,
+        "count": 31
+      },
+      {
+        "side": "left",
+        "command": "0x31",
+        "bytes": 2049,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x1",
+        "bytes": 249,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x2",
+        "bytes": 65,
+        "count": 2
+      },
+      {
+        "side": "right",
+        "command": "0x3",
+        "bytes": 9,
+        "count": 2
+      },
+      {
+        "side": "right",
+        "command": "0x4",
+        "bytes": 19,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x5",
+        "bytes": 15,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x6",
+        "bytes": 7,
+        "count": 1
+      },
+      {
+        "side": "right",
+        "command": "0x7",
+        "bytes": 517,
+        "count": 32
+      },
+      {
+        "side": "right",
+        "command": "0x8",
+        "bytes": 7,
+        "count": 1
+      },
+      {
+        "side": "right",
+        "command": "0xa",
+        "bytes": 97,
+        "count": 3
+      },
+      {
+        "side": "right",
+        "command": "0x10",
+        "bytes": 10,
+        "count": 2
+      },
+      {
+        "side": "right",
+        "command": "0x20",
+        "bytes": 10,
+        "count": 2
+      },
+      {
+        "side": "right",
+        "command": "0x21",
+        "bytes": 131,
+        "count": 16
+      },
+      {
+        "side": "right",
+        "command": "0x22",
+        "bytes": 129,
+        "count": 2
+      },
+      {
+        "side": "right",
+        "command": "0x23",
+        "bytes": 10,
+        "count": 4
+      },
+      {
+        "side": "right",
+        "command": "0x24",
+        "bytes": 361,
+        "count": 31
+      },
+      {
+        "side": "right",
+        "command": "0x30",
+        "bytes": 1024,
+        "count": 2
+      },
+      {
+        "side": "right",
+        "command": "0x31",
+        "bytes": 2049,
+        "count": 2
+      }
+    ]
+  }
+]

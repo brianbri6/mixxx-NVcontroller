@@ -1,0 +1,15 @@
+/baseline/
+/upload/
+/vendor/
+/work/
+/dist/
+/.library_helpers/
+/.checkpoint-library.json
+/.checkpoint-tmp/
+__pycache__/
+*.pyc
+/project_sources/*.pcapng
+/project_sources/*.pdf
+/node_modules/
+/.codex/
+/.cache/

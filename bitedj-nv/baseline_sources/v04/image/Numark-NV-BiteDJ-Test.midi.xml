@@ -1,0 +1,3049 @@
+<?xml version='1.0' encoding='utf-8'?>
+<MixxxControllerPreset mixxxVersion="2.5.0" schemaVersion="1">
+    <!-- SPDX-License-Identifier: GPL-2.0-only; adapted from Hidetsugu Takahashi Numark-NV preset. -->
+    <info>
+        <name>Numark NV (BiteDJ Pi4 Test v0.3)</name>
+        <author>Hidetsugu Takahashi; BiteDJ test mapping contributors</author>
+        <description>Experimental original NV: mixer, transport, pitch, jog, pads and browse. LCDs, advanced FX, touch-EQ and Slicer are not implemented. See installed bitedj-nv-test documentation.</description>
+        <wiki>https://github.com/manzyun/mixxx</wiki>
+    </info>
+    <controller id="Numark NV">
+        <scriptfiles>
+            <file filename="BiteDJ-Numark-NV.js" functionprefix="BiteDJNV" />
+            <file filename="BiteDJ-Diagnostics.js" functionprefix="BiteDJDiag" />
+        </scriptfiles>
+        <controls>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>crossfader MSB</description>
+                <status>0xB0</status>
+                <midino>0x07</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>crossfader LSB</description>
+                <status>0xB0</status>
+                <midino>0x27</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>volume MSB</description>
+                <status>0xB0</status>
+                <midino>0x08</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>volume LSB</description>
+                <status>0xB0</status>
+                <midino>0x28</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter1 MSB</description>
+                <status>0xB0</status>
+                <midino>0x09</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter1 LSB</description>
+                <status>0xB0</status>
+                <midino>0x29</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter2 MSB</description>
+                <status>0xB0</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter2 LSB</description>
+                <status>0xB0</status>
+                <midino>0x2A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter3 MSB</description>
+                <status>0xB0</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel1]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter3 LSB</description>
+                <status>0xB0</status>
+                <midino>0x2B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>pregain MSB</description>
+                <status>0xB0</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>pregain LSB</description>
+                <status>0xB0</status>
+                <midino>0x2C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>volume MSB</description>
+                <status>0xB0</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>volume LSB</description>
+                <status>0xB0</status>
+                <midino>0x2D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter1 MSB</description>
+                <status>0xB0</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter1 LSB</description>
+                <status>0xB0</status>
+                <midino>0x2E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter2 MSB</description>
+                <status>0xB0</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter2 LSB</description>
+                <status>0xB0</status>
+                <midino>0x2F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter3 MSB</description>
+                <status>0xB0</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel2]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter3 LSB</description>
+                <status>0xB0</status>
+                <midino>0x30</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>pregain MSB</description>
+                <status>0xB0</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>pregain LSB</description>
+                <status>0xB0</status>
+                <midino>0x31</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>headMix MSB</description>
+                <status>0xB0</status>
+                <midino>0x12</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>headMix LSB</description>
+                <status>0xB0</status>
+                <midino>0x32</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>volume MSB</description>
+                <status>0xB0</status>
+                <midino>0x13</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>volume LSB</description>
+                <status>0xB0</status>
+                <midino>0x33</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter1 MSB</description>
+                <status>0xB0</status>
+                <midino>0x14</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter1 LSB</description>
+                <status>0xB0</status>
+                <midino>0x34</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter2 MSB</description>
+                <status>0xB0</status>
+                <midino>0x15</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter2 LSB</description>
+                <status>0xB0</status>
+                <midino>0x35</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter3 MSB</description>
+                <status>0xB0</status>
+                <midino>0x16</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel3]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter3 LSB</description>
+                <status>0xB0</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>pregain MSB</description>
+                <status>0xB0</status>
+                <midino>0x17</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>pregain LSB</description>
+                <status>0xB0</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>volume MSB</description>
+                <status>0xB0</status>
+                <midino>0x18</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>volume LSB</description>
+                <status>0xB0</status>
+                <midino>0x38</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter1 MSB</description>
+                <status>0xB0</status>
+                <midino>0x19</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter1 LSB</description>
+                <status>0xB0</status>
+                <midino>0x39</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter2 MSB</description>
+                <status>0xB0</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter2 LSB</description>
+                <status>0xB0</status>
+                <midino>0x3A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter3 MSB</description>
+                <status>0xB0</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[EqualizerRack1_[Channel4]_Effect1]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>parameter3 LSB</description>
+                <status>0xB0</status>
+                <midino>0x3B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>pregain MSB</description>
+                <status>0xB0</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>pregain LSB</description>
+                <status>0xB0</status>
+                <midino>0x3C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>headGain</description>
+                <status>0xB0</status>
+                <midino>0x44</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[QuickEffectRack1_[Channel3]]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>super1</description>
+                <status>0xB0</status>
+                <midino>0x5A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[QuickEffectRack1_[Channel1]]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>super1</description>
+                <status>0xB0</status>
+                <midino>0x5B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[QuickEffectRack1_[Channel2]]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>super1</description>
+                <status>0xB0</status>
+                <midino>0x5C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[QuickEffectRack1_[Channel4]]</group>
+                <key>BiteDJNV.mixer</key>
+                <description>super1</description>
+                <status>0xB0</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Library]</group>
+                <key>BiteDJNV.browse</key>
+                <description>Library encoder</description>
+                <status>0xB0</status>
+                <midino>0x03</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Library]</group>
+                <key>BiteDJNV.browse</key>
+                <description>Library encoder</description>
+                <status>0xB0</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pfl</key>
+                <description>Headphone cue toggle (press / zero-value release)</description>
+                <status>0x90</status>
+                <midino>0x35</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pfl</key>
+                <description>Headphone cue toggle (note-off release)</description>
+                <status>0x80</status>
+                <midino>0x35</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pfl</key>
+                <description>Headphone cue toggle (press / zero-value release)</description>
+                <status>0x90</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pfl</key>
+                <description>Headphone cue toggle (note-off release)</description>
+                <status>0x80</status>
+                <midino>0x36</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pfl</key>
+                <description>Headphone cue toggle (press / zero-value release)</description>
+                <status>0x90</status>
+                <midino>0x34</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pfl</key>
+                <description>Headphone cue toggle (note-off release)</description>
+                <status>0x80</status>
+                <midino>0x34</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pfl</key>
+                <description>Headphone cue toggle (press / zero-value release)</description>
+                <status>0x90</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pfl</key>
+                <description>Headphone cue toggle (note-off release)</description>
+                <status>0x80</status>
+                <midino>0x37</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Play / pause (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Play / pause (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Cue; Shift: return to start (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Cue; Shift: return to start (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Sync (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Sync (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Shift (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Shift (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Bleep / reverse roll; Shift: reverse toggle (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Bleep / reverse roll; Shift: reverse toggle (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend down (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend down (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend up (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend up (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Load selected track (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Load selected track (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Slip (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Slip (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Halve loop (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Halve loop (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Double loop (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Double loop (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Tap tempo (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Tap tempo (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Vinyl mode (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Vinyl mode (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch range; Shift: keylock (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch range; Shift: keylock (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.touch</key>
+                <description>Jog touch (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.touch</key>
+                <description>Jog touch (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.sidebar</key>
+                <description>Expand / collapse selected library item (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.sidebar</key>
+                <description>Expand / collapse selected library item (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Cue pads (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Cue pads (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Loop pads (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Loop pads (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Roll pads (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Roll pads (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Sampler pads (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x1D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Sampler pads (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x1D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Slicer: pads disabled in this preset (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Slicer: pads disabled in this preset (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 1 (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 1 (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 2 (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 2 (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 3 (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x49</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 3 (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x49</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 4 (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 4 (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 5 (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 5 (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 6 (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 6 (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 7 (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 7 (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 8 (press / zero-value release)</description>
+                <status>0x91</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 8 (note-off release)</description>
+                <status>0x81</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.jog</key>
+                <description>Jog rotation, relative two-complement</description>
+                <status>0xB1</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pitch</key>
+                <description>Pitch fader MSB</description>
+                <status>0xB1</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.pitch</key>
+                <description>Pitch fader LSB</description>
+                <status>0xB1</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Play / pause (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Play / pause (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Cue; Shift: return to start (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Cue; Shift: return to start (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Sync (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Sync (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Shift (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Shift (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Bleep / reverse roll; Shift: reverse toggle (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Bleep / reverse roll; Shift: reverse toggle (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend down (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend down (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend up (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend up (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Load selected track (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Load selected track (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Slip (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Slip (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Halve loop (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Halve loop (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Double loop (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Double loop (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Tap tempo (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Tap tempo (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Vinyl mode (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Vinyl mode (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch range; Shift: keylock (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch range; Shift: keylock (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.touch</key>
+                <description>Jog touch (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.touch</key>
+                <description>Jog touch (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.sidebar</key>
+                <description>Expand / collapse selected library item (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.sidebar</key>
+                <description>Expand / collapse selected library item (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Cue pads (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Cue pads (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Loop pads (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Loop pads (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Roll pads (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Roll pads (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Sampler pads (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x1D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Sampler pads (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x1D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Slicer: pads disabled in this preset (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Slicer: pads disabled in this preset (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 1 (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 1 (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 2 (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 2 (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 3 (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x49</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 3 (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x49</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 4 (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 4 (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 5 (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 5 (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 6 (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 6 (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 7 (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 7 (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 8 (press / zero-value release)</description>
+                <status>0x92</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 8 (note-off release)</description>
+                <status>0x82</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.jog</key>
+                <description>Jog rotation, relative two-complement</description>
+                <status>0xB2</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pitch</key>
+                <description>Pitch fader MSB</description>
+                <status>0xB2</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.pitch</key>
+                <description>Pitch fader LSB</description>
+                <status>0xB2</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Play / pause (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Play / pause (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Cue; Shift: return to start (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Cue; Shift: return to start (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Sync (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Sync (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Shift (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Shift (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Bleep / reverse roll; Shift: reverse toggle (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Bleep / reverse roll; Shift: reverse toggle (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend down (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend down (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend up (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend up (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Load selected track (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Load selected track (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Slip (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Slip (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Halve loop (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Halve loop (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Double loop (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Double loop (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Tap tempo (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Tap tempo (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Vinyl mode (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Vinyl mode (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch range; Shift: keylock (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch range; Shift: keylock (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.touch</key>
+                <description>Jog touch (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.touch</key>
+                <description>Jog touch (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.sidebar</key>
+                <description>Expand / collapse selected library item (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.sidebar</key>
+                <description>Expand / collapse selected library item (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Cue pads (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Cue pads (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Loop pads (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Loop pads (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Roll pads (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Roll pads (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Sampler pads (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x1D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Sampler pads (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x1D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Slicer: pads disabled in this preset (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Slicer: pads disabled in this preset (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 1 (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 1 (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 2 (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 2 (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 3 (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x49</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 3 (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x49</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 4 (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 4 (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 5 (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 5 (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 6 (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 6 (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 7 (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 7 (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 8 (press / zero-value release)</description>
+                <status>0x93</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 8 (note-off release)</description>
+                <status>0x83</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.jog</key>
+                <description>Jog rotation, relative two-complement</description>
+                <status>0xB3</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pitch</key>
+                <description>Pitch fader MSB</description>
+                <status>0xB3</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.pitch</key>
+                <description>Pitch fader LSB</description>
+                <status>0xB3</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Play / pause (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Play / pause (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Cue; Shift: return to start (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Cue; Shift: return to start (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x20</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Sync (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Sync (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x1F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Shift (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Shift (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x0D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Bleep / reverse roll; Shift: reverse toggle (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Bleep / reverse roll; Shift: reverse toggle (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x0B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend down (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend down (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x10</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend up (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch bend up (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x11</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Load selected track (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Load selected track (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x05</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Slip (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Slip (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x0A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Halve loop (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Halve loop (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x0E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Double loop (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Double loop (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x0F</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Tap tempo (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Tap tempo (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x02</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Vinyl mode (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Vinyl mode (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x0C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch range; Shift: keylock (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.button</key>
+                <description>Pitch range; Shift: keylock (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.touch</key>
+                <description>Jog touch (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.touch</key>
+                <description>Jog touch (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x5D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.sidebar</key>
+                <description>Expand / collapse selected library item (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.sidebar</key>
+                <description>Expand / collapse selected library item (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x06</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Cue pads (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Cue pads (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x1A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Loop pads (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Loop pads (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x1C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Roll pads (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Roll pads (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x1B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Sampler pads (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x1D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Sampler pads (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x1D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Slicer: pads disabled in this preset (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.padMode</key>
+                <description>Slicer: pads disabled in this preset (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x1E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 1 (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 1 (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x47</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 2 (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 2 (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x48</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 3 (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x49</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 3 (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x49</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 4 (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 4 (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x4A</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 5 (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 5 (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x4B</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 6 (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 6 (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x4C</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 7 (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 7 (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x4D</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 8 (press / zero-value release)</description>
+                <status>0x94</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pad</key>
+                <description>Performance pad 8 (note-off release)</description>
+                <status>0x84</status>
+                <midino>0x4E</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.jog</key>
+                <description>Jog rotation, relative two-complement</description>
+                <status>0xB4</status>
+                <midino>0x00</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pitch</key>
+                <description>Pitch fader MSB</description>
+                <status>0xB4</status>
+                <midino>0x01</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.pitch</key>
+                <description>Pitch fader LSB</description>
+                <status>0xB4</status>
+                <midino>0x21</midino>
+                <options>
+                    <script-binding />
+                </options>
+            </control>
+        </controls>
+        <outputs />
+    </controller>
+</MixxxControllerPreset>

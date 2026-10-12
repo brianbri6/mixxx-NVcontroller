@@ -1,0 +1,18 @@
+{
+  "project_sources/02-mixxx-source-with-numark-nv.txt": "9e5ca33e5f21d5d0290476b16f46f2e2747bf625f2f0f86c481b9e84deb581a7",
+  "project_sources/04-numarknvplatter.pcapng": "9597d4456c326785823af1174c495c6a7a0dc519db6281a450a79022434fd100",
+  "project_sources/03-numarknvplatterwithaudio.pcapng": "cac692430f2f0729e730c95061fec6fedcc20eb128cc1ed5514c7be6053b66b5",
+  "project_sources/01-mixxx-source.txt": "9b4497cd333335a16d7486834286ee799ba39ea31cd64d162be136ab9505e690",
+  "baseline/mixxx numark nv/BiteDJ_Pi4_NV_Controls_Update_v0_4.zip": "d7da9a0bca4350f41b4fa23ffe220b126f9e2501e4cb7bb0845560bb31d05a4b",
+  "baseline/BiteDJ_Pi4_4GB_HDMI_NV_Test_v0_3.zip": "21a924d2a86c790244c200395983429e40ec50e9af0fa734db23f7c9e6c202e2",
+  "project_sources/05-NumarkNVVDJ.pcapng": "f7ef49c90e1ae023643a16555ed3d30ad7e1ea9f15dd65d5abd421525587cb6c",
+  "baseline/mixxx numark nv/BiteDJ_Pi4_NV_Display_Test_v0_5.zip": "1a35a103d346c4966ff415a6e11ba296525e3008bc7a8cbc158545a37a60ea47",
+  "baseline/mixxx numark nv/BiteDJ_Pi4_NV_Display_Test_v0_5_1.zip": "369cbbde3292862de6d16a2f87a69e3ff8b891e6e05465e05d4b318f74215c94",
+  "baseline/mixxx numark nv/BiteDJ_Pi4_NV_Display_Test_v0_5_2.zip": "36765be467bbc3a5e74853fe998f94228e05d3bd19021a87143fe5d4baf40e87",
+  "baseline/mixxx numark nv/BiteDJ_Pi4_NV_Display_Test_v0_5_3.zip": "173ac612634da000f4ca4e25b44d0bf947c900c7f40b6ddf2ccdf9c22650d547",
+  "project_sources/05-NV-UserGuide-v1.2.pdf": "8f25871309baf60a1860bc1bcff05da38161ffc5fba29a7a931d65dc8808a7b6",
+  "baseline/mixxx numark nv/BiteDJ_Pi4_NV_Display_Test_v0_5_4.zip": "8482398900b405f5734c4a6389077297da44966b9b9eac07b19ea9e612205fd5",
+  "reference/nv/Numark-NV-controller-scripts.js": "f02dc7dbc8078d83d8f0a8fed6905a12288ec5b3c3e2c8bb1f0b556eccb2c834",
+  "reference/nv/Numark-NV.midi.xml": "269d5f698e58464fb9b4d884427b7c0b9f65166daf29d6dec050a1d358b7ed9d",
+  "baseline/mixxx numark nv/BiteDJ_Pi4_NV_Display_Test_v0_5_5.zip": "402c2dc53cc99314a8296ef727a2e558094fdc29abad96b85c9d1fa329ace224"
+}

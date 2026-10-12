@@ -1,0 +1,1697 @@
+{
+  "format": 1,
+  "hardware_tested": false,
+  "sources": {
+    "03-numarknvplatterwithaudio.pcapng": {
+      "sha256": "cac692430f2f0729e730c95061fec6fedcc20eb128cc1ed5514c7be6053b66b5",
+      "control_device": 20
+    },
+    "04-numarknvplatter.pcapng": {
+      "sha256": "9597d4456c326785823af1174c495c6a7a0dc519db6281a450a79022434fd100",
+      "control_device": 20
+    },
+    "05-NumarkNVVDJ.pcapng": {
+      "sha256": "f7ef49c90e1ae023643a16555ed3d30ad7e1ea9f15dd65d5abd421525587cb6c",
+      "control_device": 14
+    }
+  },
+  "records": [
+    {
+      "capture": "03-numarknvplatterwithaudio.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 72,
+      "counts": {
+        "1": 35,
+        "2": 151,
+        "3": 122,
+        "0": 14
+      },
+      "examples": [
+        {
+          "packet": 7367,
+          "bytes": [
+            176,
+            72,
+            1
+          ]
+        },
+        {
+          "packet": 7544,
+          "bytes": [
+            176,
+            72,
+            2
+          ]
+        },
+        {
+          "packet": 9650,
+          "bytes": [
+            176,
+            72,
+            3
+          ]
+        },
+        {
+          "packet": 25342,
+          "bytes": [
+            176,
+            72,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "03-numarknvplatterwithaudio.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 73,
+      "counts": {
+        "1": 38,
+        "0": 15,
+        "2": 151,
+        "3": 116
+      },
+      "examples": [
+        {
+          "packet": 7312,
+          "bytes": [
+            176,
+            73,
+            1
+          ]
+        },
+        {
+          "packet": 7345,
+          "bytes": [
+            176,
+            73,
+            0
+          ]
+        },
+        {
+          "packet": 7540,
+          "bytes": [
+            176,
+            73,
+            2
+          ]
+        },
+        {
+          "packet": 9644,
+          "bytes": [
+            176,
+            73,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "03-numarknvplatterwithaudio.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 75,
+      "counts": {
+        "1": 12,
+        "2": 45,
+        "3": 155,
+        "4": 124,
+        "0": 9
+      },
+      "examples": [
+        {
+          "packet": 6183,
+          "bytes": [
+            176,
+            75,
+            1
+          ]
+        },
+        {
+          "packet": 6471,
+          "bytes": [
+            176,
+            75,
+            2
+          ]
+        },
+        {
+          "packet": 7572,
+          "bytes": [
+            176,
+            75,
+            3
+          ]
+        },
+        {
+          "packet": 9648,
+          "bytes": [
+            176,
+            75,
+            4
+          ]
+        },
+        {
+          "packet": 25471,
+          "bytes": [
+            176,
+            75,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 15,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3110,
+          "bytes": [
+            144,
+            15,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 16,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3117,
+          "bytes": [
+            144,
+            16,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 17,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3122,
+          "bytes": [
+            144,
+            17,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 19,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 2990,
+          "bytes": [
+            144,
+            19,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 20,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3120,
+          "bytes": [
+            144,
+            20,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 21,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3124,
+          "bytes": [
+            144,
+            21,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 72,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3137,
+          "bytes": [
+            176,
+            72,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 73,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3126,
+          "bytes": [
+            176,
+            73,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 75,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3131,
+          "bytes": [
+            176,
+            75,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 145,
+      "address": 71,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3172,
+          "bytes": [
+            145,
+            71,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 145,
+      "address": 72,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3174,
+          "bytes": [
+            145,
+            72,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 145,
+      "address": 73,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3176,
+          "bytes": [
+            145,
+            73,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 145,
+      "address": 74,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3092,
+          "bytes": [
+            145,
+            74,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 145,
+      "address": 75,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3074,
+          "bytes": [
+            145,
+            75,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 145,
+      "address": 76,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3096,
+          "bytes": [
+            145,
+            76,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 145,
+      "address": 77,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3078,
+          "bytes": [
+            145,
+            77,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 145,
+      "address": 78,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3100,
+          "bytes": [
+            145,
+            78,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 146,
+      "address": 71,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3178,
+          "bytes": [
+            146,
+            71,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 146,
+      "address": 72,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3180,
+          "bytes": [
+            146,
+            72,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 146,
+      "address": 73,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 3183,
+          "bytes": [
+            146,
+            73,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 146,
+      "address": 74,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4604,
+          "bytes": [
+            146,
+            74,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 146,
+      "address": 75,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4569,
+          "bytes": [
+            146,
+            75,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 146,
+      "address": 76,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4571,
+          "bytes": [
+            146,
+            76,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 146,
+      "address": 77,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4573,
+          "bytes": [
+            146,
+            77,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 146,
+      "address": 78,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4608,
+          "bytes": [
+            146,
+            78,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 71,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4575,
+          "bytes": [
+            147,
+            71,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 72,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4578,
+          "bytes": [
+            147,
+            72,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 73,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4580,
+          "bytes": [
+            147,
+            73,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 74,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 2996,
+          "bytes": [
+            147,
+            74,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 75,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4582,
+          "bytes": [
+            147,
+            75,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 76,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4584,
+          "bytes": [
+            147,
+            76,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 77,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4587,
+          "bytes": [
+            147,
+            77,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 78,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4610,
+          "bytes": [
+            147,
+            78,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 71,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4589,
+          "bytes": [
+            148,
+            71,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 72,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4593,
+          "bytes": [
+            148,
+            72,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 73,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4595,
+          "bytes": [
+            148,
+            73,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 74,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4606,
+          "bytes": [
+            148,
+            74,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 75,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4597,
+          "bytes": [
+            148,
+            75,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 76,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4599,
+          "bytes": [
+            148,
+            76,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 77,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4601,
+          "bytes": [
+            148,
+            77,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "04-numarknvplatter.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 78,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 4612,
+          "bytes": [
+            148,
+            78,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 15,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 999,
+          "bytes": [
+            144,
+            15,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 16,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1001,
+          "bytes": [
+            144,
+            16,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 17,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1003,
+          "bytes": [
+            144,
+            17,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 19,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1007,
+          "bytes": [
+            144,
+            19,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 20,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1009,
+          "bytes": [
+            144,
+            20,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "fx_led",
+      "status": 144,
+      "address": 21,
+      "counts": {
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1011,
+          "bytes": [
+            144,
+            21,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 72,
+      "counts": {
+        "0": 4,
+        "2": 12,
+        "3": 5,
+        "1": 9
+      },
+      "examples": [
+        {
+          "packet": 1029,
+          "bytes": [
+            176,
+            72,
+            0
+          ]
+        },
+        {
+          "packet": 10777,
+          "bytes": [
+            176,
+            72,
+            2
+          ]
+        },
+        {
+          "packet": 10799,
+          "bytes": [
+            176,
+            72,
+            3
+          ]
+        },
+        {
+          "packet": 12369,
+          "bytes": [
+            176,
+            72,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 73,
+      "counts": {
+        "0": 5,
+        "2": 9,
+        "3": 2,
+        "1": 10
+      },
+      "examples": [
+        {
+          "packet": 1031,
+          "bytes": [
+            176,
+            73,
+            0
+          ]
+        },
+        {
+          "packet": 10779,
+          "bytes": [
+            176,
+            73,
+            2
+          ]
+        },
+        {
+          "packet": 10801,
+          "bytes": [
+            176,
+            73,
+            3
+          ]
+        },
+        {
+          "packet": 12039,
+          "bytes": [
+            176,
+            73,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "meter",
+      "status": 176,
+      "address": 75,
+      "counts": {
+        "0": 4,
+        "1": 12,
+        "2": 12,
+        "3": 3
+      },
+      "examples": [
+        {
+          "packet": 1023,
+          "bytes": [
+            176,
+            75,
+            0
+          ]
+        },
+        {
+          "packet": 10775,
+          "bytes": [
+            176,
+            75,
+            1
+          ]
+        },
+        {
+          "packet": 10785,
+          "bytes": [
+            176,
+            75,
+            2
+          ]
+        },
+        {
+          "packet": 10797,
+          "bytes": [
+            176,
+            75,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 71,
+      "counts": {
+        "12": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1157,
+          "bytes": [
+            147,
+            71,
+            12
+          ]
+        },
+        {
+          "packet": 36730,
+          "bytes": [
+            147,
+            71,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 72,
+      "counts": {
+        "52": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1159,
+          "bytes": [
+            147,
+            72,
+            52
+          ]
+        },
+        {
+          "packet": 36732,
+          "bytes": [
+            147,
+            72,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 73,
+      "counts": {
+        "48": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1161,
+          "bytes": [
+            147,
+            73,
+            48
+          ]
+        },
+        {
+          "packet": 36734,
+          "bytes": [
+            147,
+            73,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 74,
+      "counts": {
+        "21": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1163,
+          "bytes": [
+            147,
+            74,
+            21
+          ]
+        },
+        {
+          "packet": 36736,
+          "bytes": [
+            147,
+            74,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 75,
+      "counts": {
+        "6": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1165,
+          "bytes": [
+            147,
+            75,
+            6
+          ]
+        },
+        {
+          "packet": 36738,
+          "bytes": [
+            147,
+            75,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 76,
+      "counts": {
+        "3": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1167,
+          "bytes": [
+            147,
+            76,
+            3
+          ]
+        },
+        {
+          "packet": 36740,
+          "bytes": [
+            147,
+            76,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 77,
+      "counts": {
+        "0": 2
+      },
+      "examples": [
+        {
+          "packet": 1169,
+          "bytes": [
+            147,
+            77,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 147,
+      "address": 78,
+      "counts": {
+        "21": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1173,
+          "bytes": [
+            147,
+            78,
+            21
+          ]
+        },
+        {
+          "packet": 36744,
+          "bytes": [
+            147,
+            78,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 71,
+      "counts": {
+        "12": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1175,
+          "bytes": [
+            148,
+            71,
+            12
+          ]
+        },
+        {
+          "packet": 36750,
+          "bytes": [
+            148,
+            71,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 72,
+      "counts": {
+        "52": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1177,
+          "bytes": [
+            148,
+            72,
+            52
+          ]
+        },
+        {
+          "packet": 36752,
+          "bytes": [
+            148,
+            72,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 73,
+      "counts": {
+        "48": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1183,
+          "bytes": [
+            148,
+            73,
+            48
+          ]
+        },
+        {
+          "packet": 36754,
+          "bytes": [
+            148,
+            73,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 74,
+      "counts": {
+        "21": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1185,
+          "bytes": [
+            148,
+            74,
+            21
+          ]
+        },
+        {
+          "packet": 36756,
+          "bytes": [
+            148,
+            74,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 75,
+      "counts": {
+        "6": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1187,
+          "bytes": [
+            148,
+            75,
+            6
+          ]
+        },
+        {
+          "packet": 36758,
+          "bytes": [
+            148,
+            75,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 76,
+      "counts": {
+        "3": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1189,
+          "bytes": [
+            148,
+            76,
+            3
+          ]
+        },
+        {
+          "packet": 36760,
+          "bytes": [
+            148,
+            76,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 77,
+      "counts": {
+        "0": 2
+      },
+      "examples": [
+        {
+          "packet": 1191,
+          "bytes": [
+            148,
+            77,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "capture": "05-NumarkNVVDJ.pcapng",
+      "direction": "out",
+      "category": "pad_palette",
+      "status": 148,
+      "address": 78,
+      "counts": {
+        "21": 1,
+        "0": 1
+      },
+      "examples": [
+        {
+          "packet": 1193,
+          "bytes": [
+            148,
+            78,
+            21
+          ]
+        },
+        {
+          "packet": 36764,
+          "bytes": [
+            148,
+            78,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

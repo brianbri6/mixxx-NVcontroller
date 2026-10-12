@@ -1,0 +1,16 @@
+{
+  "scratchSensitivity": 2.0,
+  "jogSensitivity": 0.25,
+  "vuFollowFader": true,
+  "vuSilenceThreshold": 0.01,
+  "vuPeakLevel": 5,
+  "vuTest": false,
+  "padColor1": 12,
+  "padColor2": 52,
+  "padColor3": 48,
+  "padColor4": 21,
+  "padColor5": 6,
+  "padColor6": 3,
+  "padColor7": 52,
+  "padColor8": 21
+}
