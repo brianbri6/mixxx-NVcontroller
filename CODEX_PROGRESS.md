@@ -634,3 +634,14 @@ git diff --check
 - Existing diagnostics suffice for the next step: fresh boot; press left encoder three times, then right twice; use HDMI to open a folder with songs, move selection, wait briefly, export F12 and photograph HDMI plus NV LCDs. nv-status.json reports browser_available, track_count, selected_row and song_rows_sent; the controller log records unmapped input bytes.
 - Next: correlate the ordered presses to MIDI and distinguish empty exported rows from rendered-but-invisible rows. Implement/test only after the fault is grounded. No new runtime package, native rebuild or hardware pass claimed.
 <!-- End AI-generated progress note. -->
+
+
+<!-- AI-generated progress note at the repository owner's request. -->
+### Parent folder with songs and a subfolder — 2026-10-12
+
+- User reproduction: Folder 1 contains music and Folder 2; both HDMI Browse and NV show Folder 2/music, but Folder 1 music is inaccessible.
+- Inspected the pinned BiteDJ source (78074e05c8bf99ede6fedd755aa68bd222ba343c). WLibrarySidebar::mousePressEvent only emits leafItemActivated/hides the sidebar when !hasChildren(index). activateSelectedLeaf also returns when the selected folder has children. LibraryControl::slotGoToItem opens tracks for isLeafNodeSelected(), otherwise toggles expansion. This is a strong source-supported explanation for mixed folders being treated only as containers; not yet reproduced on hardware here.
+- BrowseFeature::activateChild already passes the selected directory to BrowseTableModel. BrowseThread uses QDirIterator with QDir::Files and no recursive flag, so a correctly selected parent should supply its direct files. Do not implement recursive flattening as a substitute.
+- Required behavior: opening Folder 1 must expose its own songs while Folder 2 remains separately navigable; opening Folder 2 shows its own songs. Fix the distinction between directory activation and expansion in the pinned native UI, then verify mouse/touch and controller paths, empty folders, nested mixed folders and return-to-parent selection. Check LCD rows against the selected HDMI table afterward.
+- This requires a native change/build, not an invented MIDI address or LCD-only workaround. No runtime source or release changed in this investigation. The physical encoder-push binding still needs the previously requested ordered F12 capture.
+<!-- End AI-generated progress note. -->
