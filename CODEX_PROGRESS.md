@@ -623,3 +623,14 @@ git diff --check
 - Saved complete recovery libfile_5ce7b9ccc09c8191b0a53b70932cc2aa, version 23, source ca63fd4: 55,243,434 bytes; SHA-256 28d60da4e6e8384fd424a0b658eccdb459b83af18b38d578b40a8a87be3301b2. Local metadata applied. Native/payload/captures/history/test results and exact continuation are included.
 - Committing this receipt and refreshing recovery once more. The v056 release stays unchanged. Resolve the latest recovery version for subsequent replacements; version 23 is the confirmed guard before this final documentation refresh.
 - Next: user tests FX/wet-dry, pad colors, master lamp test and right-browser workflow, then supplies photos/F12. No further software changes without those results or new labelled protocol evidence are needed for this delivered milestone.
+
+
+<!-- AI-generated progress note at the repository owner's request. -->
+### NV browser hardware feedback — 2026-10-12
+
+- User reports browser partially works, but LCD song listing does not match the main display and pressing the browse encoder does not enter a folder. v056 browser is not hardware-complete.
+- Rechecked source: song rows are sampled from WLibrary's current WTrackTableView, using TrackModel columns and title/filename fallback. Pinned BrowseTableModel implements the column mapping. No confirmed source-level cause yet; missing model data, display visibility and output handling remain distinct possibilities.
+- Existing navigation is mapped to deck note 06; the physical encoder push remains unidentified. Original reference has an inconsistent note 05 entry, insufficient to map both sides safely. No guessed input binding has been added.
+- Existing diagnostics suffice for the next step: fresh boot; press left encoder three times, then right twice; use HDMI to open a folder with songs, move selection, wait briefly, export F12 and photograph HDMI plus NV LCDs. nv-status.json reports browser_available, track_count, selected_row and song_rows_sent; the controller log records unmapped input bytes.
+- Next: correlate the ordered presses to MIDI and distinguish empty exported rows from rendered-but-invisible rows. Implement/test only after the fault is grounded. No new runtime package, native rebuild or hardware pass claimed.
+<!-- End AI-generated progress note. -->
