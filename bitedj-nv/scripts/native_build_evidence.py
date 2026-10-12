@@ -7,9 +7,10 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 PIN = '78074e05c8bf99ede6fedd755aa68bd222ba343c'
-PROJECT = ('native/numarknvexporter.h', 'native/numarknvexporter.cpp', 'scripts/apply_native.py')
+PROJECT = ('native/numarknvexporter.h', 'native/numarknvexporter.cpp', 'scripts/apply_native.py', 'native/browser_navigation.patch')
 PATCHED = ('CMakeLists.txt', 'src/coreservices.cpp', 'src/library/library.h', 'src/library/library.cpp',
-           'src/controllers/numarknvexporter.h', 'src/controllers/numarknvexporter.cpp')
+           'src/controllers/numarknvexporter.h', 'src/controllers/numarknvexporter.cpp',
+           'src/library/sidebarmodel.cpp', 'src/widget/wlibrarysidebar.cpp')
 STAMP = ROOT/'work/native-build.json'
 
 

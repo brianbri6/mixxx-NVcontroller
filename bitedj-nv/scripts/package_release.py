@@ -70,7 +70,8 @@ def main():
     patch = []
     native_files = () if validation['native_reused_from_v05'] else (
         'CMakeLists.txt', 'src/coreservices.cpp', 'src/library/library.h', 'src/library/library.cpp',
-        'src/controllers/numarknvexporter.h', 'src/controllers/numarknvexporter.cpp')
+        'src/controllers/numarknvexporter.h', 'src/controllers/numarknvexporter.cpp',
+        'src/library/sidebarmodel.cpp', 'src/widget/wlibrarysidebar.cpp')
     for name in native_files:
         if name.startswith('src/controllers/numarknvexporter'):
             before = ''

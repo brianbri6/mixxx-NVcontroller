@@ -48,4 +48,12 @@ for name, old, new in edits:
     if text.count(old) != 1:
         raise SystemExit('Unexpected source context: ' + name)
     file.write_text(text.replace(old, new))
-print('Native NV exporter applied to', pin)
+# Apply/recheck the exact pinned mixed-folder fix, never overwrite local edits.
+patch = root / 'native/browser_navigation.patch'
+check = subprocess.run(['git', '-C', str(source), 'apply', '--check', str(patch)],
+                       stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+if check.returncode == 0:
+    subprocess.run(['git', '-C', str(source), 'apply', str(patch)], check=True)
+else:
+    subprocess.run(['git', '-C', str(source), 'apply', '--reverse', '--check', str(patch)], check=True)
+print('Native NV exporter and mixed-folder fix applied to', pin)

@@ -1,0 +1,76 @@
+--- a/src/library/sidebarmodel.cpp
++++ b/src/library/sidebarmodel.cpp
+@@ -1,4 +1,5 @@
+ #include "library/sidebarmodel.h"
++#include "library/browse/browsefeature.h"
+ 
+ #include <QTimer>
+ #include <QUrl>
+@@ -501,10 +502,20 @@
+ }
+ 
+ bool SidebarModel::hasTrackTable(const QModelIndex& index) const {
++    if (!index.isValid() || index.model() != this) {
++        return false;
++    }
+     if (index.internalPointer() == this) {
+         return m_sFeatures[index.row()]->hasTrackTable();
+     }
+-    return false;
++    const auto* item = static_cast<TreeItem*>(index.internalPointer());
++    if (!item || !qobject_cast<BrowseFeature*>(item->feature())) {
++        return false;
++    }
++    const QString path = item->getData().toString();
++    // A directory owns a track table even when it also contains subfolders.
++    // Quick Links and Devices are navigation containers, not directories.
++    return !path.isEmpty() && path != QUICK_LINK_NODE && path != DEVICE_NODE;
+ }
+ 
+ bool SidebarModel::dragMoveAccept(const QModelIndex& index, const QUrl& url) {
+--- a/src/widget/wlibrarysidebar.cpp
++++ b/src/widget/wlibrarysidebar.cpp
+@@ -216,14 +216,14 @@
+ 
+ // Mirrors the leaf-tap branch of mousePressEvent for callers that don't have
+ // a click position (e.g. controller wheel-press routed through LibraryControl).
+-// Emits leafItemActivated so the LibraryBreadcrumb updates, and collapses the
+-// sidebar via [Sidebar],sidebar_visible. Skips non-leaves and AutoDJ-style
+-// feature roots that own children — same gate as mousePressEvent.
++// Activates the selected track-owning row before switching views. The legacy
++// method name also covers Browse directories that contain subfolders.
+ void WLibrarySidebar::activateSelectedLeaf() {
+     QModelIndex idx = selectedIndex();
+-    if (!idx.isValid() || idx.model()->hasChildren(idx)) {
+-        return;
+-    }
++    if (!idx.isValid() || !isLeafNodeSelected()) {
++        return;
++    }
++    emit clicked(idx);
+     emit leafItemActivated(idx.data(Qt::DisplayRole).toString());
+     ControlObject::set(ConfigKey(QStringLiteral("[Sidebar]"),
+                                QStringLiteral("sidebar_visible")),
+@@ -385,15 +385,17 @@
+     }
+     QTreeView::mousePressEvent(event);
+ 
+-    // Touch ergonomics: tapping a leaf row collapses the sidebar so the
+-    // library view fills the screen. A "leaf" is any row with no children
+-    // OR a feature root that owns its own track table (e.g. AutoDJ).
++    // Clicking a directory label opens its own tracks; the expansion gutter
++    // remains dedicated to subfolder navigation.
+     QModelIndex idx = indexAt(event->pos());
+     if (!idx.isValid()) {
+         return;
+     }
+-    bool leaf = !idx.model()->hasChildren(idx);
+-    if (leaf) {
++    const auto* sidebarModel = qobject_cast<const SidebarModel*>(idx.model());
++    const bool ownsTracks = !idx.model()->hasChildren(idx) ||
++            (sidebarModel && sidebarModel->hasTrackTable(idx));
++    if (ownsTracks && visualRect(idx).contains(event->pos())) {
++        emit clicked(idx);
+         emit leafItemActivated(idx.data(Qt::DisplayRole).toString());
+         ControlObject::set(ConfigKey(QStringLiteral("[Sidebar]"),
+                                    QStringLiteral("sidebar_visible")),

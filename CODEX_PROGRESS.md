@@ -645,3 +645,19 @@ git diff --check
 - Required behavior: opening Folder 1 must expose its own songs while Folder 2 remains separately navigable; opening Folder 2 shows its own songs. Fix the distinction between directory activation and expansion in the pinned native UI, then verify mouse/touch and controller paths, empty folders, nested mixed folders and return-to-parent selection. Check LCD rows against the selected HDMI table afterward.
 - This requires a native change/build, not an invented MIDI address or LCD-only workaround. No runtime source or release changed in this investigation. The physical encoder-push binding still needs the previously requested ordered F12 capture.
 <!-- End AI-generated progress note. -->
+
+
+<!-- AI-generated progress note at the owner's request. -->
+### Mixed-folder fix implemented; native build pending — 2026-10-12
+
+Local milestone 471d354 adds a context-checked native/browser_navigation.patch,
+applied by scripts/apply_native.py to pinned BiteDJ. Real Browse directory rows
+own a track table regardless of subfolders. Label/enter activation populates the
+selected model before switching views; expansion gutter remains separate.
+Two new tests pass, including a C++ harness running the actual eligibility method.
+Native provenance and release patch generation include the modified files.
+Cross-toolchain restoration and a fresh ARM64 build are in progress. There is
+no new installable release yet. Root Mixxx remains unchanged; this patch targets
+the pinned Pi application's source. SOURCE_MANIFEST records the original v056
+import; subsequent changes are recorded by Git history and progress.
+<!-- End AI-generated progress note. -->

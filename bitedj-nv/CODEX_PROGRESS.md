@@ -597,3 +597,18 @@ git diff --check
 - Saved complete recovery libfile_5ce7b9ccc09c8191b0a53b70932cc2aa, version 23, source ca63fd4: 55,243,434 bytes; SHA-256 28d60da4e6e8384fd424a0b658eccdb459b83af18b38d578b40a8a87be3301b2. Local metadata applied. Native/payload/captures/history/test results and exact continuation are included.
 - Committing this receipt and refreshing recovery once more. The v056 release stays unchanged. Resolve the latest recovery version for subsequent replacements; version 23 is the confirmed guard before this final documentation refresh.
 - Next: user tests FX/wet-dry, pad colors, master lamp test and right-browser workflow, then supplies photos/F12. No further software changes without those results or new labelled protocol evidence are needed for this delivered milestone.
+
+### Mixed-folder native repair started — 2026-10-12
+
+- User explicitly asks to fix parent folders containing both tracks and subfolders. Restored f3e0bec in the root workspace by fast-forward after stashing old dirty audit/attachments; GitHub main includes investigation notes through bd8f439.
+- Source inspection confirms directory scanning reads direct files, but sidebar opening is gated on no children. Fix will identify real Browse directory rows as having a track table, keep tree expansion separate, and activate the selected model before showing its tracks. Preserve container nodes and other library features.
+- Preparing a new native build and restoring pinned release inputs. Native changes require fresh build/ABI evidence; do not reuse v054 binary or publish a v056 overwrite. Existing LCD/FX/pad/SD behavior is retained. Browse encoder push remains unidentified pending ordered F12 data.
+- Exact build path: python3 scripts/prepare_toolchain.py > work/toolchain-v057.log 2>&1; sh scripts/build_arm.sh > work/build-arm-v057.log 2>&1. Update results at subsequent milestones.
+
+### Mixed-folder source fix milestone — 2026-10-12
+
+- Added native/browser_navigation.patch to the pinned BiteDJ source: SidebarModel now recognizes real Browse directory rows as owning track tables, even with children; Quick Links/Devices containers and other feature behavior stay distinct.
+- Mouse/touch label activation and controller enter activate the selected model before switching to tracks. The tree expansion gutter retains its separate role, and toggling a node still expands/collapses it. No recursive flattening of parent/child songs.
+- scripts/apply_native.py applies the patch idempotently with Git context checks. Native provenance now includes both modified C++ files and patch source; release patch generation includes them too.
+- PASS: two native-browser regressions. One compiles and runs the actual patched eligibility method against minimal C++ model test doubles (invalid/foreign/null nodes, feature roots, parent/child/empty directories, virtual containers, unrelated features); one verifies both activation paths and retained expansion wiring. This is not a Qt GUI or physical test.
+- Native source checkout is restored at 78074e0. Cross-toolchain download/build is in progress. No new installable release yet. Next: finish toolchain/native compile, fresh ABI/version checks, v057 reversible updater validation and package. The SD and v056 FX/pad mapping stay retained.
