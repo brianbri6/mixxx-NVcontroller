@@ -629,3 +629,34 @@ git diff --check
 - PASS: 71 Python tests, 26 JS tests on this restored tree. Tests include actual C++ eligibility method with test doubles, activation wiring and controller expansion. These do not establish a Qt GUI or hardware pass.
 - Changed files: controller JS/XML, runtime launch/settings/SD version/updater, nvdisplay version, INPUTS, build/package/checkpoint/saved-release/patch-runtime helpers, tests, README and NEXT_TASK. SD mounting and DSP logic unchanged.
 - Native compile, ABI/version checks and 47 actual-payload scenarios are still pending. No new installable release is claimed yet.
+
+- GitHub source milestone saved as 4430b843abf42cfd2e5a15906ccdcdb4ea6e4424 (bitedj-nv and both root controller copies). Captures: 4328 PASS. Restored a stale baseline v051 archive from the verified dist copy; v05 through v056 now match INPUTS. The original large v03 ZIP is stale and v04 ZIP absent in this workspace, but extracted rootfs/base images and preserved baseline sources are retained; build_update verifies required original runtime/initramfs hashes before use.
+
+### v057 native build and runtime checks passed — 2026-10-13
+
+- Two background builds stopped with nonzero status while their retained logs ended without the final error. Switched to streamed incremental build output and avoided concurrent filesystem work; all remaining 403 steps completed and linked successfully.
+- Provenance gate then detected one zero-byte FiltFilt.cpp.o retained from an interrupted build. Removed only that incomplete generated object, recompiled it and relinked successfully; executable hash was unchanged. No source or evidence gate was bypassed.
+- Fresh unstripped ARM64 SHA-256: 9083092b6908ecb54ef8fda2f89e8bab9c92b9352974c1996021e93d74d9f685. Exact native source/build binding passed.
+- PASS: recursive ABI audit of 127 ELF files against original Pi runtime, zero missing libraries. QEMU --version exits 0 and prints Bite DJ 1.0. It warns about unavailable realtime priority/memlock in this environment; this is not a GUI/audio/hardware pass.
+- Logs retained under work/build-arm-v057*.log. Next: actual-payload v057 validation (47 scenarios), final package, save release/recovery and update GitHub.
+
+### v057 package validation passed — 2026-10-13
+
+- PASS all 47 actual-payload install/idempotence/upgrade/rollback/fault scenarios, including eight v056 histories and write-error/power-loss recovery from v056_from_v055. All 990 unrelated CPIO members preserved; shell/FAT validation passed; user audio/HDMI/SD/browser settings and older journals retained.
+- Installed stripped executable SHA-256 2d176dfd90d2031bb1f14fc9ca653ecf4816a2ce20bab4dda1697d38a3e9fa23. Initramfs SHA-256 0ff4019bc6bd397aab4deef53360ec014e966fb1654e591768ca9a3f49517ac6, 23,990,590 bytes. Fresh native source binding retained, no v054 reuse.
+- First package run caught v051 hash mismatch: copy2 had retained historical timestamps and stale bytes reappeared in the workspace snapshot. Restored verified archive using write_bytes and ran validation in the same operation; successful. Failed log retained. Original runtime/initramfs hashes were verified by the successful package build despite stale large source ZIPs noted above.
+- Successful stdout exceeded tool output budget; work/test-package-v057.log explicitly records exit0 and the complete generated validation JSON rather than claiming an untruncated console capture.
+- 71 Python,26 JS,4328 captured-message checks remain passing. No physical GUI/LCD/audio acceptance. Remaining known input issue: encoder-center press/D.VIEW not identified; no guessed binding added.
+- Packaging a new immutable BiteDJ_Pi4_NV_Display_Test_v0_5_7.zip next, followed by recovery and GitHub updates. v056 remains unchanged.
+
+### v057 archive built — 2026-10-13
+
+- Release source milestone 4abc4e7 produced dist/BiteDJ_Pi4_NV_Display_Test_v0_5_7.zip, 24,650,131 bytes; SHA-256 ee028b53112635468dbccb4010ce5549cafa4a478398e83bba675e958c60d970. Package source/payload/native gates, ZIP CRC and manifest checks passed. Do not overwrite this filename.
+- Save release and full recovery now. Recovery identity libfile_5ce7b9ccc09c8191b0a53b70932cc2aa confirmed at version24 before this save.
+- Next hardware action: back up BOOT initramfs, install v057 initramfs, keep current mode/audio/HDMI options. Folder label/normal mapped navigation opens direct songs; arrow/Shift-navigation expands children. Verify parent and child songs separately on HDMI and LCD, return and repeat, then F12 if anything differs. Center scroll-wheel push remains unidentified.
+
+### v057 delivery saved — 2026-10-13
+
+- Release saved successfully: libfile_27671c0941708191917df7cb39e8fc7f version0, BiteDJ_Pi4_NV_Display_Test_v0_5_7.zip, SHA ee028b53112635468dbccb4010ce5549cafa4a478398e83bba675e958c60d970, 24,650,131 bytes. Local identity metadata applied.
+- Full recovery saved successfully: libfile_5ce7b9ccc09c8191b0a53b70932cc2aa version25, source e60b123, SHA fc1625da87ea7d91543cffe18d4bf46c625c5e74332cf282a39278ee349e3eb2, 61,090,429 bytes. Local metadata applied. Contains full history, original captures/manual, fresh native executable/evidence, validated initramfs and logs.
+- Refreshing recovery once with this receipt and publishing final source/test notes to GitHub. Resolve the newest recovery version for the next replacement; 25 is the confirmed guard before this documentation refresh. No further implementation work is needed before the user's mixed-folder hardware test.

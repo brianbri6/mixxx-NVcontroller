@@ -34,7 +34,7 @@ def main():
         build_files = ['work/build-arm/mixxx', 'work/native-build.json']
         build_files += [str(p.relative_to(ROOT)) for pattern in
                         ('abi-audit.json', 'native-version.json', 'packages-*.json',
-                         'build-arm-v054.log', 'test*v054.log', 'test*v055*.log', 'test*v056*.log', 'test*v057*.log', 'build-arm-v057.log', 'toolchain-v057.log', 'capture-validation.json')
+                         'build-arm-v054.log', 'test*v054.log', 'test*v055*.log', 'test*v056*.log', 'test*v057*.log', 'build-arm-v057*.log', 'toolchain-v057.log', 'capture-validation.json')
                         for p in sorted((ROOT/'work').glob(pattern))]
         if args.with_package:
             package = ROOT/'work/package'

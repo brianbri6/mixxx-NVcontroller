@@ -661,3 +661,13 @@ no new installable release yet. Root Mixxx remains unchanged; this patch targets
 the pinned Pi application's source. SOURCE_MANIFEST records the original v056
 import; subsequent changes are recorded by Git history and progress.
 <!-- End AI-generated progress note. -->
+
+
+<!-- AI-generated text at the repository owner's explicit request. -->
+### v057 release complete — 2026-10-13
+- Source checkpoint 36724e6 under bitedj-nv. Mixed directories can open their direct-song table; expansion arrow/Shift-navigation exposes children independently. Encoder-center input is still unidentified.
+- Fresh ARM64 build passed source binding, 127-file runtime ABI audit and QEMU version check. 71 Python,26 JS,4328 capture records and47 actual-payload install/rollback/fault cases pass. No physical test claimed.
+- Release BiteDJ_Pi4_NV_Display_Test_v0_5_7.zip: SHA ee028b53112635468dbccb4010ce5549cafa4a478398e83bba675e958c60d970,24650131 bytes; saved libfile_27671c0941708191917df7cb39e8fc7f version0.
+- Recovery libfile_5ce7b9ccc09c8191b0a53b70932cc2aa version26 saved successfully, SHA b3ac8938a92b5324686aab2caa0406255f5d4e03c9ee5126d744e8b0c6ef44e5,61091325 bytes. Includes original captures/manual, full Git history, native binary/evidence and validated initramfs.
+- Next: physical parent/child folder acceptance on HDMI/NV. Do not overwrite v056 or v057 release archives. SOURCE_MANIFEST.json records the original import; later tracked commits are subsequent changes. No upstream PR created.
+<!-- End AI-generated text. -->

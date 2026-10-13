@@ -138,7 +138,7 @@ overlays, detailed LCD FX enable/parameter graphics and artwork remain unresolve
         put('validation/package.json', (package/'validation.json').read_bytes())
         for name in ('capture-validation.json', 'test-v057.log', 'test-controller-v057.log',
                      'test-package-v057.log', 'test-sd-music-v057.log', 'native-build.json', 'abi-audit.json', 'native-version.json',
-                     'build-arm-v054.log', 'build-arm-v057.log', 'packages-arm64.json', 'packages-amd64.json'):
+                     'build-arm-v054.log', 'build-arm-v057.log', 'build-arm-v057-resume.log', 'build-arm-v057-stream.log', 'packages-arm64.json', 'packages-amd64.json'):
             file = ROOT/'work'/name
             if file.exists():
                 put('validation/'+name, file.read_bytes())

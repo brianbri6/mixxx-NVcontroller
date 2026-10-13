@@ -4,11 +4,11 @@ Continue the original Numark NV + Deckshark/BiteDJ Pi4 4GB mixed-folder browser 
 
 ## Current work
 
-v056 remains the last delivered release. v057 adds native/browser_navigation.patch against TeamDeckshark/bitedj commit 78074e05c8bf99ede6fedd755aa68bd222ba343c. SidebarModel identifies real Browse directories as owning tracks even with children; label/enter opens tracks while expansion stays separate. Controller note06 navigation enters tracks normally, Shift+navigation expands/collapses in sidebar, either returns from tracks to folders. Do not claim the unidentified encoder center press is fixed. D.VIEW/artwork/cue overlays remain incomplete.
+v057 archive built from 4abc4e7; saved as libfile_27671c0941708191917df7cb39e8fc7f version0. Check CODEX_PROGRESS for recovery receipt. SHA-256 ee028b53112635468dbccb4010ce5549cafa4a478398e83bba675e958c60d970 (24,650,131 bytes). v057 adds native/browser_navigation.patch against TeamDeckshark/bitedj commit 78074e05c8bf99ede6fedd755aa68bd222ba343c. SidebarModel identifies real Browse directories as owning tracks even with children; label/enter opens tracks while expansion stays separate. Controller note06 navigation enters tracks normally, Shift+navigation expands/collapses in sidebar, either returns from tracks to folders. Do not claim the unidentified encoder center press is fixed. D.VIEW/artwork/cue overlays remain incomplete.
 
 Workspace repeatedly returns to e9e6687. This run preserved dirty old files in a stash and fast-forwarded recovery bundle f3e0bec, then restored native fix files from GitHub 7c557b60f6ff48ae13a8d395b978b2fc7fa6a8a0. Prefer newer published source/recovery over stale local files. GitHub integration lives under bitedj-nv/; preserve the upstream fork root. Root res/controllers copies should mirror controller sources when published. Do not reset completed work.
 
-v057 slot/journal/version preparation includes pinned v056, 47 planned actual-payload upgrade/rollback/fault cases, and refuses reuse of the old v054 native binary. Source-level checks passed 71 Python +26 JS this run. Check latest progress for build, package and delivery results. Toolchain restoration completed; a fresh ARM64 build is running at the initial handoff. No physical acceptance here.
+v057 slot/journal/version preparation includes pinned v056, 47 passed actual-payload upgrade/rollback/fault cases, and refuses reuse of the old v054 native binary. Source-level checks passed 71 Python +26 JS this run. Check latest progress for build, package and delivery results. Fresh ARM64 build, 127-file ABI audit, QEMU version check and all 47 payload scenarios passed. See newest progress for release save receipt. No physical acceptance here.
 
 ## Exact commands
 
@@ -37,6 +37,6 @@ python3 scripts/package_release.py
 python3 scripts/checkpoint.py --with-native-build --with-package
 ```
 
-Restore pinned baseline releases v05 through v056 from INPUTS.json. v056 is libfile_324e0e3b3b58819183a3c1e406638746, SHA cdf27c6c1ab35f4aa01df2bdc4c7ff4794d729d59171d42c83eca225133a25c7. Recovery identity libfile_5ce7b9ccc09c8191b0a53b70932cc2aa; last known version24. Resolve fresh guard before replacing. Keep original captures/manual, native evidence/binary and validation logs. Do not restamp old native evidence. Save new release separately.
+Restore pinned baseline releases v05 through v056 from INPUTS.json. v056 is libfile_324e0e3b3b58819183a3c1e406638746, SHA cdf27c6c1ab35f4aa01df2bdc4c7ff4794d729d59171d42c83eca225133a25c7. Recovery identity libfile_5ce7b9ccc09c8191b0a53b70932cc2aa; version25 confirmed before final receipt refresh. Resolve fresh guard before replacing. Keep original captures/manual, native evidence/binary and validation logs. Do not restamp old native evidence. Save new release separately.
 
 Hardware checklist: Folder1 with direct songs +Folder2 with different songs; clicking Folder1 label shows only its songs on HDMI/NV; arrow or Shift+navigation exposes Folder2; entering Folder2 shows its songs. Return and repeat, test empty folder, normal track load and existing FX/audio. Keep HDMI waveforms disabled. Collect F12/photos for remaining LCD or center-push failures.
