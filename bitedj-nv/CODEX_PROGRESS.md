@@ -612,3 +612,20 @@ git diff --check
 - scripts/apply_native.py applies the patch idempotently with Git context checks. Native provenance now includes both modified C++ files and patch source; release patch generation includes them too.
 - PASS: two native-browser regressions. One compiles and runs the actual patched eligibility method against minimal C++ model test doubles (invalid/foreign/null nodes, feature roots, parent/child/empty directories, virtual containers, unrelated features); one verifies both activation paths and retained expansion wiring. This is not a Qt GUI or physical test.
 - Native source checkout is restored at 78074e0. Cross-toolchain download/build is in progress. No new installable release yet. Next: finish toolchain/native compile, fresh ABI/version checks, v057 reversible updater validation and package. The SD and v056 FX/pad mapping stay retained.
+
+
+### Resumed mixed-folder fix — 2026-10-13
+
+- Workspace reopened at e9e6687; preserved its dirty audit/attachment in a named Git stash, fast-forwarded the verified recovery bundle to f3e0bec, then restored the six exact browser-fix files from GitHub commit 7c557b60f6ff48ae13a8d395b978b2fc7fa6a8a0. No released work reverted.
+- Prior uncommitted v057 preparation and toolchain were not retained. They must be recovered/reimplemented and verified; previous 71 Python/26 JS results are historical, not results on this restored tree.
+- Fresh native/toolchain restoration started. An initial clone used the wrong owner and failed without modifying source; corrected to the documented TeamDeckshark/bitedj repository. No new binary or hardware test yet.
+- Remaining: fresh native build and ABI/version evidence, v057 version/rollback/package work, Shift-navigation expansion, regression checks, release and durable handoff. The center browse push still needs labelled MIDI diagnostics.
+
+### v057 restoration and software milestone — 2026-10-13
+
+- Restored exact pinned native checkout and toolchain successfully. Fresh ARM64 build is running (work/build-arm-v057.log); do not substitute v054 binary.
+- Advanced runtime, launcher, settings and updater to independent v057 paths; pinned v056 release and added its eight upgrade histories plus write-error/power-loss scenarios (47 expected total). Native package gate requires a fresh build.
+- Added Shift + mapped navigation expansion in sidebar; normal navigation opens the selected track table. Center encoder input remains unknown. Updated README and exact continuation.
+- PASS: 71 Python tests, 26 JS tests on this restored tree. Tests include actual C++ eligibility method with test doubles, activation wiring and controller expansion. These do not establish a Qt GUI or hardware pass.
+- Changed files: controller JS/XML, runtime launch/settings/SD version/updater, nvdisplay version, INPUTS, build/package/checkpoint/saved-release/patch-runtime helpers, tests, README and NEXT_TASK. SD mounting and DSP logic unchanged.
+- Native compile, ABI/version checks and 47 actual-payload scenarios are still pending. No new installable release is claimed yet.

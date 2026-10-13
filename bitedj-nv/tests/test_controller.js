@@ -407,6 +407,7 @@ test('browser enters sidebar leaves, returns to folders and never implicitly loa
     assert.ok(!writes.some(v=>v[1]==='GoToItem'));
     n.sidebar(1,6,127,0x91,'[Channel1]'); assert.ok(writes.some(v=>v[1]==='GoToItem'&&v[2]===1));
     writes.length=0; n.shift[0]=true; n.sidebar(1,6,127,0x91,'[Channel1]'); assert.ok(!writes.some(v=>v[1]==='GoToItem'));
+    assert.ok(writes.some(v=>v[0]==='[Playlist]'&&v[1]==='ToggleSelectedSidebarItem'&&v[2]===1));
     n.browse(0,3,1); assert.equal(h.engine.getValue('[Library]','focused_widget'),2); assert.equal(h.engine.getValue('[Library]','MoveVertical'),1);
     h.engine.setValue('[Library]','focused_widget',0); n.browse(0,3,127); assert.equal(h.engine.getValue('[Library]','focused_widget'),3); assert.equal(h.engine.getValue('[Library]','MoveVertical'),-1);
 });

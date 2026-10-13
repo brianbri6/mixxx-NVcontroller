@@ -1,46 +1,42 @@
 # Exact continuation prompt
 
-Continue the original Numark NV + Deckshark/BiteDJ Raspberry Pi4 4GB integration. First inspect git status/diff/history and CODEX_PROGRESS.md; preserve completed work, update progress while working, commit milestones and save durable recovery checkpoints. Do not spawn agents, bypass AF_UNIX restrictions, rewrite baseline_sources, or overwrite a released version ZIP. Keep HDMI waveforms disabled. Native source is pinned to TeamDeckshark/bitedj 78074e05c8bf99ede6fedd755aa68bd222ba343c.
+Continue the original Numark NV + Deckshark/BiteDJ Pi4 4GB mixed-folder browser fix. Inspect git status/diff/history and CODEX_PROGRESS.md first. Preserve completed work. Maintain progress, commit milestones, publish source to the user's brianbri6/mixxx-NVcontroller GitHub fork, and save durable recovery. Do not spawn subagents, bypass AF_UNIX restrictions, overwrite released ZIPs, or change HDMI waveforms/audio settings.
 
-Latest request: user confirms v055 SD music fix works; add FX controls/adjustment, pad colors, fix missing master meters and make NV LCD browsing usable. v056 implementation is committed; consult the newest CODEX_PROGRESS milestone for final validation/delivery status before doing anything again.
+## Current work
 
-## Implemented
+v056 remains the last delivered release. v057 adds native/browser_navigation.patch against TeamDeckshark/bitedj commit 78074e05c8bf99ede6fedd755aa68bd222ba343c. SidebarModel identifies real Browse directories as owning tracks even with children; label/enter opens tracks while expansion stays separate. Controller note06 navigation enters tracks normally, Shift+navigation expands/collapses in sidebar, either returns from tracks to folders. Do not claim the unidentified encoder center press is fixed. D.VIEW/artwork/cue overlays remain incomplete.
 
-- FX three slots each in units 1/2: button toggle, knob meta, Shift+button next effect, Shift+first knob wet/dry. Empty slots load on explicit press. Active layer is inferred from deck traffic (fallback1/2). Enabling routes to that deck, preserves other routes/mix. Dedicated FX assignment buttons and single-effect pages remain unmapped.
-- Pads cue/loop/roll/sampler feedback and blink, mode/layer hold cleanup, palette settings padColor1..8. Only captured codes0,3,6,12,21,48,52 accepted. No named RGB encoding verified.
-- Master stereo CC48/49 output from actual [Main] VU/peak, clear at silence, included in lamp test. Physical destination and red5 remain to test.
-- Browser focus correction: existing navigation note06 returns to sidebar or enters its item, Shift returns to sidebar; encoder follows focus. Existing native exporter supports filesystem BrowseTableModel. Optional right-browser file provides a visibility experiment. No guessed D.VIEW or Sel push mapping.
-- Native application/exporter/audio unchanged from v054. v055 SD mounting retained, user-confirmed working. See README.md and docs/NV_CONTROLS_V056.md for workflow/evidence/remaining gaps.
+Workspace repeatedly returns to e9e6687. This run preserved dirty old files in a stash and fast-forwarded recovery bundle f3e0bec, then restored native fix files from GitHub 7c557b60f6ff48ae13a8d395b978b2fc7fa6a8a0. Prefer newer published source/recovery over stale local files. GitHub integration lives under bitedj-nv/; preserve the upstream fork root. Root res/controllers copies should mirror controller sources when published. Do not reset completed work.
 
-## Validation and continuation
+v057 slot/journal/version preparation includes pinned v056, 47 planned actual-payload upgrade/rollback/fault cases, and refuses reuse of the old v054 native binary. Source-level checks passed 71 Python +26 JS this run. Check latest progress for build, package and delivery results. Toolchain restoration completed; a fresh ARM64 build is running at the initial handoff. No physical acceptance here.
 
-**Delivered:** v056 release libfile_324e0e3b3b58819183a3c1e406638746 version0, SHA cdf27c6c1ab35f4aa01df2bdc4c7ff4794d729d59171d42c83eca225133a25c7 (24,627,384 bytes), source09454b0. Recovery v23/sourceca63fd4 saved successfully, with a documentation-only refresh following. All validation targets below passed. Next step is physical NV testing, not rebuilding the unchanged release.
-
-69 Python and26 JS tests,4328 captured LCD messages,37 actual-payload install/upgrade/idempotence/rollback/fault cases are the v056 targets. The initial final-version Python run exposed a preexisting race: instant-exit fake native app could finish before background service stub logged. The fixture now waits boundedly for that event; production launcher is unchanged except version path. Failed log retained. Check latest result before claiming all pass.
-
-The package uses its own v056 slot, updater journal and preferences journal. v055 is pinned in INPUTS/saved_release and all earlier rollback guards retained. Build copies the exact source-verified stripped v054 executable; no cross-toolchain or native rebuild needed. Unstripped SHA edb43515380e9395745746abf2b09f565641792e7c8091471a423e96a000f9e7; installed SHA cfc8a79fbe049616fc0e04b5d087df0d389869ca280ac40c2aa18469f0de9707. Existing ABI127-files/QEMU-version evidence is retained for that exact binary.
-
-Next work after delivery: physical acceptance checklist in docs/NV_CONTROLS_V056.md. Obtain photos and F12 before asserting master LED/color/browser success. D.VIEW needs labelled incoming and outgoing events; current captures lack the complete cycle. Cue/loop overlays, detailed LCD FX graphics, artwork, touch-EQ, Slicer and HDMI-disconnected boot remain incomplete. Do not repeat the completed LCD capture audit without new evidence.
-
-## Restore and exact commands
-
-Workspace has reverted repeatedly. Restore latest recovery repository.bundle by fast-forward after preserving dirty work; copy build-artifacts/work/ and source/project_sources/*.pcapng/*.pdf to matching paths. Restore all hash-pinned baseline archives through v055. v054 release identity libfile_546014e3255c8191a16edcd47dd98b3b; v055 libfile_69531cf98960819193e90a262871667e (SHA402c2dc53cc99314a8296ef727a2e558094fdc29abad96b85c9d1fa329ace224). Native executable is recoverable without rebuilding.
+## Exact commands
 
 ```sh
+git status --short
+git diff
+git log -6 --oneline
+# If source absent, restore exact pinned checkout:
+git clone --filter=blob:none --no-checkout https://github.com/TeamDeckshark/bitedj.git vendor/bitedj
+git -C vendor/bitedj checkout 78074e05c8bf99ede6fedd755aa68bd222ba343c
 python3 scripts/apply_native.py
-PYTHONPATH=scripts python3 -c 'from native_build_evidence import verify; print(verify("work/build-arm/mixxx"))'
-node tests/test_controller.js > work/test-controller-v056.log 2>&1
-python3 -m unittest discover -s tests -v > work/test-v056.log 2>&1
+# Only if toolchain missing:
+python3 scripts/prepare_toolchain.py > work/toolchain-v057.log 2>&1
+# A fresh native build is required for this patch:
+NV_BUILD_JOBS=6 sh scripts/build_arm.sh > work/build-arm-v057.log 2>&1
+python3 scripts/audit_arm.py
+python3 scripts/check_native_version.py
+node tests/test_controller.js > work/test-controller-v057.log 2>&1
+python3 -m unittest discover -s tests -v > work/test-v057.log 2>&1
 python3 scripts/verify_captures.py
-python3 scripts/analyze_control_feedback.py
 sh -n runtime/launch.sh
-python3 scripts/build_update.py --native-binary work/build-arm/mixxx > work/test-package-v056.log 2>&1
+python3 scripts/build_update.py --native-binary work/build-arm/mixxx > work/test-package-v057.log 2>&1
 git diff --check
-# Commit before packaging; never overwrite an existing release ZIP.
+# Commit tracked source before packaging.
 python3 scripts/package_release.py
 python3 scripts/checkpoint.py --with-native-build --with-package
 ```
 
-For unchanged sources use retained validation/package, do not rerun optional tests/builds. Only restore toolchain/rebuild if native source changes or matching native artifact cannot be recovered (README commands).
+Restore pinned baseline releases v05 through v056 from INPUTS.json. v056 is libfile_324e0e3b3b58819183a3c1e406638746, SHA cdf27c6c1ab35f4aa01df2bdc4c7ff4794d729d59171d42c83eca225133a25c7. Recovery identity libfile_5ce7b9ccc09c8191b0a53b70932cc2aa; last known version24. Resolve fresh guard before replacing. Keep original captures/manual, native evidence/binary and validation logs. Do not restamp old native evidence. Save new release separately.
 
-Recovery identity libfile_5ce7b9ccc09c8191b0a53b70932cc2aa. Version22/source6bafa82 was saved before controls edits (SHA0e630509ae7349c1128ba9db510150fe374da2d0540b1ed8f5c591acc6a3e5cc); later milestones follow. Resolve the latest version before replacing it and inspect every upload result. This run's helpers are .library_helpers/fx-resume/. Save new release and checkpoint, record receipts in CODEX_PROGRESS, commit that receipt and refresh checkpoint. Keep tests, failed attempt log, original captures/manual, native binary/evidence and validated initramfs in recovery. Source-only local Git is not a durable save in this environment.
+Hardware checklist: Folder1 with direct songs +Folder2 with different songs; clicking Folder1 label shows only its songs on HDMI/NV; arrow or Shift+navigation exposes Folder2; entering Folder2 shows its songs. Return and repeat, test empty folder, normal track load and existing FX/audio. Keep HDMI waveforms disabled. Collect F12/photos for remaining LCD or center-push failures.

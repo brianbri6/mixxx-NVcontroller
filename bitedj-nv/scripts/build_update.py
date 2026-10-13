@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build v0.5.6 from the exact Pi4 base and source-verified native executable."""
+"""Build v0.5.7 from the exact Pi4 base and source-verified native executable."""
 import argparse
 import base64
 import copy
@@ -12,7 +12,7 @@ import tempfile
 from unittest import mock
 import zstandard
 
-from saved_release import ROOT, V05_PATH, V051_PATH, V052_PATH, V053_PATH, V054_PATH, V055_PATH, load_v05, load_v051, load_v052, load_v053, load_v054, load_v055, sha, parse_cpio, encode_cpio
+from saved_release import ROOT, V05_PATH, V051_PATH, V052_PATH, V053_PATH, V054_PATH, V055_PATH, V056_PATH, load_v05, load_v051, load_v052, load_v053, load_v054, load_v055, load_v056, sha, parse_cpio, encode_cpio
 from native_build_evidence import verify as verify_native
 sys.path.insert(0, str(ROOT/'baseline_sources/v03/sources'))
 from fat32 import Fat32
@@ -21,7 +21,7 @@ from patch_runtime import make as patch_runtime
 OUT = ROOT/'work/package'
 PAYLOAD = ROOT/'work/payload'
 BASE = ROOT/'work/rootfs'
-SLOT = 'usr/local/lib/bitedj-nv-v056'
+SLOT = 'usr/local/lib/bitedj-nv-v057'
 
 
 def generated_namespace(source, name):
@@ -30,24 +30,25 @@ def generated_namespace(source, name):
     return namespace
 
 
-def validate_install(source, legacy_source, source_v051, source_v052, source_v053, source_v054, source_v055, entries, compatibility):
+def validate_install(source, legacy_source, source_v051, source_v052, source_v053, source_v054, source_v055, source_v056, entries, compatibility):
     result = {}
     versions = ('v03', 'v04', 'v05_from_v03', 'v05_from_v04',
                 'v051_from_v03', 'v051_from_v04', 'v051_from_v05',
                 'v052_from_v03', 'v052_from_v04', 'v052_from_v05', 'v052_from_v051',
                 'v053_from_v03', 'v053_from_v04', 'v053_from_v05', 'v053_from_v051', 'v053_from_v052',
                 'v054_from_v03', 'v054_from_v04', 'v054_from_v05', 'v054_from_v051', 'v054_from_v052', 'v054_from_v053',
-                'v055_from_v03', 'v055_from_v04', 'v055_from_v05', 'v055_from_v051', 'v055_from_v052', 'v055_from_v053', 'v055_from_v054')
+                'v055_from_v03', 'v055_from_v04', 'v055_from_v05', 'v055_from_v051', 'v055_from_v052', 'v055_from_v053', 'v055_from_v054', 'v056_from_v03', 'v056_from_v04', 'v056_from_v05', 'v056_from_v051', 'v056_from_v052', 'v056_from_v053', 'v056_from_v054', 'v056_from_v055')
     for version in versions:
-        trials = ('normal', 'write_error', 'power_loss') if version in ('v052_from_v051', 'v053_from_v052', 'v054_from_v053', 'v055_from_v054') else ('normal',)
+        trials = ('normal', 'write_error', 'power_loss') if version in ('v052_from_v051', 'v053_from_v052', 'v054_from_v053', 'v055_from_v054', 'v056_from_v055') else ('normal',)
         for trial in trials:
-            current = generated_namespace(source, 'nv_v056_validation')
+            current = generated_namespace(source, 'nv_v057_validation')
             v05 = generated_namespace(legacy_source, 'nv_v05_validation')
             v051 = generated_namespace(source_v051, 'nv_v051_validation')
             v052 = generated_namespace(source_v052, 'nv_v052_validation')
             v053 = generated_namespace(source_v053, 'nv_v053_validation')
             v054 = generated_namespace(source_v054, 'nv_v054_validation')
             v055 = generated_namespace(source_v055, 'nv_v055_validation')
+            v056 = generated_namespace(source_v056, 'nv_v056_validation')
             with tempfile.TemporaryDirectory(dir=ROOT/'work') as temporary:
                 root = Path(temporary)
                 paths = ['etc/deckshark-release', *compatibility,
@@ -78,7 +79,7 @@ def validate_install(source, legacy_source, source_v051, source_v052, source_v05
                         shutil.copy2(ROOT/'baseline_sources/v04/sources/payload'/name,
                                      root/'usr/share/mixxx/controllers'/name)
                 old_updates = []
-                versions_in_order = ['v05', 'v051', 'v052', 'v053', 'v054', 'v055']
+                versions_in_order = ['v05', 'v051', 'v052', 'v053', 'v054', 'v055', 'v056']
                 target_version, _, previous_version = version.partition('_from_')
                 chain = []
                 if previous_version in versions_in_order:
@@ -86,9 +87,9 @@ def validate_install(source, legacy_source, source_v051, source_v052, source_v05
                 if target_version in versions_in_order:
                     chain.append(target_version)
                 for old_version in chain:
-                    old = {'v05': v05, 'v051': v051, 'v052': v052, 'v053': v053, 'v054': v054, 'v055': v055}[old_version]
+                    old = {'v05': v05, 'v051': v051, 'v052': v052, 'v053': v053, 'v054': v054, 'v055': v055, 'v056': v056}[old_version]
                     assert old['update'](root) == 'installed'
-                    if old_version in ('v052', 'v053', 'v054', 'v055'):
+                    if old_version in ('v052', 'v053', 'v054', 'v055', 'v056'):
                         # Simulate startup, including the older preference journal.
                         old['nv_apply_settings'](root)
                         settings['root/.mixxx/mixxx.cfg'] = (root/'root/.mixxx/mixxx.cfg').read_bytes()
@@ -102,7 +103,8 @@ def validate_install(source, legacy_source, source_v051, source_v052, source_v05
                                                    'usr/local/lib/bitedj-nv-v052', v052['BACKUP'],
                                                    'usr/local/lib/bitedj-nv-v053', v053['BACKUP'],
                                                    'usr/local/lib/bitedj-nv-v054', v054['BACKUP'],
-                                                   'usr/local/lib/bitedj-nv-v055', v055['BACKUP'])
+                                                   'usr/local/lib/bitedj-nv-v055', v055['BACKUP'],
+                                                   'usr/local/lib/bitedj-nv-v056', v056['BACKUP'])
                                     for f in (root/prefix).rglob('*') if f.is_file()}
 
                 def check_restored():
@@ -186,6 +188,7 @@ def main():
     parser.add_argument('--v053-release', type=Path, default=V053_PATH)
     parser.add_argument('--v054-release', type=Path, default=V054_PATH)
     parser.add_argument('--v055-release', type=Path, default=V055_PATH)
+    parser.add_argument('--v056-release', type=Path, default=V056_PATH)
     parser.add_argument('--native-binary', type=Path, required=True, help='Native binary with matching source/build evidence')
     args = parser.parse_args()
     native_evidence = verify_native(args.native_binary)
@@ -195,6 +198,8 @@ def main():
     archive_v053, source_v053, payload_v053, compatibility_v053 = load_v053(args.v053_release)
     archive_v054, source_v054, payload_v054, compatibility_v054 = load_v054(args.v054_release)
     archive_v055, source_v055, payload_v055, compatibility_v055 = load_v055(args.v055_release)
+    archive_v056, source_v056, payload_v056, compatibility_v056 = load_v056(args.v056_release)
+    assert compatibility_v056 == compatibility, 'Previous runtime compatibility differs'
     assert compatibility_v055 == compatibility, 'Previous runtime compatibility differs'
     assert compatibility_v051 == compatibility, 'Previous runtime compatibility differs'
     assert compatibility_v052 == compatibility, 'Previous runtime compatibility differs'
@@ -206,6 +211,7 @@ def main():
     previous_v053 = {e['path']: e for e in payload_v053}
     previous_v054 = {e['path']: e for e in payload_v054}
     previous_v055 = {e['path']: e for e in payload_v055}
+    previous_v056 = {e['path']: e for e in payload_v056}
     OUT.mkdir(parents=True, exist_ok=True)
     # PAYLOAD is generated output. Never merge obsolete version slots into it.
     if PAYLOAD.exists():
@@ -254,6 +260,8 @@ def main():
             allowed.append(previous_v053[name]['new_sha256'])
         if name in previous_v054:
             allowed.append(previous_v054[name]['new_sha256'])
+        if name in previous_v056:
+            allowed.append(previous_v056[name]['new_sha256'])
         if name in previous_v055:
             allowed.append(previous_v055[name]['new_sha256'])
         entries.append({'path': name, 'old_sha256': list(dict.fromkeys(allowed)),
@@ -269,8 +277,8 @@ def main():
     assert source.count('PAYLOAD = None') == source.count('COMPATIBILITY = None') == 1
     source = source.replace('PAYLOAD = None', 'PAYLOAD = ' + repr(entries))
     source = source.replace('COMPATIBILITY = None', 'COMPATIBILITY = ' + repr(compatibility))
-    compile(source, 'nv_v056_generated.py', 'exec')
-    (OUT/'nv_v056_generated.py').write_text(source)
+    compile(source, 'nv_v057_generated.py', 'exec')
+    (OUT/'nv_v057_generated.py').write_text(source)
     fat = Fat32(ROOT/'work/base/boot.img')
     item = next(e for e in fat.entries() if e['name'].casefold() == 'initramfs.img')
     original = fat.chain(item['cluster'])[:item['size']]
@@ -281,11 +289,11 @@ def main():
     init = next(r for r in records if r[3] == 'init')
     marker = b'exec /bin/busybox switch_root /newroot /sbin/init'
     assert init[4].count(marker) == 1
-    block = b'''# Fixed NV v0.5.6 update; never executes commands or Python supplied on BOOT.
-if /bin/busybox chroot /newroot /usr/bin/python3 - < /bitedj-nv-v056.py; then
-    echo "BiteDJ: NV v0.5.6 update checked"
+    block = b'''# Fixed NV v0.5.7 update; never executes commands or Python supplied on BOOT.
+if /bin/busybox chroot /newroot /usr/bin/python3 - < /bitedj-nv-v057.py; then
+    echo "BiteDJ: NV v0.5.7 update checked"
 else
-    echo "BiteDJ: NV v0.5.6 update skipped; see BOOT/BiteDJ_NV_v056_update.txt" >&2
+    echo "BiteDJ: NV v0.5.7 update skipped; see BOOT/BiteDJ_NV_v057_update.txt" >&2
 fi
 
 '''
@@ -293,7 +301,7 @@ fi
     (OUT/'initramfs-init.sh').write_bytes(init[4])
     for script in (OUT/'initramfs-init.sh', slot/'launch.sh', PAYLOAD/'usr/bin/start-mixxx'):
         subprocess.run(['sh', '-n', str(script)], check=True)
-    name = b'bitedj-nv-v056.py\0'
+    name = b'bitedj-nv-v057.py\0'
     data = source.encode()
     fields = [max(r[1][0] for r in records)+1, 0o100644, 0, 0, 1, 0, len(data), 0, 0, 0, 0, len(name), 0]
     records.insert(len(records)-1, [b'070701', fields, name, name[:-1].decode(), data])
@@ -305,13 +313,13 @@ fi
             assert restored[name][4].replace(block, b'') == record[4]
         else:
             assert restored[name] == record, name
-    assert restored['bitedj-nv-v056.py'][4] == data
+    assert restored['bitedj-nv-v057.py'][4] == data
     (OUT/'initramfs.img').write_bytes(packed)
     fat.replace('initramfs.img', packed)
     fat_stats = fat.validate()
-    install_results = validate_install(source, legacy_source, source_v051, source_v052, source_v053, source_v054, source_v055, entries, compatibility)
+    install_results = validate_install(source, legacy_source, source_v051, source_v052, source_v053, source_v054, source_v055, source_v056, entries, compatibility)
     native_sha = sha((slot/'bitedj').read_bytes())
-    result = {'version': '0.5.6 experimental', 'source_commit': prior_validation['source_commit'],
+    result = {'version': '0.5.7 experimental', 'source_commit': prior_validation['source_commit'],
               'native_sha256': native_sha,
               'native_build': native_evidence,
               'native_reused_from_v054': reused_v054,

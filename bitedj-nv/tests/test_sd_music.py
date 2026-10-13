@@ -140,7 +140,7 @@ class SdMusicTests(unittest.TestCase):
         native.chmod(0o755)
         launch = self.root/'launch.sh'
         source = (project/'runtime/launch.sh').read_text()
-        source = source.replace('/usr/local/lib/bitedj-nv-v056', str(slot))
+        source = source.replace('/usr/local/lib/bitedj-nv-v057', str(slot))
         source = source.replace('/usr/bin/python3', str(python))
         source = source.replace('/boot/firmware', str(self.root/'boot/firmware'))
         source = source.replace('/tmp/bitedj-nv', str(self.root/'logs'))

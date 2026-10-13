@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-2.0-only
- * Original Numark NV controls test v0.5.6 for BiteDJ / Mixxx 2.5.
+ * Original Numark NV controls test v0.5.7 for BiteDJ / Mixxx 2.5.
  * MIDI addresses: Hidetsugu Takahashi's Numark-NV preset, revision
  * 6e999daaf62322e351169b364f071dfb1df4e4c1, and NumarkNVVDJ.pcapng.
  * This script replaces the older preset's broken/undefined handlers.
@@ -466,11 +466,13 @@ BiteDJNV.sidebar = function(channel, control, value, status, group) {
     var deck = BiteDJNV.deck(group);
     if (deck) { BiteDJNV.selectDeck(deck); }
     var focus = engine.getValue('[Library]', 'focused_widget');
-    if ((deck && BiteDJNV.shift[deck - 1]) || focus !== 2) {
+    if (deck && BiteDJNV.shift[deck - 1] && focus === 2) {
+        BiteDJNV.pulse('[Playlist]', 'ToggleSelectedSidebarItem');
+    } else if (focus !== 2) {
         engine.setValue('[Sidebar]', 'sidebar_visible', 1);
         engine.setValue('[Library]', 'focused_widget', 2);
     } else {
-        // Expand branches or enter the selected leaf and focus tracks. Never
+        // Open the selected folder track table (including mixed folders). Never
         // call GoToItem from the track table: that can load a track implicitly.
         BiteDJNV.pulse('[Library]', 'GoToItem');
     }
@@ -584,7 +586,7 @@ BiteDJNV.readSettings = function() {
 };
 BiteDJNV.init = function() {
     BiteDJNV.readSettings();
-    console.info('BiteDJNV controls v0.5.6: scratchSensitivity=' + BiteDJNV.scratchSensitivity +
+    console.info('BiteDJNV controls v0.5.7: scratchSensitivity=' + BiteDJNV.scratchSensitivity +
         ' jogSensitivity=' + BiteDJNV.jogSensitivity + ' vuFollowFader=' + BiteDJNV.vuFollowFader +
         ' vuSilenceThreshold=' + BiteDJNV.vuSilenceThreshold + ' vuPeakLevel=' + BiteDJNV.vuPeakLevel +
         ' vuTest=' + BiteDJNV.vuTest);

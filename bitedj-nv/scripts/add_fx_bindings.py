@@ -14,7 +14,7 @@ for status, addresses, handler in [(0x90,(15,16,17,19,20,21),'fxButton'),(0x80,(
     for address in addresses:
         rows.append(f'            <control><group>[Master]</group><key>BiteDJNV.{handler}</key><status>{hex(status)}</status><midino>{hex(address)}</midino><options><script-binding /></options></control>')
 s=s.replace('        </controls>', start+'\n'+'\n'.join(rows)+'\n'+end+'\n        </controls>')
-s=s.replace('Controls Test v0.5.3','Controls Test v0.5.6').replace('Expand / collapse selected library item','Browser: folders / enter leaf / return to folders')
+s=s.replace('Controls Test v0.5.3','Controls Test v0.5.7').replace('Expand / collapse selected library item','Browser: folders / enter leaf / return to folders')
 if 'variable="padColor1"' not in s:
     options='\n'.join(f'            <option variable="padColor{i+1}" type="integer" min="0" max="52" default="{code}" label="Pad {i+1} captured color code" />' for i,code in enumerate((12,52,48,21,6,3,52,21)))
     s=s.replace('    </settings>', '        <group label="Pad palette (codes 0,3,6,12,21,48,52 only)">\n'+options+'\n        </group>\n    </settings>')

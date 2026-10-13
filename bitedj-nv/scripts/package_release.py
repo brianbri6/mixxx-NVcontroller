@@ -10,7 +10,7 @@ from saved_release import load_v05
 from native_build_evidence import verify as verify_native
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT/'dist/BiteDJ_Pi4_NV_Display_Test_v0_5_6.zip'
+OUT = ROOT/'dist/BiteDJ_Pi4_NV_Display_Test_v0_5_7.zip'
 PIN = '78074e05c8bf99ede6fedd755aa68bd222ba343c'
 
 
@@ -33,15 +33,15 @@ def main():
               'v054_from_v03', 'v054_from_v04', 'v054_from_v05', 'v054_from_v051', 'v054_from_v052', 'v054_from_v053',
               'v054_from_v053:write_error', 'v054_from_v053:power_loss',
               'v055_from_v03', 'v055_from_v04', 'v055_from_v05', 'v055_from_v051', 'v055_from_v052', 'v055_from_v053', 'v055_from_v054',
-              'v055_from_v054:write_error', 'v055_from_v054:power_loss')
+              'v055_from_v054:write_error', 'v055_from_v054:power_loss', 'v056_from_v03', 'v056_from_v04', 'v056_from_v05', 'v056_from_v051', 'v056_from_v052', 'v056_from_v053', 'v056_from_v054', 'v056_from_v055', 'v056_from_v055:write_error', 'v056_from_v055:power_loss')
     if validation['actual_payload_install_idempotence_rollback'] != dict.fromkeys(checks, 'passed'):
         raise SystemExit('Direct install, upgrade, fault recovery and rollback must pass validation')
-    if validation['version'] != '0.5.6 experimental':
-        raise SystemExit('Expected the v0.5.6 validation record')
+    if validation['version'] != '0.5.7 experimental':
+        raise SystemExit('Expected the v0.5.7 validation record')
     native = verify_native(ROOT/'work/build-arm/mixxx')
     if (validation.get('native_build') != native or validation['native_reused_from_v05'] or
-            not validation.get('native_reused_from_v054')):
-        raise SystemExit('This controls update must retain the source-verified v0.5.4 native build')
+            validation.get('native_reused_from_v054')):
+        raise SystemExit('This browser update requires a fresh source-verified native build')
     for name in ('abi-audit.json', 'native-version.json'):
         result = json.loads((ROOT/'work'/name).read_text())
         if result['native_sha256'] != native['native_sha256']:
@@ -53,10 +53,10 @@ def main():
             raise SystemExit('Rebuild changed installer source: '+name)
     # Refuse stale generated payloads after an unrebuilt source edit.
     current_sources = {
-        'runtime/launch.sh': 'usr/local/lib/bitedj-nv-v056/launch.sh',
-        'runtime/nv_settings.py': 'usr/local/lib/bitedj-nv-v056/nv_settings.py',
-        'runtime/sd_music.py': 'usr/local/lib/bitedj-nv-v056/sd_music.py',
-        **{'nvdisplay/'+name: 'usr/local/lib/bitedj-nv-v056/nvdisplay/'+name for name in
+        'runtime/launch.sh': 'usr/local/lib/bitedj-nv-v057/launch.sh',
+        'runtime/nv_settings.py': 'usr/local/lib/bitedj-nv-v057/nv_settings.py',
+        'runtime/sd_music.py': 'usr/local/lib/bitedj-nv-v057/sd_music.py',
+        **{'nvdisplay/'+name: 'usr/local/lib/bitedj-nv-v057/nvdisplay/'+name for name in
            ('__init__.py', 'framing.py', 'protocol.py', 'transport.py', 'service.py', 'palette.bin')},
         **{'controller/'+name: 'usr/share/mixxx/controllers/'+name for name in
            ('BiteDJ-Numark-NV.js', 'Numark-NV-BiteDJ-Test.midi.xml')}
@@ -96,18 +96,18 @@ Binary links against the unmodified Pi4 runtime libraries; no runtime shared lib
 The original image and mapping authors retain their licenses and attribution.
 Generated Python bridge/integration code: MIT. Native exporter: GPL-2.0-or-later.
 Full project Git history and supplied captures are in BiteDJ_NV_Recovery_Checkpoint.zip.
-v0.5.6 adds FX buttons/knobs, captured-palette pad feedback, stereo master meters
-and browser focus navigation. Retains the user-confirmed v0.5.5 SD MUSIC fix.
+v0.5.7 fixes native mixed-folder activation and adds Shift-navigation expansion.
+Retains v0.5.6 controls and the user-confirmed v0.5.5 SD MUSIC fix.
 It retains bounded native FX-name/metaknob and active HDMI browser export.
 The renderer populates capture-grounded 0A/21/22/24 text fields and clears stale rows.
-The unchanged v0.5.4 ARM64 executable is bound to its source hashes and checked against the
+The freshly built v0.5.7 ARM64 executable is bound to its source hashes and checked against the
 original runtime libraries. Current native ABI/version evidence is in validation/;
 earlier evidence remains labelled prior-v05. No sound routing or DSP code changed.
 Full waveform mode, VU clearing, adjustable scratch and diagnostic input observer
 remain from v0.5.3. Existing BOOT mode/settings files are honored.
 The optional browser-view test uses captured B0 16 00/01; preserve is the default.
-v0.5.6 has its own slot and journal. Rollback returns to the previous version,
-including v0.5.5. No physical NV/Pi test was performed. D. VIEW cycling, cue/loop
+v0.5.7 has its own slot and journal. Rollback returns to the previous version,
+including v0.5.6. No physical NV/Pi test was performed. D. VIEW cycling, cue/loop
 overlays, detailed LCD FX enable/parameter graphics and artwork remain unresolved.
 '''
     paths = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode().split('\0')
@@ -124,7 +124,7 @@ overlays, detailed LCD FX enable/parameter graphics and artwork remain unresolve
         # The mode file is optional: copy only initramfs for an SD-only update.
         # Existing BOOT mode and SD options stay user-owned.
         put('install/BiteDJ_NV_display_mode.txt', b'full\n')
-        put('rollback/BiteDJ_NV_v056_rollback', b'')
+        put('rollback/BiteDJ_NV_v057_rollback', b'')
         put('settings/BiteDJ_NV_settings.json', (ROOT/'controller/BiteDJ_NV_settings.json').read_bytes())
         lamp_test = json.loads((ROOT/'controller/BiteDJ_NV_settings.json').read_text())
         lamp_test['vuTest'] = True
@@ -136,9 +136,9 @@ overlays, detailed LCD FX enable/parameter graphics and artwork remain unresolve
         for mode in ('preserve', 'performance', 'left', 'right', 'both'):
             put('browser-view-examples/'+mode+'/BiteDJ_NV_browser_view.txt', (mode+'\n').encode())
         put('validation/package.json', (package/'validation.json').read_bytes())
-        for name in ('capture-validation.json', 'test-v056.log', 'test-controller-v056.log',
-                     'test-package-v056.log', 'test-sd-music-v056.log', 'native-build.json', 'abi-audit.json', 'native-version.json',
-                     'build-arm-v054.log', 'packages-arm64.json', 'packages-amd64.json'):
+        for name in ('capture-validation.json', 'test-v057.log', 'test-controller-v057.log',
+                     'test-package-v057.log', 'test-sd-music-v057.log', 'native-build.json', 'abi-audit.json', 'native-version.json',
+                     'build-arm-v054.log', 'build-arm-v057.log', 'packages-arm64.json', 'packages-amd64.json'):
             file = ROOT/'work'/name
             if file.exists():
                 put('validation/'+name, file.read_bytes())
@@ -168,3 +168,4 @@ overlays, detailed LCD FX enable/parameter graphics and artwork remain unresolve
 
 if __name__ == '__main__':
     main()
+

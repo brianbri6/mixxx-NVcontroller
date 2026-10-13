@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <MixxxControllerPreset mixxxVersion="2.5.0" schemaVersion="1">
     <info>
-        <name>Numark NV (BiteDJ Pi4 Controls Test v0.5.6)</name>
+        <name>Numark NV (BiteDJ Pi4 Controls Test v0.5.7)</name>
         <author>Hidetsugu Takahashi; BiteDJ test mapping contributors</author>
         <description>Original NV: adjustable scratch rotation, VU/peak test and existing absolute platter, pitch and layer fixes. Enable only on NV Control. LCD bridge uses NV Audio/Graphics MIDI separately. See README.</description>
         <wiki>https://github.com/manzyun/mixxx</wiki>

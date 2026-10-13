@@ -73,3 +73,8 @@ def load_v054(path=V054_PATH):
 
 def load_v055(path=V055_PATH):
     return load_release(path, V055_PATH, 'bitedj-nv-v055.py')
+
+V056_PATH = ROOT/'baseline/mixxx numark nv/BiteDJ_Pi4_NV_Display_Test_v0_5_6.zip'
+
+def load_v056(path=V056_PATH):
+    return load_release(path, V056_PATH, 'bitedj-nv-v056.py')

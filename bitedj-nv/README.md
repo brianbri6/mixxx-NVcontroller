@@ -1,8 +1,8 @@
-# BiteDJ Pi4 + original Numark NV — experimental v0.5.6
+# BiteDJ Pi4 + original Numark NV — experimental v0.5.7
 
 Standalone Raspberry Pi4 4GB: HDMI for music selection/settings, NV LCDs for track information, BPM and experimental waveforms. This is a **reversible update for the saved Pi4 HDMI NV v0.3 image**, including installations already updated to v0.4, v0.5, v0.5.1, v0.5.2, v0.5.3, v0.5.4 or v0.5.5. It is not a complete SD image, an NVII update, or an updater for stock Deckshark.
 
-The user confirmed the v0.5.5 SD music fix works. **v0.5.6 adds FX buttons/knobs, colored performance-pad feedback, stereo master-meter output and browser focus navigation.** These new controls pass software tests; physical NV testing is next. D. VIEW cycling and all LCD fields are not yet complete.
+**v0.5.7 fixes opening folders that contain both songs and subfolders.** Select a folder's label to show its own songs; use its expansion arrow to see subfolders. The NV LCD mirrors the active HDMI list. Shift + the mapped navigation button expands/collapses the selected folder, while a normal press opens its songs. Physical Pi/NV acceptance is still required. The v0.5.6 FX, pad and master-meter controls and working v0.5.5 SD music helper are retained. D. VIEW cycling and all LCD fields are not yet complete.
 
 ## What changed
 
@@ -10,7 +10,7 @@ The user confirmed the v0.5.5 SD music fix works. **v0.5.6 adds FX buttons/knobs
 - Pads: assigned cues, loops, rolls and loaded samplers receive configurable captured palette codes, with blinking for active states. The exact visible colors need a photo from the NV; arbitrary RGB values are not supported yet.
 - Master meters: sends separate left/right post-gain VU levels to captured CC48/49 destinations, including silence clearing and the startup lamp test. Physical destination and red segment still need verification.
 - Browser: navigation now enters a sidebar item or returns to folders, and the encoder moves the focused list. Optional right-LCD browser setup is described below; automatic D. VIEW switching remains unresolved.
-- Retains the working SD MUSIC mount helper, F12 diagnostics and a separate reversible v056 runtime/journal, including rollback to v055.
+- Retains the working SD MUSIC mount helper, F12 diagnostics and a separate reversible v057 runtime/journal, including rollback to v056.
 
 Retained from v0.5.4:
 
@@ -20,17 +20,17 @@ Retained from v0.5.4:
 - An optional browser visibility experiment uses only the captured `B0 16 00/01` values. The default sends no new view command. It is **not** a verified D. VIEW cycle.
 - All sixteen scrolling waveform tiles, overview, VU idle/fader clearing, adjustable scratch response, layer/pitch fixes, port ownership and F12 diagnostics from v0.5.3 are retained. The earlier controller functions remain covered by regression tests.
 
-This revision reuses the exact verified v0.5.4 ARM64 application. Native exporter, audio engine and scheduling source are unchanged. The controller mapping and startup settings are updated.
+This revision requires a fresh ARM64 application build for the native sidebar fix. Native exporter, audio engine and scheduling source are unchanged. Folder scanning still lists direct files; child songs are not merged into the parent list.
 
 ## Install
 
 1. Shut down the Pi, insert its SD card in your computer, and back up BOOT's existing `initramfs.img`, `BiteDJ_NV_display_mode.txt` and `BiteDJ_NV_browser_view.txt` / `BiteDJ_SD_music.txt` (if present) to your computer.
-2. Extract `BiteDJ_Pi4_NV_Display_Test_v0_5_6.zip`. Copy **`install/initramfs.img`** directly onto BOOT, replacing the backed-up file. Keep your existing display mode. If you also want to enable full NV waveforms, optionally copy `install/BiteDJ_NV_display_mode.txt` to BOOT; it contains `full`.
+2. Extract `BiteDJ_Pi4_NV_Display_Test_v0_5_7.zip`. Copy **`install/initramfs.img`** directly onto BOOT, replacing the backed-up file. Keep your existing display mode. If you also want to enable full NV waveforms, optionally copy `install/BiteDJ_NV_display_mode.txt` to BOOT; it contains `full`.
 3. For easy tuning, also copy **`settings/BiteDJ_NV_settings.json`** directly onto BOOT. This is optional: without it, the new mapping defaults to 2× scratch response. Preserve any settings file you previously customized.
 4. Keep `config.txt`, `cmdline.txt`, audio routing and HDMI waveform settings unchanged. Keep HDMI waveforms disabled as in the smooth Pi4 setup. Safely eject and boot with the NV powered and connected.
-5. If installation is skipped, read **`BiteDJ_NV_v056_update.txt`** on BOOT. Unrecognized/customized program or mapping files are not overwritten. An interrupted older update must recover using its own saved updater before upgrading.
+5. If installation is skipped, read **`BiteDJ_NV_v057_update.txt`** on BOOT. Unrecognized/customized program or mapping files are not overwritten. An interrupted older update must recover using its own saved updater before upgrading.
 
-The new slot is `/usr/local/lib/bitedj-nv-v056/`. The original application, previous version slots and previous backup journals stay intact. Startup disables only `[Controller]` NV Audio/Graphics enable flags that reference this NV controls mapping. In HDMI **Devices**, leave those two MIDI rows disabled and NV Control enabled. **Do not disable NV Audio in the audio-output settings.**
+The new slot is `/usr/local/lib/bitedj-nv-v057/`. The original application, previous version slots and previous backup journals stay intact. Startup disables only `[Controller]` NV Audio/Graphics enable flags that reference this NV controls mapping. In HDMI **Devices**, leave those two MIDI rows disabled and NV Control enabled. **Do not disable NV Audio in the audio-output settings.**
 
 ## SD music partition
 
@@ -109,7 +109,7 @@ The subsequent [LCD capture analysis](docs/lcd_capture_analysis/REPORT.md) ident
 
 First install with the default view behavior, load tracks and check waveform/FX fields. To test the captured browser-visibility candidate, copy **`browser-view-examples/right/BiteDJ_NV_browser_view.txt`** onto BOOT and reboot. This requests performance mode on the left and browser mode on the right. Move the HDMI library cursor, scroll, change a folder and wait for analyzed BPM; compare the right LCD with HDMI. Both LCDs receive the same library page even when a performance view hides it.
 
-With the library active, turn the browse encoder to move selection. The mapped navigation/Fwd button (deck MIDI note 06) returns from tracks to folders; in folders it expands/enters the selected item. Shift + that button always returns to folders. Enter a leaf to focus its tracks, then use the existing deck Load button. The LCD mirrors the active HDMI model, including filesystem music folders. It is a bounded page around the cursor, not an independent second browser. Check that the physical button is Fwd on your NV; the Sel push and automatic return-to-performance still need labelled input evidence.
+With the library active, turn the browse encoder to move selection. The mapped navigation/Fwd button (deck MIDI note 06) returns from tracks to folders; in folders it opens the selected directory’s own tracks, even if that directory has subfolders. Shift + that button expands/collapses the folder tree when focused there; from tracks it returns to folders. Open a folder to focus its tracks, then use the existing deck Load button. The LCD mirrors the active HDMI model, including filesystem music folders. It is a bounded page around the cursor, not an independent second browser. Check that the physical button is Fwd on your NV; the Sel push and automatic return-to-performance still need labelled input evidence.
 
 | File value | Request sent to the LCDs |
 |---|---|
@@ -127,7 +127,7 @@ F12 auxiliary status reports source availability, row counts/current cursor and 
 
 For an immediate LCD fallback, select `off` and reboot. This keeps the new controls mapping and preferences.
 
-For **full v0.5.6 rollback**, copy the empty **`rollback/BiteDJ_NV_v056_rollback`** file onto BOOT and reboot **with the v0.5.6 initramfs still installed**. Check `BiteDJ_NV_v056_update.txt`. The updater restores the previous launcher, diagnostics, mapping and owned NV preference values, and removes the v0.5.6 runtime files. It leaves later unrelated settings changes intact; it also keeps an owned setting you changed after the update instead of overwriting it.
+For **full v0.5.7 rollback**, copy the empty **`rollback/BiteDJ_NV_v057_rollback`** file onto BOOT and reboot **with the v0.5.7 initramfs still installed**. Check `BiteDJ_NV_v057_update.txt`. The updater restores the previous launcher, diagnostics, mapping and owned NV preference values, and removes the v0.5.7 runtime files. It leaves later unrelated settings changes intact; it also keeps an owned setting you changed after the update instead of overwriting it.
 
 Keep the rollback marker to prevent reinstalling, or restore the exact initramfs you backed up. Restore your previous mode file too if you copied the full-mode test file, and restore/remove the optional browser-view and SD music files. When rolling back before v0.5.5, the SD helper no longer runs; it does not unmount a partition during an active session. Those BOOT files remain user-owned. Rollback returns to the version you upgraded from: v0.5.5, v0.5.4, v0.5.3, v0.5.2, v0.5.1, v0.5, or the original v0.3/v0.4 app. To undo earlier versions too, use each saved version's initramfs and its own rollback marker in reverse order. Do not install an older updater over an active newer version before rolling the newer version back. Edited program/mapping files block rollback rather than being overwritten; retain the report if this happens.
 
@@ -141,7 +141,7 @@ Keep the rollback marker to prevent reinstalling, or restore the exact initramfs
 
 ## Rebuild and continue
 
-Read `CODEX_PROGRESS.md` and `NEXT_TASK.md`. The checkpoint retains Git history and all three captures. Restore the v0.3 image and v0.5/v0.5.1/v0.5.2/v0.5.3/v0.5.4/v0.5.5 ZIPs to their pinned `baseline/` paths in INPUTS.json. On Linux with Python 3, `zstandard`, Node.js and `debugfs`:
+Read `CODEX_PROGRESS.md` and `NEXT_TASK.md`. The checkpoint retains Git history and all three captures. Restore the v0.3 image and v0.5/v0.5.1/v0.5.2/v0.5.3/v0.5.4/v0.5.5/v0.5.6 ZIPs to their pinned `baseline/` paths in INPUTS.json. On Linux with Python 3, `zstandard`, Node.js and `debugfs`:
 
 ```sh
 # Skip extraction/checkout/toolchain setup if those exact inputs already exist.
@@ -154,17 +154,17 @@ git -C vendor/bitedj checkout 78074e05c8bf99ede6fedd755aa68bd222ba343c
 python3 scripts/apply_native.py
 PYTHONPATH=scripts python3 -c 'from native_build_evidence import verify; print(verify("work/build-arm/mixxx"))'
 # Only if matching native artifacts are missing or native source changed:
-python3 scripts/prepare_toolchain.py > work/toolchain-v054.log 2>&1
-sh scripts/build_arm.sh > work/build-arm-v054.log 2>&1
+python3 scripts/prepare_toolchain.py > work/toolchain-v057.log 2>&1
+sh scripts/build_arm.sh > work/build-arm-v057.log 2>&1
 python3 scripts/audit_arm.py
 python3 scripts/check_native_version.py
-# Runtime/package checks (native rebuilding is unnecessary for this controls update):
-node tests/test_controller.js > work/test-controller-v056.log 2>&1
-python3 -m unittest discover -s tests -v > work/test-v056.log 2>&1
+# Runtime/package checks after the fresh native build:
+node tests/test_controller.js > work/test-controller-v057.log 2>&1
+python3 -m unittest discover -s tests -v > work/test-v057.log 2>&1
 python3 scripts/verify_captures.py
 python3 scripts/analyze_control_feedback.py
 sh -n runtime/launch.sh
-python3 scripts/build_update.py --native-binary work/build-arm/mixxx > work/test-package-v056.log 2>&1
+python3 scripts/build_update.py --native-binary work/build-arm/mixxx > work/test-package-v057.log 2>&1
 git diff --check
 # Commit all source/docs before packaging. Never overwrite an existing release.
 python3 scripts/package_release.py

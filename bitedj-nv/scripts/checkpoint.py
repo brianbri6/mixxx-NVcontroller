@@ -34,7 +34,7 @@ def main():
         build_files = ['work/build-arm/mixxx', 'work/native-build.json']
         build_files += [str(p.relative_to(ROOT)) for pattern in
                         ('abi-audit.json', 'native-version.json', 'packages-*.json',
-                         'build-arm-v054.log', 'test*v054.log', 'test*v055*.log', 'test*v056*.log', 'capture-validation.json')
+                         'build-arm-v054.log', 'test*v054.log', 'test*v055*.log', 'test*v056*.log', 'test*v057*.log', 'build-arm-v057.log', 'toolchain-v057.log', 'capture-validation.json')
                         for p in sorted((ROOT/'work').glob(pattern))]
         if args.with_package:
             package = ROOT/'work/package'
@@ -42,8 +42,8 @@ def main():
             if (validation.get('native_build') != native or
                     hashlib.sha256((package/'initramfs.img').read_bytes()).hexdigest() !=
                     validation['initramfs_sha256'] or
-                    validation.get('version') != '0.5.6 experimental' or
-                    len(validation['actual_payload_install_idempotence_rollback']) != 37 or
+                    validation.get('version') != '0.5.7 experimental' or
+                    len(validation['actual_payload_install_idempotence_rollback']) != 47 or
                     set(validation['actual_payload_install_idempotence_rollback'].values()) != {'passed'}):
                 raise SystemExit('Package evidence is incomplete or does not match the native build')
             build_files += ['work/package/initramfs.img', 'work/package/validation.json']

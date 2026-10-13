@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Fixed, hash-gated NV v0.5.6 update; invoked before BiteDJ starts."""
+"""Fixed, hash-gated NV v0.5.7 update; invoked before BiteDJ starts."""
 import base64
 import hashlib
 import json
@@ -12,12 +12,12 @@ from runtime.nv_settings import nv_restore_settings
 
 PAYLOAD = None
 COMPATIBILITY = None
-BACKUP = 'usr/local/share/bitedj-nv-v056-backup'
+BACKUP = 'usr/local/share/bitedj-nv-v057-backup'
 LEGACY_BACKUPS = ('usr/local/share/bitedj-nv-v05-backup', 'usr/local/share/bitedj-nv-v051-backup',
                   'usr/local/share/bitedj-nv-v052-backup', 'usr/local/share/bitedj-nv-v053-backup',
-                  'usr/local/share/bitedj-nv-v054-backup', 'usr/local/share/bitedj-nv-v055-backup')
-ROLLBACK = 'BiteDJ_NV_v056_rollback'
-REPORT = 'BiteDJ_NV_v056_update.txt'
+                  'usr/local/share/bitedj-nv-v054-backup', 'usr/local/share/bitedj-nv-v055-backup', 'usr/local/share/bitedj-nv-v056-backup')
+ROLLBACK = 'BiteDJ_NV_v057_rollback'
+REPORT = 'BiteDJ_NV_v057_update.txt'
 RELEASE = 'BiteDJ Pi4 4GB HDMI NV Test v0.3'
 
 
@@ -33,7 +33,7 @@ def current_hash(path):
 
 def atomic_write(path, data, mode=0o644):
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(path.name+'.nv-v056-new')
+    temporary = path.with_name(path.name+'.nv-v057-new')
     with temporary.open('wb') as stream:
         stream.write(data)
         stream.flush()
@@ -118,7 +118,7 @@ def update(root=Path('/')):
         if (boot/ROLLBACK).exists():
             if state is not None:
                 restore(root, backup, state)
-            report('ROLLED BACK / DISABLED: pre-v0.5.6 launcher and mapping restored; settings preserved.\n'
+            report('ROLLED BACK / DISABLED: pre-v0.5.7 launcher and mapping restored; settings preserved.\n'
                    'Returns to the previously installed version; owned NV preferences restored, later user edits kept.')
             return 'rolled_back'
         for legacy_backup in LEGACY_BACKUPS:
@@ -164,7 +164,7 @@ def update(root=Path('/')):
             files.append(entry)
             required_space += len(data)
         if state and state.get('installed') and all(current_hash(root/x['path']) == x['new'] for x in files):
-            report('ALREADY INSTALLED: NV v0.5.6 experimental display bridge; NV startup tuning enabled.')
+            report('ALREADY INSTALLED: NV v0.5.7 experimental display bridge; NV startup tuning enabled.')
             return 'already_installed'
         if shutil.disk_usage(root).free < required_space + 8*1024*1024:
             raise OSError('Insufficient root partition space for update and backups')
@@ -179,7 +179,7 @@ def update(root=Path('/')):
             atomic_write(root/item['path'], base64.b64decode(item['base64'], validate=True), item['mode'])
         state.update(installed=True, installing=False)
         atomic_write(state_path, json.dumps(state, indent=2).encode())
-        report('INSTALLED: NV v0.5.6 experimental display bridge. Default mode: full (an existing BOOT mode file takes precedence).\n'
+        report('INSTALLED: NV v0.5.7 experimental display bridge. Default mode: full (an existing BOOT mode file takes precedence).\n'
                'Sound routing/HDMI preserved. Startup reserves display MIDI ports and applies BOOT NV tuning.\n'
                'BOOT/BiteDJ_NV_display_mode.txt accepts info, overview, full, off.\n'
                'BOOT/BiteDJ_SD_music.txt accepts auto (default) or off; SD mount status is in F12 diagnostics.\n'

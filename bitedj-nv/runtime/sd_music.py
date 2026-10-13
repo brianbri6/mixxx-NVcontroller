@@ -111,7 +111,7 @@ def existing_mount(candidate, mounts):
 
 
 def mount_music(system):
-    result = {'version': '0.5.6', 'mode': 'auto', 'status': 'skipped', 'target': TARGET,
+    result = {'version': '0.5.7', 'mode': 'auto', 'status': 'skipped', 'target': TARGET,
               'hardware_verified': False, 'formatted_or_repartitioned': False}
     option = system.path(OPTION)
     try:
