@@ -403,6 +403,7 @@ BiteDJNV.button = function(channel, control, value, status, group) {
     case 0x21: BiteDJNV.toggle(group, 'play'); break;
     case 0x1f: BiteDJNV.toggle(group, 'sync_enabled'); break;
     case 0x05: BiteDJNV.pulse(group, 'LoadSelectedTrack'); break;
+    case 0x04: // Captured physical slip note on 91..94.
     case 0x0a: BiteDJNV.toggle(group, 'slip_enabled'); break;
     case 0x0e: BiteDJNV.pulse(group, 'loop_halve'); break;
     case 0x0f: BiteDJNV.pulse(group, 'loop_double'); break;
@@ -494,7 +495,208 @@ BiteDJNV.padModeLEDs = function(deck) {
     });
     BiteDJNV.sendLED(0x90 + deck, 0x1e, 0); // Slicer remains unavailable.
 };
+// BEGIN NV LEARNED INPUTS + LED DISCOVERY 2026-10-19
+BiteDJNV.learnedNames = {
+  "91 04 7F": "Deck 1 Slip pressed",
+  "90 62 7F": "Deck A Sel Knob touched",
+  "91 07 7F": "Deck 1 knob Sel pressed",
+  "91 08 7F": "Deck 1 Panel pressed",
+  "90 54 7F": "Deck A Beat Knob touched",
+  "90 12 7F": "Deck A Beat pressed",
+  "90 51 7F": "Deck A FX1 touched",
+  "90 52 7F": "Deck A FX2 touched",
+  "90 53 7F": "Deck A FX3 touched",
+  "93 04 7F": "Deck 3 Slip pressed",
+  "93 07 7F": "Deck 3 Knob Sel pressed",
+  "93 08 7F": "Deck 3 Panel pressed",
+  "90 48 7F": "Channel 1 Trim touched",
+  "90 47 7F": "Channel 1 High touched",
+  "90 46 7F": "Channel 1 Mid touched",
+  "90 45 7F": "Channel 1 Low touched",
+  "90 5F 7F": "Channel 1 Filter touched",
+  "90 4C 7F": "Channel 2 Trim touched",
+  "90 4B 7F": "Channel 2 High touched",
+  "90 4A 7F": "Channel 2 Mid touched",
+  "90 49 7F": "Channel 2 Low touched",
+  "90 60 7F": "Channel 2 Filter touched",
+  "90 44 7F": "Channel 3 Trim touched",
+  "90 43 7F": "Channel 3 High touched",
+  "90 42 7F": "Channel 3 Mid touched",
+  "90 41 7F": "Channel 3 Low touched",
+  "90 5E 7F": "Channel 3 Filter touched",
+  "90 50 7F": "Channel 4 Trim touched",
+  "90 4F 7F": "Channel 4 High touched",
+  "90 4E 7F": "Channel 4 Mid touched",
+  "90 4D 7F": "Channel 4 Low touched",
+  "90 61 7F": "Channel 4 Filter touched",
+  "90 55 7F": "Deck B FX1 touched",
+  "90 56 7F": "Deck B FX2 touched",
+  "90 57 7F": "Deck B FX3 touched",
+  "90 16 7F": "Deck B Beat pressed",
+  "90 2A 7F": "Master FX A pressed",
+  "90 2B 7F": "Master FX B pressed",
+  "90 24 7F": "Channel 1 FX A pressed",
+  "90 25 7F": "Channel 1 FX B pressed",
+  "90 26 7F": "Channel 2 FX A pressed",
+  "90 27 7F": "Channel 2 FX B pressed",
+  "90 22 7F": "Channel 3 FX A pressed",
+  "90 23 7F": "Channel 3 FX B pressed",
+  "90 28 7F": "Channel 4 FX A pressed",
+  "90 29 7F": "Channel 4 FX B pressed",
+  "90 32 7F": "CF Start A On",
+  "80 32 00": "CF Start A Off",
+  "90 33 7F": "CF Start B On",
+  "80 33 00": "CF Start B Off",
+  "90 31 7F": "CF Contour Hard Cut",
+  "80 31 00": "CF Contour Smooth Fade",
+  "90 2E 01": "PFL Channel 1 A",
+  "90 2E 00": "PFL Channel 1 Off",
+  "90 2E 02": "PFL Channel 1 B",
+  "90 2D 01": "PFL Channel 3 A",
+  "90 2D 00": "PFL Channel 3 Off",
+  "90 2D 02": "PFL Channel 3 B",
+  "90 2F 01": "PFL Channel 2 A",
+  "90 2F 00": "PFL Channel 2 Off",
+  "90 2F 02": "PFL Channel 2 B",
+  "90 30 01": "PFL Channel 4 A",
+  "90 30 00": "PFL Channel 4 Off",
+  "90 30 02": "PFL Channel 4 B",
+  "80 2A 00": "Master FX A released",
+  "80 2B 00": "Master FX B released",
+  "80 22 00": "Channel 3 FX A released",
+  "80 23 00": "Channel 3 FX B released",
+  "90 62 00": "Deck A Sel Knob lifted",
+  "90 51 00": "Deck A FX1 lifted",
+  "90 52 00": "Deck A FX2 lifted",
+  "90 53 00": "Deck A FX3 lifted",
+  "90 54 00": "Deck A Beat Knob lifted",
+  "90 44 00": "Channel 3 Trim lifted",
+  "90 43 00": "Channel 3 High lifted",
+  "90 42 00": "Channel 3 Mid lifted",
+  "90 41 00": "Channel 3 Low lifted",
+  "90 5E 00": "Channel 3 Filter lifted",
+  "90 48 00": "Channel 1 Trim lifted",
+  "90 47 00": "Channel 1 High lifted",
+  "90 46 00": "Channel 1 Mid lifted",
+  "81 04 00": "Deck 1 Slip released",
+  "83 04 00": "Deck 3 Slip released",
+  "90 55 00": "Deck B FX1 lifted",
+  "90 56 00": "Deck B FX2 lifted",
+  "90 57 00": "Deck B FX3 lifted",
+  "90 58 7F": "Deck B Beat Knob touched",
+  "90 58 00": "Deck B Beat Knob lifted",
+  "80 16 00": "Deck B Beat released",
+  "80 12 00": "Deck A Beat released",
+  "90 45 00": "Channel 1 Low lifted",
+  "90 5F 00": "Channel 1 Filter lifted",
+  "90 4C 00": "Channel 2 Trim lifted",
+  "90 4B 00": "Channel 2 High lifted",
+  "90 4A 00": "Channel 2 Mid lifted",
+  "90 49 00": "Channel 2 Low lifted",
+  "90 60 00": "Channel 2 Filter lifted",
+  "90 50 00": "Channel 4 Trim lifted",
+  "90 4F 00": "Channel 4 High lifted",
+  "90 4E 00": "Channel 4 Mid lifted",
+  "90 4D 00": "Channel 4 Low lifted",
+  "90 61 00": "Channel 4 Filter lifted",
+  "81 07 00": "Deck 1 knob Sel released",
+  "83 07 00": "Deck 3 Knob Sel released",
+  "81 08 00": "Deck 1 Panel released",
+  "83 08 00": "Deck 3 Panel released",
+  "90 5B 7F": "Deck A Beat Knob pressed",
+  "80 5B 00": "Deck A Beat Knob released",
+  "90 40 7F": "Cue Split On",
+  "80 40 00": "Cue Split Off",
+  "80 24 00": "Channel 1 FX A released",
+  "80 25 00": "Channel 1 FX B released",
+  "80 26 00": "Channel 2 FX A released",
+  "80 27 00": "Channel 2 FX B released",
+  "80 28 00": "Channel 4 FX A released",
+  "80 29 00": "Channel 4 FX B released",
+  "92 04 7F": "Deck 2 Slip pressed",
+  "82 04 00": "Deck 2 Slip released",
+  "92 08 7F": "Deck 2 Panel pressed",
+  "82 08 00": "Deck 2 Panel released",
+  "90 63 7F": "Deck B Sel Knob touched",
+  "90 63 00": "Deck B Sel Knob lifted",
+  "92 07 7F": "Deck 2 knob Sel pressed",
+  "82 07 00": "Deck 2 knob Sel released",
+  "94 07 7F": "Deck 4 knob Sel pressed",
+  "84 07 00": "Deck 4 knob Sel released",
+  "94 04 7F": "Deck 4 Slip pressed",
+  "84 04 00": "Deck 4 Slip released",
+  "94 08 7F": "Deck 4 Panel pressed",
+  "84 08 00": "Deck 4 Panel released",
+  "90 5C 7F": "Deck B Beat Knob pressed",
+  "80 5C 00": "Deck B Beat Knob released",
+  "B0 48 7F": "Deck A Beat Knob Left",
+  "B0 48 01": "Deck A Beat Knob Right",
+  "B0 4C 7F": "Deck B Beat Knob Left",
+  "B0 4C 01": "Deck B Beat Knob Right",
+  "B0 61 01": "Deck A D.View 1",
+  "B0 61 02": "Deck A D.View 2",
+  "B0 61 00": "Deck A D.View 0",
+  "B0 62 00": "Deck B D.View 0",
+  "B0 62 01": "Deck B D.View 1",
+  "B0 62 02": "Deck B D.View 2"
+};
+
+BiteDJNV.fxAssignmentNotes = [[0x24,0x25],[0x26,0x27],[0x22,0x23],[0x28,0x29]];
+BiteDJNV.nvView = [-1,-1];
+BiteDJNV.learnedSeen = {};
+BiteDJNV.updateFxAssignmentLEDs = function() {
+    BiteDJNV.fxAssignmentNotes.forEach(function(notes,i) {
+        var key = 'group_[Channel' + (i+1) + ']_enable';
+        [1,2].forEach(function(unitNumber,side) {
+            BiteDJNV.sendLED(0x90,notes[side], engine.getValue('[EffectRack1_EffectUnit'+unitNumber+']',key)?127:0);
+        });
+    });
+};
+BiteDJNV.assignChannelFx = function(control) {
+    var targets = {0x24:[1,1],0x25:[1,2],0x26:[2,1],0x27:[2,2],
+                   0x22:[3,1],0x23:[3,2],0x28:[4,1],0x29:[4,2]};
+    var target=targets[control];
+    if(!target)return;
+    var key='group_[Channel'+target[0]+']_enable',n=target[1];
+    var unit='[EffectRack1_EffectUnit'+n+']',other='[EffectRack1_EffectUnit'+(3-n)+']';
+    var enable=!engine.getValue(unit,key);
+    engine.setValue(unit,key,enable?1:0);
+    if(enable) {
+        engine.setValue(other,key,0);
+        engine.setValue(unit,'enabled',1);
+    }
+    BiteDJNV.updateFxAssignmentLEDs();
+};
+BiteDJNV.testDiscoveredLED = function(number,on) {
+    var safe=[0x12,0x16,0x22,0x23,0x24,0x25,0x26,0x27,0x28,0x29,0x2a,0x2b,0x59,0x5a];
+    if(safe.indexOf(number)<0)throw new Error('Unverified LED address');
+    BiteDJNV.sendLED(0x90,number,on?127:0,true);
+};
+// B0 47 01 and B0 62 02 remain read-only; LCD USB function is separate.
+// Master FX A/B and hardware CF/PFL switches are named, not assigned guessed audio behavior.
+BiteDJNV.handleLearnedInput = function(channel,control,value,status,group) {
+    var raw=[status,control,value].map(function(x){return ('0'+x.toString(16)).slice(-2).toUpperCase();}).join(' ');
+    var label=BiteDJNV.learnedNames[raw];
+    if(!label)return false;
+    var count=BiteDJNV.learnedSeen[raw]||0;
+    BiteDJNV.learnedSeen[raw]=count+1;
+    if(count<8)console.info('BiteDJNV learned IN '+raw+' '+label);
+    var kind=status&0xf0,deck=status&0x0f;
+    if((kind===0x90||kind===0x80)&&deck>=1&&deck<=4&&control===0x04) {
+        BiteDJNV.button(channel,control,value,status,'[Channel'+deck+']');
+    }
+    if(kind===0x90&&value&&deck>=1&&deck<=4&&control===0x07) {
+        BiteDJNV.selectDeck(deck);
+        if(engine.getValue('[Library]','focused_widget')===2)BiteDJNV.pulse('[Library]','GoToItem');
+        else engine.setValue('[Library]','focused_widget',2);
+    }
+    if(status===0x90&&value&&control>=0x22&&control<=0x29)BiteDJNV.assignChannelFx(control);
+    if(status===0xb0&&(control===0x61||control===0x62)&&value<=2)BiteDJNV.nvView[control-0x61]=value;
+    return true;
+};
+// END NV LEARNED INPUTS + LED DISCOVERY 2026-10-19
 BiteDJNV.observeInput = function(channel, control, value, status, group) {
+    if (BiteDJNV.handleLearnedInput(channel, control, value, status, group)) { return; }
     // Unknown messages are diagnostics only. Never infer D. VIEW from another
     // model or change audio/transport while identifying an unmapped control.
     if ((status & 0xf0) === 0x90 && !value) { return; }
@@ -520,6 +722,7 @@ BiteDJNV.updateMeters = function() {
     if (BiteDJNV.meterTicks % 2 === 0) {
         for (var padDeck = 1; padDeck <= 4; padDeck++) { BiteDJNV.updatePads(padDeck); }
         BiteDJNV.updateFxLEDs();
+        BiteDJNV.updateFxAssignmentLEDs();
     }
     // Optional silent lamp test: 0,1,2,3,4,5,0, each for one second, then normal VU.
     if (BiteDJNV.meterTestTicks < 140) {
@@ -597,6 +800,7 @@ BiteDJNV.init = function() {
     BiteDJNV.meterMotion = [];
     BiteDJNV.inputDiagnostics = {};
     BiteDJNV.inputDiagnosticCount = 0;
+    BiteDJNV.learnedSeen = {}; BiteDJNV.nvView = [-1,-1];
     BiteDJNV.fxPressed = {};
     BiteDJNV.bytes = {};
     BiteDJNV.holds = {};
