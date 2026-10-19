@@ -388,12 +388,18 @@ BiteDJNV.button = function(channel, control, value, status, group) {
         return;
     }
     if (control === 0x0b) {
-        if (!down) { BiteDJNV.hold('reverse' + d, group, 'reverseroll', false); return; }
+        if (!down) {
+            BiteDJNV.hold('reverse' + d, group, 'reverseroll', false);
+            BiteDJNV.sendLED(0x90 + d, 0x0b, engine.getValue(group, 'reverse') ? 127 : 0);
+            return;
+        }
         if (shift) { if (down) { BiteDJNV.toggle(group, 'reverse'); } }
         else { BiteDJNV.hold('reverse' + d, group, 'reverseroll', true); }
+        BiteDJNV.sendLED(0x90 + d, 0x0b, 127);
         return;
     }
     if (control === 0x10 || control === 0x11) {
+        BiteDJNV.sendLED(0x90 + d, control, down ? 127 : 0);
         BiteDJNV.hold('bend' + d + ':' + control, group,
             control === 0x10 ? 'rate_temp_down' : 'rate_temp_up', down);
         return;
