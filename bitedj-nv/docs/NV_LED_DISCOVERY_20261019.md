@@ -4,7 +4,7 @@ Working branch: `nv-learned-inputs-led-discovery-20261019`. Original NV only, no
 
 ## Sources
 - User-provided `learned_commands.json`: **142 exact input messages / 98 unique status-address pairs**. The GitHub file `bitedj-nv/controller/NV_learned_commands.json` intentionally contains only raw MIDI keys and user labels (no timestamps).
-- User-provided `led test1.pcapng`: **2,994 USB packets / 46.360 seconds**; main controller `15E4:1005` endpoint 01 OUT / 82 IN, with separate `15E4:1033` left LCD+audio and `15E4:2033` right LCD. Main MIDI OUT has **112 distinct status-address combinations**; 96 represented in old feedback code; 16 new/requiring review. 130 LCD SysEx frames are not controller LEDs.
+- User-provided `led test1.pcapng`: **2,994 USB packets / 46.360 seconds**; main controller `15E4:1005` endpoint 01 OUT / 82 IN, with separate `15E4:1033` left LCD+audio and `15E4:2033` right LCD. Main MIDI OUT has **112 distinct status-address combinations**; 84 actively sent by the old feedback code; 28 previously unsupported/requiring review. 130 LCD SysEx frames are not controller LEDs.
 
 ## Newly identified output commands
 | Hex OUT on controller 15E4:1005 | Physical target | Evidence |
@@ -15,6 +15,8 @@ Working branch: `nv-learned-inputs-led-discovery-20261019`. Original NV only, no
 | `90 28/29 00/7F` | Channel 4 FX A/B | Same |
 | `90 2A/2B 00/7F` | Master FX A/B | Each toggles independently; audio routing not established |
 | `90 59/5A 00/7F` | Touch Mode / Filter-Roll LEDs | Observed timed feedback; audio semantics unresolved |
+| `91–94 0B 00/7F` | Bleep / Reverse LEDs | Captured but not sent by old JS; newly added feedback |
+| `91–94 10/11 00/7F` | Pitch-bend LEDs | Captured but not sent by old JS; newly added feedback |
 | `90 12/16 00` | Beat indicators (candidate) | Zero only; lamp-on unverified |
 | `B0 47 01` | Unknown startup feedback | Do not replay |
 | `B0 62 02` | Possible host view feedback | Do not infer full LCD view cycle |
@@ -24,6 +26,7 @@ MIDI direction matters: e.g. `B0 48` controller IN is a Beat encoder, while `B0 
 ## Mapping changes
 - Both JS mapping copies include 142 full-MIDI-value labels, output-feedback method `updateFxAssignmentLEDs`, A/B exclusive FX-unit channel routing, physical Slip input note 04, physical Sel-center note 07, and observational D.VIEW values `B0 61/62 00/01/02`.
 - Both XML presets bind an additional **30 missing release/note-off addresses**. All 142 labeled exact messages now have a valid MIDI status+number binding.
+- Reverse/Bleep and pitch-bend handlers now send LED feedback from their existing audio actions.
 - Master FX, CF contour/start, PFL 0/1/2 switches, Cue Split and touch sensors are **observation only** until functional behavior is tested.
 - Optional note LED test `BiteDJNV.testDiscoveredLED(note, on)`, e.g. `BiteDJNV.testDiscoveredLED(0x24,true)`. It refuses unknown CC and never touches USB audio or LCD functions.
 
