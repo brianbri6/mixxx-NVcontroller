@@ -4213,6 +4213,246 @@
             <control><group>[Channel4]</group><key>BiteDJNV.observeInput</key><status>0xb4</status><midino>0x7e</midino><options><script-binding /></options></control>
             <control><group>[Channel4]</group><key>BiteDJNV.observeInput</key><status>0xb4</status><midino>0x7f</midino><options><script-binding /></options></control>
             <!-- END generated unmapped-input diagnostics -->
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>CF Start A Off</description>
+                <status>0x80</status>
+                <midino>0x32</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>CF Start B Off</description>
+                <status>0x80</status>
+                <midino>0x33</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>CF Contour Smooth Fade</description>
+                <status>0x80</status>
+                <midino>0x31</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Master FX A released</description>
+                <status>0x80</status>
+                <midino>0x2A</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Master FX B released</description>
+                <status>0x80</status>
+                <midino>0x2B</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Channel 3 FX A released</description>
+                <status>0x80</status>
+                <midino>0x22</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Channel 3 FX B released</description>
+                <status>0x80</status>
+                <midino>0x23</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 1 Slip released</description>
+                <status>0x81</status>
+                <midino>0x04</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 3 Slip released</description>
+                <status>0x83</status>
+                <midino>0x04</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck B Beat released</description>
+                <status>0x80</status>
+                <midino>0x16</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck A Beat released</description>
+                <status>0x80</status>
+                <midino>0x12</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 1 knob Sel released</description>
+                <status>0x81</status>
+                <midino>0x07</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 3 Knob Sel released</description>
+                <status>0x83</status>
+                <midino>0x07</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel1]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 1 Panel released</description>
+                <status>0x81</status>
+                <midino>0x08</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel3]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 3 Panel released</description>
+                <status>0x83</status>
+                <midino>0x08</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck A Beat Knob released</description>
+                <status>0x80</status>
+                <midino>0x5B</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Cue Split Off</description>
+                <status>0x80</status>
+                <midino>0x40</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Channel 1 FX A released</description>
+                <status>0x80</status>
+                <midino>0x24</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Channel 1 FX B released</description>
+                <status>0x80</status>
+                <midino>0x25</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Channel 2 FX A released</description>
+                <status>0x80</status>
+                <midino>0x26</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Channel 2 FX B released</description>
+                <status>0x80</status>
+                <midino>0x27</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Channel 4 FX A released</description>
+                <status>0x80</status>
+                <midino>0x28</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Channel 4 FX B released</description>
+                <status>0x80</status>
+                <midino>0x29</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 2 Slip released</description>
+                <status>0x82</status>
+                <midino>0x04</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 2 Panel released</description>
+                <status>0x82</status>
+                <midino>0x08</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel2]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 2 knob Sel released</description>
+                <status>0x82</status>
+                <midino>0x07</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 4 knob Sel released</description>
+                <status>0x84</status>
+                <midino>0x07</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 4 Slip released</description>
+                <status>0x84</status>
+                <midino>0x04</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Channel4]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck 4 Panel released</description>
+                <status>0x84</status>
+                <midino>0x08</midino>
+                <options><script-binding /></options>
+            </control>
+            <control>
+                <group>[Master]</group>
+                <key>BiteDJNV.observeInput</key>
+                <description>Deck B Beat Knob released</description>
+                <status>0x80</status>
+                <midino>0x5C</midino>
+                <options><script-binding /></options>
+            </control>
         </controls>
         <outputs />
     </controller>
