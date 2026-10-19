@@ -18,10 +18,20 @@ Working branch: `nv-learned-inputs-led-discovery-20261019`. Original NV only, no
 | `91–94 0B 00/7F` | Bleep / Reverse LEDs | Captured but not sent by old JS; newly added feedback |
 | `91–94 10/11 00/7F` | Pitch-bend LEDs | Captured but not sent by old JS; newly added feedback |
 | `90 12/16 00` | Beat indicators (candidate) | Zero only; lamp-on unverified |
-| `B0 47 01` | Unknown startup feedback | Do not replay |
+| `B0 47 01` | Beatkeeper far-left LED (owner confirmed) | Position values 00..0B are now mapped |
 | `B0 62 02` | Possible host view feedback | Do not infer full LCD view cycle |
 
+The previous unknown-command classification of B0 47 01 is superseded by the user's subsequent hardware test.
+
 MIDI direction matters: e.g. `B0 48` controller IN is a Beat encoder, while `B0 48` OUT is a VU feedback address.
+
+## Beatkeeper protocol decoded — owner hardware confirmation
+- `B0 47 00` = entire Beatkeeper row OFF.
+- `B0 47 01` through `B0 47 0B` select eleven discrete LEDs from far left through far right. `B0 47 06` is the white center.
+- This is a position code, not an LED bitmask or general brightness level. Only 01 was captured in led test1.pcapng; the full 00..0B range was reported as physically verified by the user.
+- The user guide specifies center white for matched BPM, with the indicator toward the faster deck.
+- Updated JS computes relative BPM between active left and right layer decks, sends OFF when unloaded/invalid, center when within 0.1% (adjustable), otherwise moves by one LED per 0.5% relative difference (adjustable). Cache prevents repetitive identical MIDI commands; refresh interval 200 ms.
+- Preset settings: beatkeeperEnabled, beatkeeperMatchPercent, beatkeeperPercentPerStep. These comparison thresholds are software choices, not controller-firmware specifications.
 
 ## Mapping changes
 - Both JS mapping copies include 142 full-MIDI-value labels, output-feedback method `updateFxAssignmentLEDs`, A/B exclusive FX-unit channel routing, physical Slip input note 04, physical Sel-center note 07, and observational D.VIEW values `B0 61/62 00/01/02`.
