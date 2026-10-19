@@ -487,6 +487,41 @@ BiteDJNV.sidebar = function(channel, control, value, status, group) {
 BiteDJNV.pfl = function(channel, control, value, status, group) {
     if (BiteDJNV.pressed(value, status)) { BiteDJNV.toggle(group, 'pfl'); }
 };
+
+// Hardware-verified original NV Beatkeeper: B0 47 00 OFF; 01..0B left-to-right,
+// 06 = center white. The control selects ONE position (not a bitmask).
+BiteDJNV.beatkeeperEnabled = true;
+BiteDJNV.beatkeeperPercentPerStep = 0.5; // Adjustable percentage BPM delta per LED.
+BiteDJNV.beatkeeperMatchPercent = 0.1; // Deadband for centre white.
+BiteDJNV.beatkeeperPosition = function(leftBpm, rightBpm, matchPercent, percentPerStep) {
+    if (!isFinite(leftBpm) || !isFinite(rightBpm) || leftBpm <= 0 || rightBpm <= 0) return 0;
+    if (!isFinite(matchPercent) || matchPercent < 0) matchPercent = 0.1;
+    if (!isFinite(percentPerStep) || percentPerStep <= 0) percentPerStep = 0.5;
+    // Percentage difference is tempo-scale-independent (e.g. 60 vs 61 and
+    // 120 vs 122 give approximately the same relative visual distance).
+    var difference = 100 * (leftBpm - rightBpm) / Math.max(leftBpm, rightBpm);
+    if (Math.abs(difference) <= matchPercent) return 6;
+    var steps = Math.min(5, Math.max(1,
+                    Math.ceil((Math.abs(difference) - matchPercent) / percentPerStep)));
+    // Left active deck faster => LED travels left; right faster => right.
+    return difference > 0 ? 6 - steps : 6 + steps;
+};
+BiteDJNV.updateBeatkeeper = function(force) {
+    var level = 0;
+    if (BiteDJNV.beatkeeperEnabled) {
+        var leftDeck = BiteDJNV.sideDeck(0), rightDeck = BiteDJNV.sideDeck(1);
+        var leftGroup = '[Channel' + leftDeck + ']';
+        var rightGroup = '[Channel' + rightDeck + ']';
+        if (engine.getValue(leftGroup, 'track_loaded') &&
+            engine.getValue(rightGroup, 'track_loaded')) {
+            level = BiteDJNV.beatkeeperPosition(
+                engine.getValue(leftGroup, 'bpm'), engine.getValue(rightGroup, 'bpm'),
+                BiteDJNV.beatkeeperMatchPercent, BiteDJNV.beatkeeperPercentPerStep);
+        }
+    }
+    BiteDJNV.sendLED(0xB0, 0x47, level, !!force);
+};
+
 BiteDJNV.sendLED = function(status, control, value, force) {
     var id = status + ':' + control;
     if (force || BiteDJNV.ledValues[id] !== value) {
@@ -725,6 +760,8 @@ BiteDJNV.meterIdle = function(deck) {
     return ticks >= 6; // 300 ms stationary, paused, with no cue/scratch gesture.
 };
 BiteDJNV.updateMeters = function() {
+    // 200 ms Beatkeeper updates; sendLED caches unchanged values.
+    if (BiteDJNV.meterTicks % 4 === 0) { BiteDJNV.updateBeatkeeper(); }
     if (BiteDJNV.meterTicks % 2 === 0) {
         for (var padDeck = 1; padDeck <= 4; padDeck++) { BiteDJNV.updatePads(padDeck); }
         BiteDJNV.updateFxLEDs();
@@ -776,6 +813,7 @@ BiteDJNV.meterLevel = function(value, fader, peak) {
 };
 BiteDJNV.readSettings = function() {
     var numbers = {
+        beatkeeperPercentPerStep: [0.5, 0.1, 5.0], beatkeeperMatchPercent: [0.1, 0.0, 2.0],
         scratchSensitivity: [2.0, 0.25, 8.0], jogSensitivity: [0.25, 0.05, 2.0],
         vuSilenceThreshold: [0.01, 0.0002, 0.1], vuPeakLevel: [5, 4, 5]
     };
@@ -788,9 +826,9 @@ BiteDJNV.readSettings = function() {
         var value = typeof engine.getSetting === 'function' ? engine.getSetting('padColor' + (index + 1)) : undefined;
         return BiteDJNV.padPalette.indexOf(value) >= 0 ? value : fallback;
     });
-    ['vuFollowFader', 'vuTest'].forEach(function(name) {
+    ['vuFollowFader', 'vuTest', 'beatkeeperEnabled'].forEach(function(name) {
         var value = typeof engine.getSetting === 'function' ? engine.getSetting(name) : undefined;
-        BiteDJNV[name] = typeof value === 'boolean' ? value : name === 'vuFollowFader';
+        BiteDJNV[name] = typeof value === 'boolean' ? value : name !== 'vuTest';
     });
 };
 BiteDJNV.init = function() {
@@ -843,6 +881,7 @@ BiteDJNV.init = function() {
             BiteDJNV.connections.push(pfl); pfl.trigger();
         })(d);
     }
+    BiteDJNV.updateBeatkeeper(true);
     BiteDJNV.updateMeters();
     BiteDJNV.meterTimer = engine.beginTimer(50, BiteDJNV.updateMeters);
     // Current-position request used by the original NV community mapping.
