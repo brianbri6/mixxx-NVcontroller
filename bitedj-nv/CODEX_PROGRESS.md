@@ -725,3 +725,11 @@ AI-generated progress note.
 - Minor failed attempt: a combined progress patch expected a standalone sentence that was part of a longer line; patch verification rejected it without changing files. Applied the documentation edits with exact context.
 - Next: commit/publish the packaging milestone, run the source packager from that published Pi subtree, verify coverage against every committed file, record size/hash and deliver the source ZIP. Exact source command: python3 scripts/package_source.py --output dist/BiteDJ_Pi4_NV_v0_5_8_Source_2026-10-20.zip.
 End AI-generated progress note.
+
+### Source archive coverage correction — 2026-10-20
+
+AI-generated progress note.
+- First packaging attempt from the GitHub subdirectory produced zero project files: Git archive applied the working-directory prefix to a tree that was already scoped to bitedj-nv. This incomplete758-byte artifact was not delivered and is retained only as work/source-archive-v058-empty-failed.zip.
+- Fixed archive execution to use the repository root for the already-scoped project tree. Added a mandatory nonempty exact comparison between archived names and git ls-files so every tracked project file must be present before writing/verification.
+- The source ZIP will be rebuilt from the corrected published commit. The failed artifact is not an installable release or a valid source package. Native/controller/runtime code remains unchanged.
+End AI-generated progress note.

@@ -49,13 +49,18 @@ def main():
         'instructions': 'SOURCE_README.md',
     }
     entries = {}
-    with tarfile.open(fileobj=io.BytesIO(git('archive', '--format=tar', treeish))) as archive:
+    repository_root = git('rev-parse', '--show-toplevel').decode().strip()
+    source_tar = git('-C', repository_root, 'archive', '--format=tar', treeish)
+    with tarfile.open(fileobj=io.BytesIO(source_tar)) as archive:
         for item in archive:
             if item.isdir():
                 continue
             if not item.isfile() or '..' in Path(item.name).parts or Path(item.name).is_absolute():
                 raise SystemExit('Unsupported source archive entry: ' + item.name)
             entries[item.name] = (archive.extractfile(item).read(), item.mode)
+    tracked = {name for name in git('ls-files', '-z', '--', '.').decode().split('\0') if name}
+    if not tracked or set(entries) != tracked:
+        raise SystemExit('Source archive does not match all tracked project files')
     origin['source_files'] = len(entries)
     entries['SOURCE_ORIGIN.json'] = ((json.dumps(origin, indent=2) + '\n').encode(), 0o644)
     hashes = {name: hashlib.sha256(data).hexdigest() for name, (data, _) in entries.items()}
