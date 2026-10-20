@@ -1,144 +1,5196 @@
 {
-  "91 04 7F": "Deck 1 Slip pressed",
-  "90 62 7F": "Deck A Sel Knob touched",
-  "91 07 7F": "Deck 1 knob Sel pressed",
-  "91 08 7F": "Deck 1 Panel pressed",
-  "90 54 7F": "Deck A Beat Knob touched",
-  "90 12 7F": "Deck A Beat pressed",
-  "90 51 7F": "Deck A FX1 touched",
-  "90 52 7F": "Deck A FX2 touched",
-  "90 53 7F": "Deck A FX3 touched",
-  "93 04 7F": "Deck 3 Slip pressed",
-  "93 07 7F": "Deck 3 Knob Sel pressed",
-  "93 08 7F": "Deck 3 Panel pressed",
-  "90 48 7F": "Channel 1 Trim touched",
-  "90 47 7F": "Channel 1 High touched",
-  "90 46 7F": "Channel 1 Mid touched",
-  "90 45 7F": "Channel 1 Low touched",
-  "90 5F 7F": "Channel 1 Filter touched",
-  "90 4C 7F": "Channel 2 Trim touched",
-  "90 4B 7F": "Channel 2 High touched",
-  "90 4A 7F": "Channel 2 Mid touched",
-  "90 49 7F": "Channel 2 Low touched",
-  "90 60 7F": "Channel 2 Filter touched",
-  "90 44 7F": "Channel 3 Trim touched",
-  "90 43 7F": "Channel 3 High touched",
-  "90 42 7F": "Channel 3 Mid touched",
-  "90 41 7F": "Channel 3 Low touched",
-  "90 5E 7F": "Channel 3 Filter touched",
-  "90 50 7F": "Channel 4 Trim touched",
-  "90 4F 7F": "Channel 4 High touched",
-  "90 4E 7F": "Channel 4 Mid touched",
-  "90 4D 7F": "Channel 4 Low touched",
-  "90 61 7F": "Channel 4 Filter touched",
-  "90 55 7F": "Deck B FX1 touched",
-  "90 56 7F": "Deck B FX2 touched",
-  "90 57 7F": "Deck B FX3 touched",
-  "90 16 7F": "Deck B Beat pressed",
-  "90 2A 7F": "Master FX A pressed",
-  "90 2B 7F": "Master FX B pressed",
-  "90 24 7F": "Channel 1 FX A pressed",
-  "90 25 7F": "Channel 1 FX B pressed",
-  "90 26 7F": "Channel 2 FX A pressed",
-  "90 27 7F": "Channel 2 FX B pressed",
-  "90 22 7F": "Channel 3 FX A pressed",
-  "90 23 7F": "Channel 3 FX B pressed",
-  "90 28 7F": "Channel 4 FX A pressed",
-  "90 29 7F": "Channel 4 FX B pressed",
-  "90 32 7F": "CF Start A On",
-  "80 32 00": "CF Start A Off",
-  "90 33 7F": "CF Start B On",
-  "80 33 00": "CF Start B Off",
-  "90 31 7F": "CF Contour Hard Cut",
-  "80 31 00": "CF Contour Smooth Fade",
-  "90 2E 01": "PFL Channel 1 A",
-  "90 2E 00": "PFL Channel 1 Off",
-  "90 2E 02": "PFL Channel 1 B",
-  "90 2D 01": "PFL Channel 3 A",
-  "90 2D 00": "PFL Channel 3 Off",
-  "90 2D 02": "PFL Channel 3 B",
-  "90 2F 01": "PFL Channel 2 A",
-  "90 2F 00": "PFL Channel 2 Off",
-  "90 2F 02": "PFL Channel 2 B",
-  "90 30 01": "PFL Channel 4 A",
-  "90 30 00": "PFL Channel 4 Off",
-  "90 30 02": "PFL Channel 4 B",
-  "80 2A 00": "Master FX A released",
-  "80 2B 00": "Master FX B released",
-  "80 22 00": "Channel 3 FX A released",
-  "80 23 00": "Channel 3 FX B released",
-  "90 62 00": "Deck A Sel Knob lifted",
-  "90 51 00": "Deck A FX1 lifted",
-  "90 52 00": "Deck A FX2 lifted",
-  "90 53 00": "Deck A FX3 lifted",
-  "90 54 00": "Deck A Beat Knob lifted",
-  "90 44 00": "Channel 3 Trim lifted",
-  "90 43 00": "Channel 3 High lifted",
-  "90 42 00": "Channel 3 Mid lifted",
-  "90 41 00": "Channel 3 Low lifted",
-  "90 5E 00": "Channel 3 Filter lifted",
-  "90 48 00": "Channel 1 Trim lifted",
-  "90 47 00": "Channel 1 High lifted",
-  "90 46 00": "Channel 1 Mid lifted",
-  "81 04 00": "Deck 1 Slip released",
-  "83 04 00": "Deck 3 Slip released",
-  "90 55 00": "Deck B FX1 lifted",
-  "90 56 00": "Deck B FX2 lifted",
-  "90 57 00": "Deck B FX3 lifted",
-  "90 58 7F": "Deck B Beat Knob touched",
-  "90 58 00": "Deck B Beat Knob lifted",
-  "80 16 00": "Deck B Beat released",
-  "80 12 00": "Deck A Beat released",
-  "90 45 00": "Channel 1 Low lifted",
-  "90 5F 00": "Channel 1 Filter lifted",
-  "90 4C 00": "Channel 2 Trim lifted",
-  "90 4B 00": "Channel 2 High lifted",
-  "90 4A 00": "Channel 2 Mid lifted",
-  "90 49 00": "Channel 2 Low lifted",
-  "90 60 00": "Channel 2 Filter lifted",
-  "90 50 00": "Channel 4 Trim lifted",
-  "90 4F 00": "Channel 4 High lifted",
-  "90 4E 00": "Channel 4 Mid lifted",
-  "90 4D 00": "Channel 4 Low lifted",
-  "90 61 00": "Channel 4 Filter lifted",
-  "81 07 00": "Deck 1 knob Sel released",
-  "83 07 00": "Deck 3 Knob Sel released",
-  "81 08 00": "Deck 1 Panel released",
-  "83 08 00": "Deck 3 Panel released",
-  "90 5B 7F": "Deck A Beat Knob pressed",
-  "80 5B 00": "Deck A Beat Knob released",
-  "90 40 7F": "Cue Split On",
-  "80 40 00": "Cue Split Off",
-  "80 24 00": "Channel 1 FX A released",
-  "80 25 00": "Channel 1 FX B released",
-  "80 26 00": "Channel 2 FX A released",
-  "80 27 00": "Channel 2 FX B released",
-  "80 28 00": "Channel 4 FX A released",
-  "80 29 00": "Channel 4 FX B released",
-  "92 04 7F": "Deck 2 Slip pressed",
-  "82 04 00": "Deck 2 Slip released",
-  "92 08 7F": "Deck 2 Panel pressed",
-  "82 08 00": "Deck 2 Panel released",
-  "90 63 7F": "Deck B Sel Knob touched",
-  "90 63 00": "Deck B Sel Knob lifted",
-  "92 07 7F": "Deck 2 knob Sel pressed",
-  "82 07 00": "Deck 2 knob Sel released",
-  "94 07 7F": "Deck 4 knob Sel pressed",
-  "84 07 00": "Deck 4 knob Sel released",
-  "94 04 7F": "Deck 4 Slip pressed",
-  "84 04 00": "Deck 4 Slip released",
-  "94 08 7F": "Deck 4 Panel pressed",
-  "84 08 00": "Deck 4 Panel released",
-  "90 5C 7F": "Deck B Beat Knob pressed",
-  "80 5C 00": "Deck B Beat Knob released",
-  "B0 48 7F": "Deck A Beat Knob Left",
-  "B0 48 01": "Deck A Beat Knob Right",
-  "B0 4C 7F": "Deck B Beat Knob Left",
-  "B0 4C 01": "Deck B Beat Knob Right",
-  "B0 61 01": "Deck A D.View 1",
-  "B0 61 02": "Deck A D.View 2",
-  "B0 61 00": "Deck A D.View 0",
-  "B0 62 00": "Deck B D.View 0",
-  "B0 62 01": "Deck B D.View 1",
-  "B0 62 02": "Deck B D.View 2"
+  "91 04 7F": {
+    "name": "Deck 1 Slip pressed",
+    "notes": "",
+    "raw_hex": "91 04 7F",
+    "raw_bytes": [
+      145,
+      4,
+      127
+    ],
+    "address": "91 04",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:12:17",
+    "observed_at": "2026-10-19T17:11:47.945-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "91 04 7F",
+        "observed_at": "2026-10-19T17:11:47.945-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 04 00",
+        "observed_at": "2026-10-19T17:11:48.095-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 62 7F": {
+    "name": "Deck A Sel Knob touched",
+    "notes": "",
+    "raw_hex": "90 62 7F",
+    "raw_bytes": [
+      144,
+      98,
+      127
+    ],
+    "address": "90 62",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:17:01",
+    "observed_at": "2026-10-19T17:16:53.870-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 62 7F",
+        "observed_at": "2026-10-19T17:16:48.127-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 62 00",
+        "observed_at": "2026-10-19T17:16:49.762-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 62 7F",
+        "observed_at": "2026-10-19T17:16:50.438-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 62 00",
+        "observed_at": "2026-10-19T17:16:51.169-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 62 7F",
+        "observed_at": "2026-10-19T17:16:51.676-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 62 00",
+        "observed_at": "2026-10-19T17:16:53.363-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 62 7F",
+        "observed_at": "2026-10-19T17:16:53.870-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 62 00",
+        "observed_at": "2026-10-19T17:16:54.153-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "91 07 7F": {
+    "name": "Deck 1 knob Sel pressed",
+    "notes": "",
+    "raw_hex": "91 07 7F",
+    "raw_bytes": [
+      145,
+      7,
+      127
+    ],
+    "address": "91 07",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:33:20",
+    "observed_at": "2026-10-19T17:33:04.275-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "91 07 7F",
+        "observed_at": "2026-10-19T17:33:04.275-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 07 00",
+        "observed_at": "2026-10-19T17:33:04.700-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "91 07 7F",
+        "observed_at": "2026-10-19T17:33:08.979-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 07 00",
+        "observed_at": "2026-10-19T17:33:09.830-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "91 08 7F": {
+    "name": "Deck 1 Panel pressed",
+    "notes": "",
+    "raw_hex": "91 08 7F",
+    "raw_bytes": [
+      145,
+      8,
+      127
+    ],
+    "address": "91 08",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:34:57",
+    "observed_at": "2026-10-19T17:34:47.278-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "91 08 7F",
+        "observed_at": "2026-10-19T17:34:41.997-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 08 00",
+        "observed_at": "2026-10-19T17:34:42.923-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "91 08 7F",
+        "observed_at": "2026-10-19T17:34:43.649-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 08 00",
+        "observed_at": "2026-10-19T17:34:44.324-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "91 08 7F",
+        "observed_at": "2026-10-19T17:34:46.152-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 08 00",
+        "observed_at": "2026-10-19T17:34:46.577-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "91 08 7F",
+        "observed_at": "2026-10-19T17:34:47.278-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 08 00",
+        "observed_at": "2026-10-19T17:34:47.729-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 54 7F": {
+    "name": "Deck A Beat Knob touched",
+    "notes": "",
+    "raw_hex": "90 54 7F",
+    "raw_bytes": [
+      144,
+      84,
+      127
+    ],
+    "address": "90 54",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:37:32",
+    "observed_at": "2026-10-19T17:37:22.817-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 54 7F",
+        "observed_at": "2026-10-19T17:37:16.005-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 54 00",
+        "observed_at": "2026-10-19T17:37:22.256-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 54 7F",
+        "observed_at": "2026-10-19T17:37:22.817-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 54 00",
+        "observed_at": "2026-10-19T17:37:23.999-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 12 7F": {
+    "name": "Deck A Beat pressed",
+    "notes": "",
+    "raw_hex": "90 12 7F",
+    "raw_bytes": [
+      144,
+      18,
+      127
+    ],
+    "address": "90 12",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:21:56",
+    "observed_at": "2026-10-19T17:21:48.309-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 12 7F",
+        "observed_at": "2026-10-19T17:21:48.309-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 12 00",
+        "observed_at": "2026-10-19T17:21:48.635-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 51 7F": {
+    "name": "Deck A FX1 touched",
+    "notes": "",
+    "raw_hex": "90 51 7F",
+    "raw_bytes": [
+      144,
+      81,
+      127
+    ],
+    "address": "90 51",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:17:41",
+    "observed_at": "2026-10-19T17:17:28.325-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 51 00",
+        "observed_at": "2026-10-19T17:17:27.818-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 51 7F",
+        "observed_at": "2026-10-19T17:17:28.325-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 51 00",
+        "observed_at": "2026-10-19T17:17:28.888-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 52 7F": {
+    "name": "Deck A FX2 touched",
+    "notes": "",
+    "raw_hex": "90 52 7F",
+    "raw_bytes": [
+      144,
+      82,
+      127
+    ],
+    "address": "90 52",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:17:50",
+    "observed_at": "2026-10-19T17:17:44.594-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 52 7F",
+        "observed_at": "2026-10-19T17:17:44.594-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 52 00",
+        "observed_at": "2026-10-19T17:17:45.159-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 53 7F": {
+    "name": "Deck A FX3 touched",
+    "notes": "",
+    "raw_hex": "90 53 7F",
+    "raw_bytes": [
+      144,
+      83,
+      127
+    ],
+    "address": "90 53",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:18:07",
+    "observed_at": "2026-10-19T17:18:01.708-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 53 7F",
+        "observed_at": "2026-10-19T17:18:01.708-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 53 00",
+        "observed_at": "2026-10-19T17:18:02.046-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "93 04 7F": {
+    "name": "Deck 3 Slip pressed",
+    "notes": "",
+    "raw_hex": "93 04 7F",
+    "raw_bytes": [
+      147,
+      4,
+      127
+    ],
+    "address": "93 04",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:14:22",
+    "observed_at": "2026-10-19T17:14:05.936-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "93 04 7F",
+        "observed_at": "2026-10-19T17:14:02.057-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 04 00",
+        "observed_at": "2026-10-19T17:14:02.734-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "93 04 7F",
+        "observed_at": "2026-10-19T17:14:03.284-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 04 00",
+        "observed_at": "2026-10-19T17:14:04.985-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "93 04 7F",
+        "observed_at": "2026-10-19T17:14:05.936-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 04 00",
+        "observed_at": "2026-10-19T17:14:06.536-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "93 07 7F": {
+    "name": "Deck 3 Knob Sel pressed",
+    "notes": "",
+    "raw_hex": "93 07 7F",
+    "raw_bytes": [
+      147,
+      7,
+      127
+    ],
+    "address": "93 07",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:33:46",
+    "observed_at": "2026-10-19T17:33:33.651-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "93 07 7F",
+        "observed_at": "2026-10-19T17:33:33.651-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 07 00",
+        "observed_at": "2026-10-19T17:33:34.802-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "93 08 7F": {
+    "name": "Deck 3 Panel pressed",
+    "notes": "",
+    "raw_hex": "93 08 7F",
+    "raw_bytes": [
+      147,
+      8,
+      127
+    ],
+    "address": "93 08",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:35:46",
+    "observed_at": "2026-10-19T17:35:35.604-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "93 08 7F",
+        "observed_at": "2026-10-19T17:35:35.604-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 08 00",
+        "observed_at": "2026-10-19T17:35:36.304-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 48 7F": {
+    "name": "Channel 1 Trim touched",
+    "notes": "",
+    "raw_hex": "90 48 7F",
+    "raw_bytes": [
+      144,
+      72,
+      127
+    ],
+    "address": "90 48",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:23:22",
+    "observed_at": "2026-10-19T16:23:06.673-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 48 7F",
+        "observed_at": "2026-10-19T16:23:06.673-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 48 00",
+        "observed_at": "2026-10-19T16:23:07.235-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 47 7F": {
+    "name": "Channel 1 High touched",
+    "notes": "",
+    "raw_hex": "90 47 7F",
+    "raw_bytes": [
+      144,
+      71,
+      127
+    ],
+    "address": "90 47",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:23:38",
+    "observed_at": "2026-10-19T16:23:25.428-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 47 7F",
+        "observed_at": "2026-10-19T16:23:25.428-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 47 00",
+        "observed_at": "2026-10-19T16:23:25.597-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 46 7F": {
+    "name": "Channel 1 Mid touched",
+    "notes": "",
+    "raw_hex": "90 46 7F",
+    "raw_bytes": [
+      144,
+      70,
+      127
+    ],
+    "address": "90 46",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:23:54",
+    "observed_at": "2026-10-19T16:23:41.988-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 46 7F",
+        "observed_at": "2026-10-19T16:23:41.988-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 46 00",
+        "observed_at": "2026-10-19T16:23:42.213-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 45 7F": {
+    "name": "Channel 1 Low touched",
+    "notes": "",
+    "raw_hex": "90 45 7F",
+    "raw_bytes": [
+      144,
+      69,
+      127
+    ],
+    "address": "90 45",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:02:59",
+    "observed_at": "2026-10-19T17:02:44.605-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 45 7F",
+        "observed_at": "2026-10-19T17:02:44.605-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 45 00",
+        "observed_at": "2026-10-19T17:02:44.998-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 5F 7F": {
+    "name": "Channel 1 Filter touched",
+    "notes": "",
+    "raw_hex": "90 5F 7F",
+    "raw_bytes": [
+      144,
+      95,
+      127
+    ],
+    "address": "90 5F",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:24:28",
+    "observed_at": "2026-10-19T16:24:14.600-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 5F 7F",
+        "observed_at": "2026-10-19T16:24:14.600-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 5F 00",
+        "observed_at": "2026-10-19T16:24:14.882-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4C 7F": {
+    "name": "Channel 2 Trim touched",
+    "notes": "",
+    "raw_hex": "90 4C 7F",
+    "raw_bytes": [
+      144,
+      76,
+      127
+    ],
+    "address": "90 4C",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:24:50",
+    "observed_at": "2026-10-19T16:24:34.339-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4C 7F",
+        "observed_at": "2026-10-19T16:24:34.339-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4C 00",
+        "observed_at": "2026-10-19T16:24:34.676-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4B 7F": {
+    "name": "Channel 2 High touched",
+    "notes": "",
+    "raw_hex": "90 4B 7F",
+    "raw_bytes": [
+      144,
+      75,
+      127
+    ],
+    "address": "90 4B",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:25:32",
+    "observed_at": "2026-10-19T16:25:21.415-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4B 7F",
+        "observed_at": "2026-10-19T16:25:21.415-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4B 00",
+        "observed_at": "2026-10-19T16:25:21.865-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4A 7F": {
+    "name": "Channel 2 Mid touched",
+    "notes": "",
+    "raw_hex": "90 4A 7F",
+    "raw_bytes": [
+      144,
+      74,
+      127
+    ],
+    "address": "90 4A",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:29:21",
+    "observed_at": "2026-10-19T17:29:14.661-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4A 7F",
+        "observed_at": "2026-10-19T17:29:14.661-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4A 00",
+        "observed_at": "2026-10-19T17:29:15.111-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 49 7F": {
+    "name": "Channel 2 Low touched",
+    "notes": "",
+    "raw_hex": "90 49 7F",
+    "raw_bytes": [
+      144,
+      73,
+      127
+    ],
+    "address": "90 49",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:29:40",
+    "observed_at": "2026-10-19T17:29:33.860-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 49 7F",
+        "observed_at": "2026-10-19T17:29:32.508-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 49 00",
+        "observed_at": "2026-10-19T17:29:33.015-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 49 7F",
+        "observed_at": "2026-10-19T17:29:33.860-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 49 00",
+        "observed_at": "2026-10-19T17:29:34.254-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 60 7F": {
+    "name": "Channel 2 Filter touched",
+    "notes": "",
+    "raw_hex": "90 60 7F",
+    "raw_bytes": [
+      144,
+      96,
+      127
+    ],
+    "address": "90 60",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:31:45",
+    "observed_at": "2026-10-19T16:31:25.990-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 60 7F",
+        "observed_at": "2026-10-19T16:31:25.990-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 60 00",
+        "observed_at": "2026-10-19T16:31:27.678-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 44 7F": {
+    "name": "Channel 3 Trim touched",
+    "notes": "",
+    "raw_hex": "90 44 7F",
+    "raw_bytes": [
+      144,
+      68,
+      127
+    ],
+    "address": "90 44",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:58:57",
+    "observed_at": "2026-10-19T16:58:48.162-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 44 7F",
+        "observed_at": "2026-10-19T16:58:48.162-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 44 00",
+        "observed_at": "2026-10-19T16:58:48.781-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 43 7F": {
+    "name": "Channel 3 High touched",
+    "notes": "",
+    "raw_hex": "90 43 7F",
+    "raw_bytes": [
+      144,
+      67,
+      127
+    ],
+    "address": "90 43",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:32:30",
+    "observed_at": "2026-10-19T16:32:23.113-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 43 7F",
+        "observed_at": "2026-10-19T16:32:23.113-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 43 00",
+        "observed_at": "2026-10-19T16:32:23.451-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 42 7F": {
+    "name": "Channel 3 Mid touched",
+    "notes": "",
+    "raw_hex": "90 42 7F",
+    "raw_bytes": [
+      144,
+      66,
+      127
+    ],
+    "address": "90 42",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:32:45",
+    "observed_at": "2026-10-19T16:32:34.101-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 42 7F",
+        "observed_at": "2026-10-19T16:32:34.101-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 42 00",
+        "observed_at": "2026-10-19T16:32:34.439-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 41 7F": {
+    "name": "Channel 3 Low touched",
+    "notes": "",
+    "raw_hex": "90 41 7F",
+    "raw_bytes": [
+      144,
+      65,
+      127
+    ],
+    "address": "90 41",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:32:57",
+    "observed_at": "2026-10-19T16:32:48.799-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 41 7F",
+        "observed_at": "2026-10-19T16:32:48.799-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 41 00",
+        "observed_at": "2026-10-19T16:32:49.080-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 5E 7F": {
+    "name": "Channel 3 Filter touched",
+    "notes": "",
+    "raw_hex": "90 5E 7F",
+    "raw_bytes": [
+      144,
+      94,
+      127
+    ],
+    "address": "90 5E",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:33:15",
+    "observed_at": "2026-10-19T16:33:05.415-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 5E 7F",
+        "observed_at": "2026-10-19T16:33:05.415-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 5E 00",
+        "observed_at": "2026-10-19T16:33:05.696-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 50 7F": {
+    "name": "Channel 4 Trim touched",
+    "notes": "",
+    "raw_hex": "90 50 7F",
+    "raw_bytes": [
+      144,
+      80,
+      127
+    ],
+    "address": "90 50",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:34:29",
+    "observed_at": "2026-10-19T16:33:27.064-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 50 7F",
+        "observed_at": "2026-10-19T16:33:27.064-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 50 00",
+        "observed_at": "2026-10-19T16:33:27.233-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4F 7F": {
+    "name": "Channel 4 High touched",
+    "notes": "",
+    "raw_hex": "90 4F 7F",
+    "raw_bytes": [
+      144,
+      79,
+      127
+    ],
+    "address": "90 4F",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:36:11",
+    "observed_at": "2026-10-19T16:35:21.985-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4F 7F",
+        "observed_at": "2026-10-19T16:35:21.985-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4F 00",
+        "observed_at": "2026-10-19T16:35:22.435-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4F 7F",
+        "observed_at": "2026-10-19T16:35:56.495-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4F 00",
+        "observed_at": "2026-10-19T16:35:57.620-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4F 7F",
+        "observed_at": "2026-10-19T16:36:01.449-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4F 00",
+        "observed_at": "2026-10-19T16:36:04.096-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4F 7F",
+        "observed_at": "2026-10-19T16:36:05.449-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4F 00",
+        "observed_at": "2026-10-19T16:36:07.871-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4E 7F": {
+    "name": "Channel 4 Mid touched",
+    "notes": "",
+    "raw_hex": "90 4E 7F",
+    "raw_bytes": [
+      144,
+      78,
+      127
+    ],
+    "address": "90 4E",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:36:33",
+    "observed_at": "2026-10-19T16:36:22.344-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4E 7F",
+        "observed_at": "2026-10-19T16:36:22.344-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4E 00",
+        "observed_at": "2026-10-19T16:36:22.513-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4D 7F": {
+    "name": "Channel 4 Low touched",
+    "notes": "",
+    "raw_hex": "90 4D 7F",
+    "raw_bytes": [
+      144,
+      77,
+      127
+    ],
+    "address": "90 4D",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:36:52",
+    "observed_at": "2026-10-19T16:36:42.341-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4D 7F",
+        "observed_at": "2026-10-19T16:36:42.341-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4D 00",
+        "observed_at": "2026-10-19T16:36:42.510-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 61 7F": {
+    "name": "Channel 4 Filter touched",
+    "notes": "",
+    "raw_hex": "90 61 7F",
+    "raw_bytes": [
+      144,
+      97,
+      127
+    ],
+    "address": "90 61",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:37:07",
+    "observed_at": "2026-10-19T16:36:57.664-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 61 7F",
+        "observed_at": "2026-10-19T16:36:57.664-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 61 00",
+        "observed_at": "2026-10-19T16:36:57.889-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 55 7F": {
+    "name": "Deck B FX1 touched",
+    "notes": "",
+    "raw_hex": "90 55 7F",
+    "raw_bytes": [
+      144,
+      85,
+      127
+    ],
+    "address": "90 55",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:19:15",
+    "observed_at": "2026-10-19T17:19:05.600-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 55 7F",
+        "observed_at": "2026-10-19T17:18:47.582-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 55 00",
+        "observed_at": "2026-10-19T17:18:47.863-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 55 7F",
+        "observed_at": "2026-10-19T17:19:05.600-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 55 00",
+        "observed_at": "2026-10-19T17:19:06.386-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 56 7F": {
+    "name": "Deck B FX2 touched",
+    "notes": "",
+    "raw_hex": "90 56 7F",
+    "raw_bytes": [
+      144,
+      86,
+      127
+    ],
+    "address": "90 56",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:20:01",
+    "observed_at": "2026-10-19T17:19:55.027-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 56 7F",
+        "observed_at": "2026-10-19T17:19:55.027-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 56 00",
+        "observed_at": "2026-10-19T17:19:56.210-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 57 7F": {
+    "name": "Deck B FX3 touched",
+    "notes": "",
+    "raw_hex": "90 57 7F",
+    "raw_bytes": [
+      144,
+      87,
+      127
+    ],
+    "address": "90 57",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:19:41",
+    "observed_at": "2026-10-19T17:19:35.320-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 57 7F",
+        "observed_at": "2026-10-19T17:19:35.320-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 57 00",
+        "observed_at": "2026-10-19T17:19:35.828-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 16 7F": {
+    "name": "Deck B Beat pressed",
+    "notes": "",
+    "raw_hex": "90 16 7F",
+    "raw_bytes": [
+      144,
+      22,
+      127
+    ],
+    "address": "90 16",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:21:04",
+    "observed_at": "2026-10-19T17:20:50.902-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 16 7F",
+        "observed_at": "2026-10-19T17:20:50.902-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 16 00",
+        "observed_at": "2026-10-19T17:20:51.829-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2A 7F": {
+    "name": "Master FX A pressed",
+    "notes": "",
+    "raw_hex": "90 2A 7F",
+    "raw_bytes": [
+      144,
+      42,
+      127
+    ],
+    "address": "90 2A",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:53:08",
+    "observed_at": "2026-10-19T16:52:50.200-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2A 7F",
+        "observed_at": "2026-10-19T16:52:50.200-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 2A 00",
+        "observed_at": "2026-10-19T16:52:50.901-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2B 7F": {
+    "name": "Master FX B pressed",
+    "notes": "",
+    "raw_hex": "90 2B 7F",
+    "raw_bytes": [
+      144,
+      43,
+      127
+    ],
+    "address": "90 2B",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:54:00",
+    "observed_at": "2026-10-19T16:53:45.701-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2B 7F",
+        "observed_at": "2026-10-19T16:53:45.701-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 2B 00",
+        "observed_at": "2026-10-19T16:53:46.202-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 2B 7F",
+        "observed_at": "2026-10-19T16:53:46.878-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 2B 00",
+        "observed_at": "2026-10-19T16:53:48.604-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 24 7F": {
+    "name": "Channel 1 FX A pressed",
+    "notes": "",
+    "raw_hex": "90 24 7F",
+    "raw_bytes": [
+      144,
+      36,
+      127
+    ],
+    "address": "90 24",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:44:40",
+    "observed_at": "2026-10-19T17:44:33.111-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 24 7F",
+        "observed_at": "2026-10-19T17:44:31.734-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 24 00",
+        "observed_at": "2026-10-19T17:44:32.259-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 24 7F",
+        "observed_at": "2026-10-19T17:44:33.111-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 24 00",
+        "observed_at": "2026-10-19T17:44:33.787-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 25 7F": {
+    "name": "Channel 1 FX B pressed",
+    "notes": "",
+    "raw_hex": "90 25 7F",
+    "raw_bytes": [
+      144,
+      37,
+      127
+    ],
+    "address": "90 25",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:45:02",
+    "observed_at": "2026-10-19T17:44:54.190-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 25 7F",
+        "observed_at": "2026-10-19T17:44:54.190-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 25 00",
+        "observed_at": "2026-10-19T17:44:54.991-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 26 7F": {
+    "name": "Channel 2 FX A pressed",
+    "notes": "",
+    "raw_hex": "90 26 7F",
+    "raw_bytes": [
+      144,
+      38,
+      127
+    ],
+    "address": "90 26",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:45:25",
+    "observed_at": "2026-10-19T17:45:18.496-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 26 7F",
+        "observed_at": "2026-10-19T17:45:18.496-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 26 00",
+        "observed_at": "2026-10-19T17:45:18.822-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 27 7F": {
+    "name": "Channel 2 FX B pressed",
+    "notes": "",
+    "raw_hex": "90 27 7F",
+    "raw_bytes": [
+      144,
+      39,
+      127
+    ],
+    "address": "90 27",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:45:42",
+    "observed_at": "2026-10-19T17:45:19.172-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 27 7F",
+        "observed_at": "2026-10-19T17:45:19.172-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 27 00",
+        "observed_at": "2026-10-19T17:45:19.473-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 22 7F": {
+    "name": "Channel 3 FX A pressed",
+    "notes": "",
+    "raw_hex": "90 22 7F",
+    "raw_bytes": [
+      144,
+      34,
+      127
+    ],
+    "address": "90 22",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:54:34",
+    "observed_at": "2026-10-19T16:54:18.137-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 22 7F",
+        "observed_at": "2026-10-19T16:54:18.137-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 22 00",
+        "observed_at": "2026-10-19T16:54:19.314-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 23 7F": {
+    "name": "Channel 3 FX B pressed",
+    "notes": "",
+    "raw_hex": "90 23 7F",
+    "raw_bytes": [
+      144,
+      35,
+      127
+    ],
+    "address": "90 23",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:54:56",
+    "observed_at": "2026-10-19T16:54:49.618-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 23 7F",
+        "observed_at": "2026-10-19T16:54:49.618-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 23 00",
+        "observed_at": "2026-10-19T16:54:50.143-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 28 7F": {
+    "name": "Channel 4 FX A pressed",
+    "notes": "",
+    "raw_hex": "90 28 7F",
+    "raw_bytes": [
+      144,
+      40,
+      127
+    ],
+    "address": "90 28",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:46:05",
+    "observed_at": "2026-10-19T17:45:57.250-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 28 7F",
+        "observed_at": "2026-10-19T17:45:57.250-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 28 00",
+        "observed_at": "2026-10-19T17:45:57.600-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 29 7F": {
+    "name": "Channel 4 FX B pressed",
+    "notes": "",
+    "raw_hex": "90 29 7F",
+    "raw_bytes": [
+      144,
+      41,
+      127
+    ],
+    "address": "90 29",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:46:40",
+    "observed_at": "2026-10-19T17:46:33.397-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 29 7F",
+        "observed_at": "2026-10-19T17:46:30.618-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 29 00",
+        "observed_at": "2026-10-19T17:46:31.844-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 29 7F",
+        "observed_at": "2026-10-19T17:46:33.397-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 29 00",
+        "observed_at": "2026-10-19T17:46:33.823-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 32 7F": {
+    "name": "CF Start A On",
+    "notes": "switch",
+    "raw_hex": "90 32 7F",
+    "raw_bytes": [
+      144,
+      50,
+      127
+    ],
+    "address": "90 32",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:44:43",
+    "observed_at": "2026-10-19T16:44:12.374-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 32 7F",
+        "observed_at": "2026-10-19T16:44:12.374-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 32 00",
+        "observed_at": "2026-10-19T16:44:14.952-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 32 00": {
+    "name": "CF Start A Off",
+    "notes": "switch",
+    "raw_hex": "80 32 00",
+    "raw_bytes": [
+      128,
+      50,
+      0
+    ],
+    "address": "80 32",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:44:36",
+    "observed_at": "2026-10-19T16:44:14.952-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 32 7F",
+        "observed_at": "2026-10-19T16:44:12.374-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 32 00",
+        "observed_at": "2026-10-19T16:44:14.952-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 33 7F": {
+    "name": "CF Start B On",
+    "notes": "",
+    "raw_hex": "90 33 7F",
+    "raw_bytes": [
+      144,
+      51,
+      127
+    ],
+    "address": "90 33",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:44:05",
+    "observed_at": "2026-10-19T16:43:54.733-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 33 7F",
+        "observed_at": "2026-10-19T16:43:54.733-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 33 00": {
+    "name": "CF Start B Off",
+    "notes": "switch",
+    "raw_hex": "80 33 00",
+    "raw_bytes": [
+      128,
+      51,
+      0
+    ],
+    "address": "80 33",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:45:05",
+    "observed_at": "2026-10-19T16:44:50.937-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "80 33 00",
+        "observed_at": "2026-10-19T16:44:48.134-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 33 7F",
+        "observed_at": "2026-10-19T16:44:49.611-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 33 00",
+        "observed_at": "2026-10-19T16:44:50.937-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 31 7F": {
+    "name": "CF Contour Hard Cut",
+    "notes": "switch",
+    "raw_hex": "90 31 7F",
+    "raw_bytes": [
+      144,
+      49,
+      127
+    ],
+    "address": "90 31",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T16:46:33",
+    "observed_at": "2026-10-19T16:46:06.818-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 31 7F",
+        "observed_at": "2026-10-19T16:46:06.818-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 31 00": {
+    "name": "CF Contour Smooth Fade",
+    "notes": "switch ",
+    "raw_hex": "80 31 00",
+    "raw_bytes": [
+      128,
+      49,
+      0
+    ],
+    "address": "80 31",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:46:59",
+    "observed_at": "2026-10-19T16:46:40.926-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "80 31 00",
+        "observed_at": "2026-10-19T16:46:40.926-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2E 01": {
+    "name": "PFL Channel 1 A",
+    "notes": "switch",
+    "raw_hex": "90 2E 01",
+    "raw_bytes": [
+      144,
+      46,
+      1
+    ],
+    "address": "90 2E",
+    "value_hex": "01",
+    "value_decimal": 1,
+    "updated": "2026-10-19T16:48:38",
+    "observed_at": "2026-10-19T16:48:30.214-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2E 00",
+        "observed_at": "2026-10-19T16:47:37.882-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 2E 01",
+        "observed_at": "2026-10-19T16:48:30.214-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2E 00": {
+    "name": "PFL Channel 1 Off",
+    "notes": "switch",
+    "raw_hex": "90 2E 00",
+    "raw_bytes": [
+      144,
+      46,
+      0
+    ],
+    "address": "90 2E",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:48:26",
+    "observed_at": "2026-10-19T16:47:37.882-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2E 00",
+        "observed_at": "2026-10-19T16:47:37.882-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2E 02": {
+    "name": "PFL Channel 1 B",
+    "notes": "switch",
+    "raw_hex": "90 2E 02",
+    "raw_bytes": [
+      144,
+      46,
+      2
+    ],
+    "address": "90 2E",
+    "value_hex": "02",
+    "value_decimal": 2,
+    "updated": "2026-10-19T16:48:54",
+    "observed_at": "2026-10-19T16:48:43.980-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2E 00",
+        "observed_at": "2026-10-19T16:47:37.882-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 2E 01",
+        "observed_at": "2026-10-19T16:48:30.214-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 2E 00",
+        "observed_at": "2026-10-19T16:48:42.479-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 2E 02",
+        "observed_at": "2026-10-19T16:48:43.980-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2D 01": {
+    "name": "PFL Channel 3 A",
+    "notes": "switch",
+    "raw_hex": "90 2D 01",
+    "raw_bytes": [
+      144,
+      45,
+      1
+    ],
+    "address": "90 2D",
+    "value_hex": "01",
+    "value_decimal": 1,
+    "updated": "2026-10-19T16:49:16",
+    "observed_at": "2026-10-19T16:49:01.221-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2D 01",
+        "observed_at": "2026-10-19T16:49:01.221-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2D 00": {
+    "name": "PFL Channel 3 Off",
+    "notes": "",
+    "raw_hex": "90 2D 00",
+    "raw_bytes": [
+      144,
+      45,
+      0
+    ],
+    "address": "90 2D",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:49:27",
+    "observed_at": "2026-10-19T16:49:18.788-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2D 00",
+        "observed_at": "2026-10-19T16:49:18.788-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2D 02": {
+    "name": "PFL Channel 3 B",
+    "notes": "switch",
+    "raw_hex": "90 2D 02",
+    "raw_bytes": [
+      144,
+      45,
+      2
+    ],
+    "address": "90 2D",
+    "value_hex": "02",
+    "value_decimal": 2,
+    "updated": "2026-10-19T16:49:43",
+    "observed_at": "2026-10-19T16:49:30.751-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2D 02",
+        "observed_at": "2026-10-19T16:49:30.751-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2F 01": {
+    "name": "PFL Channel 2 A",
+    "notes": "switch",
+    "raw_hex": "90 2F 01",
+    "raw_bytes": [
+      144,
+      47,
+      1
+    ],
+    "address": "90 2F",
+    "value_hex": "01",
+    "value_decimal": 1,
+    "updated": "2026-10-19T16:50:11",
+    "observed_at": "2026-10-19T16:49:59.730-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2F 01",
+        "observed_at": "2026-10-19T16:49:59.730-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2F 00": {
+    "name": "PFL Channel 2 Off",
+    "notes": "switch",
+    "raw_hex": "90 2F 00",
+    "raw_bytes": [
+      144,
+      47,
+      0
+    ],
+    "address": "90 2F",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:50:30",
+    "observed_at": "2026-10-19T16:50:17.947-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2F 00",
+        "observed_at": "2026-10-19T16:50:17.947-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 2F 02": {
+    "name": "PFL Channel 2 B",
+    "notes": "switch",
+    "raw_hex": "90 2F 02",
+    "raw_bytes": [
+      144,
+      47,
+      2
+    ],
+    "address": "90 2F",
+    "value_hex": "02",
+    "value_decimal": 2,
+    "updated": "2026-10-19T16:50:45",
+    "observed_at": "2026-10-19T16:50:32.936-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2F 02",
+        "observed_at": "2026-10-19T16:50:32.936-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 30 01": {
+    "name": "PFL Channel 4 A",
+    "notes": "switch",
+    "raw_hex": "90 30 01",
+    "raw_bytes": [
+      144,
+      48,
+      1
+    ],
+    "address": "90 30",
+    "value_hex": "01",
+    "value_decimal": 1,
+    "updated": "2026-10-19T16:51:07",
+    "observed_at": "2026-10-19T16:50:53.230-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 30 01",
+        "observed_at": "2026-10-19T16:50:53.230-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 30 00": {
+    "name": "PFL Channel 4 Off",
+    "notes": "switch",
+    "raw_hex": "90 30 00",
+    "raw_bytes": [
+      144,
+      48,
+      0
+    ],
+    "address": "90 30",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:51:21",
+    "observed_at": "2026-10-19T16:51:11.851-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 30 00",
+        "observed_at": "2026-10-19T16:51:11.851-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 30 02": {
+    "name": "PFL Channel 4 B",
+    "notes": "switch",
+    "raw_hex": "90 30 02",
+    "raw_bytes": [
+      144,
+      48,
+      2
+    ],
+    "address": "90 30",
+    "value_hex": "02",
+    "value_decimal": 2,
+    "updated": "2026-10-19T16:51:39",
+    "observed_at": "2026-10-19T16:51:27.339-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 30 02",
+        "observed_at": "2026-10-19T16:51:27.339-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 2A 00": {
+    "name": "Master FX A released",
+    "notes": "",
+    "raw_hex": "80 2A 00",
+    "raw_bytes": [
+      128,
+      42,
+      0
+    ],
+    "address": "80 2A",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:53:34",
+    "observed_at": "2026-10-19T16:53:17.875-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2A 7F",
+        "observed_at": "2026-10-19T16:53:17.400-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 2A 00",
+        "observed_at": "2026-10-19T16:53:17.875-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 2B 00": {
+    "name": "Master FX B released",
+    "notes": "",
+    "raw_hex": "80 2B 00",
+    "raw_bytes": [
+      128,
+      43,
+      0
+    ],
+    "address": "80 2B",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:54:14",
+    "observed_at": "2026-10-19T16:53:46.202-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 2B 7F",
+        "observed_at": "2026-10-19T16:53:45.701-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 2B 00",
+        "observed_at": "2026-10-19T16:53:46.202-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 2B 7F",
+        "observed_at": "2026-10-19T16:53:46.878-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 2B 00",
+        "observed_at": "2026-10-19T16:53:48.604-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 22 00": {
+    "name": "Channel 3 FX A released",
+    "notes": "",
+    "raw_hex": "80 22 00",
+    "raw_bytes": [
+      128,
+      34,
+      0
+    ],
+    "address": "80 22",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:54:44",
+    "observed_at": "2026-10-19T16:54:19.314-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 22 7F",
+        "observed_at": "2026-10-19T16:54:18.137-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 22 00",
+        "observed_at": "2026-10-19T16:54:19.314-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 23 00": {
+    "name": "Channel 3 FX B released",
+    "notes": "",
+    "raw_hex": "80 23 00",
+    "raw_bytes": [
+      128,
+      35,
+      0
+    ],
+    "address": "80 23",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T16:55:07",
+    "observed_at": "2026-10-19T16:54:50.143-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 23 7F",
+        "observed_at": "2026-10-19T16:54:49.618-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 23 00",
+        "observed_at": "2026-10-19T16:54:50.143-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 62 00": {
+    "name": "Deck A Sel Knob lifted",
+    "notes": "",
+    "raw_hex": "90 62 00",
+    "raw_bytes": [
+      144,
+      98,
+      0
+    ],
+    "address": "90 62",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:26:15",
+    "observed_at": "2026-10-19T17:26:10.420-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 62 7F",
+        "observed_at": "2026-10-19T17:26:09.745-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 62 00",
+        "observed_at": "2026-10-19T17:26:10.420-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 51 00": {
+    "name": "Deck A FX1 lifted",
+    "notes": "",
+    "raw_hex": "90 51 00",
+    "raw_bytes": [
+      144,
+      81,
+      0
+    ],
+    "address": "90 51",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:25:27",
+    "observed_at": "2026-10-19T17:25:18.130-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 51 7F",
+        "observed_at": "2026-10-19T17:25:17.286-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 51 00",
+        "observed_at": "2026-10-19T17:25:18.130-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 52 00": {
+    "name": "Deck A FX2 lifted",
+    "notes": "",
+    "raw_hex": "90 52 00",
+    "raw_bytes": [
+      144,
+      82,
+      0
+    ],
+    "address": "90 52",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:25:37",
+    "observed_at": "2026-10-19T17:25:31.919-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 52 7F",
+        "observed_at": "2026-10-19T17:25:31.525-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 52 00",
+        "observed_at": "2026-10-19T17:25:31.919-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 53 00": {
+    "name": "Deck A FX3 lifted",
+    "notes": "",
+    "raw_hex": "90 53 00",
+    "raw_bytes": [
+      144,
+      83,
+      0
+    ],
+    "address": "90 53",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:25:42",
+    "observed_at": "2026-10-19T17:25:32.708-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 53 7F",
+        "observed_at": "2026-10-19T17:25:32.370-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 53 00",
+        "observed_at": "2026-10-19T17:25:32.708-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 54 00": {
+    "name": "Deck A Beat Knob lifted",
+    "notes": "",
+    "raw_hex": "90 54 00",
+    "raw_bytes": [
+      144,
+      84,
+      0
+    ],
+    "address": "90 54",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:37:40",
+    "observed_at": "2026-10-19T17:37:23.999-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 54 7F",
+        "observed_at": "2026-10-19T17:37:16.005-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 54 00",
+        "observed_at": "2026-10-19T17:37:22.256-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 54 7F",
+        "observed_at": "2026-10-19T17:37:22.817-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 54 00",
+        "observed_at": "2026-10-19T17:37:23.999-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 44 00": {
+    "name": "Channel 3 Trim lifted",
+    "notes": "",
+    "raw_hex": "90 44 00",
+    "raw_bytes": [
+      144,
+      68,
+      0
+    ],
+    "address": "90 44",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:26:26",
+    "observed_at": "2026-10-19T17:26:20.733-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 44 7F",
+        "observed_at": "2026-10-19T17:26:20.452-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 44 00",
+        "observed_at": "2026-10-19T17:26:20.733-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 43 00": {
+    "name": "Channel 3 High lifted",
+    "notes": "",
+    "raw_hex": "90 43 00",
+    "raw_bytes": [
+      144,
+      67,
+      0
+    ],
+    "address": "90 43",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:26:31",
+    "observed_at": "2026-10-19T17:26:21.079-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 43 7F",
+        "observed_at": "2026-10-19T17:26:20.910-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 43 00",
+        "observed_at": "2026-10-19T17:26:21.079-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 42 00": {
+    "name": "Channel 3 Mid lifted",
+    "notes": "",
+    "raw_hex": "90 42 00",
+    "raw_bytes": [
+      144,
+      66,
+      0
+    ],
+    "address": "90 42",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:26:36",
+    "observed_at": "2026-10-19T17:26:21.536-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 42 7F",
+        "observed_at": "2026-10-19T17:26:21.311-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 42 00",
+        "observed_at": "2026-10-19T17:26:21.536-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 41 00": {
+    "name": "Channel 3 Low lifted",
+    "notes": "",
+    "raw_hex": "90 41 00",
+    "raw_bytes": [
+      144,
+      65,
+      0
+    ],
+    "address": "90 41",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:26:42",
+    "observed_at": "2026-10-19T17:26:21.937-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 41 7F",
+        "observed_at": "2026-10-19T17:26:21.712-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 41 00",
+        "observed_at": "2026-10-19T17:26:21.937-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 5E 00": {
+    "name": "Channel 3 Filter lifted",
+    "notes": "",
+    "raw_hex": "90 5E 00",
+    "raw_bytes": [
+      144,
+      94,
+      0
+    ],
+    "address": "90 5E",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:26:47",
+    "observed_at": "2026-10-19T17:26:22.281-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 5E 7F",
+        "observed_at": "2026-10-19T17:26:22.113-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 5E 00",
+        "observed_at": "2026-10-19T17:26:22.281-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 48 00": {
+    "name": "Channel 1 Trim lifted",
+    "notes": "",
+    "raw_hex": "90 48 00",
+    "raw_bytes": [
+      144,
+      72,
+      0
+    ],
+    "address": "90 48",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:27:05",
+    "observed_at": "2026-10-19T17:26:58.791-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 48 7F",
+        "observed_at": "2026-10-19T17:26:58.510-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 48 00",
+        "observed_at": "2026-10-19T17:26:58.791-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 47 00": {
+    "name": "Channel 1 High lifted",
+    "notes": "",
+    "raw_hex": "90 47 00",
+    "raw_bytes": [
+      144,
+      71,
+      0
+    ],
+    "address": "90 47",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:27:10",
+    "observed_at": "2026-10-19T17:26:59.417-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 47 7F",
+        "observed_at": "2026-10-19T17:26:59.080-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 47 00",
+        "observed_at": "2026-10-19T17:26:59.417-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 46 00": {
+    "name": "Channel 1 Mid lifted",
+    "notes": "",
+    "raw_hex": "90 46 00",
+    "raw_bytes": [
+      144,
+      70,
+      0
+    ],
+    "address": "90 46",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:27:14",
+    "observed_at": "2026-10-19T17:26:59.987-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 46 7F",
+        "observed_at": "2026-10-19T17:26:59.649-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 46 00",
+        "observed_at": "2026-10-19T17:26:59.987-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "81 04 00": {
+    "name": "Deck 1 Slip released",
+    "notes": "",
+    "raw_hex": "81 04 00",
+    "raw_bytes": [
+      129,
+      4,
+      0
+    ],
+    "address": "81 04",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:12:27",
+    "observed_at": "2026-10-19T17:11:48.095-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "91 04 7F",
+        "observed_at": "2026-10-19T17:11:47.945-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 04 00",
+        "observed_at": "2026-10-19T17:11:48.095-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "83 04 00": {
+    "name": "Deck 3 Slip released",
+    "notes": "",
+    "raw_hex": "83 04 00",
+    "raw_bytes": [
+      131,
+      4,
+      0
+    ],
+    "address": "83 04",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:14:37",
+    "observed_at": "2026-10-19T17:14:06.536-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "93 04 7F",
+        "observed_at": "2026-10-19T17:14:02.057-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 04 00",
+        "observed_at": "2026-10-19T17:14:02.734-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "93 04 7F",
+        "observed_at": "2026-10-19T17:14:03.284-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 04 00",
+        "observed_at": "2026-10-19T17:14:04.985-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "93 04 7F",
+        "observed_at": "2026-10-19T17:14:05.936-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 04 00",
+        "observed_at": "2026-10-19T17:14:06.536-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 55 00": {
+    "name": "Deck B FX1 lifted",
+    "notes": "",
+    "raw_hex": "90 55 00",
+    "raw_bytes": [
+      144,
+      85,
+      0
+    ],
+    "address": "90 55",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:31:24",
+    "observed_at": "2026-10-19T17:31:11.548-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 55 7F",
+        "observed_at": "2026-10-19T17:31:11.379-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 55 00",
+        "observed_at": "2026-10-19T17:31:11.548-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 56 00": {
+    "name": "Deck B FX2 lifted",
+    "notes": "",
+    "raw_hex": "90 56 00",
+    "raw_bytes": [
+      144,
+      86,
+      0
+    ],
+    "address": "90 56",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:31:29",
+    "observed_at": "2026-10-19T17:31:14.642-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 56 7F",
+        "observed_at": "2026-10-19T17:31:12.334-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 56 00",
+        "observed_at": "2026-10-19T17:31:14.642-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 57 00": {
+    "name": "Deck B FX3 lifted",
+    "notes": "",
+    "raw_hex": "90 57 00",
+    "raw_bytes": [
+      144,
+      87,
+      0
+    ],
+    "address": "90 57",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:31:34",
+    "observed_at": "2026-10-19T17:31:15.543-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 57 7F",
+        "observed_at": "2026-10-19T17:31:14.980-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 57 00",
+        "observed_at": "2026-10-19T17:31:15.543-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 58 7F": {
+    "name": "Deck B Beat Knob touched",
+    "notes": "",
+    "raw_hex": "90 58 7F",
+    "raw_bytes": [
+      144,
+      88,
+      127
+    ],
+    "address": "90 58",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:57:53",
+    "observed_at": "2026-10-19T17:57:45.983-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:38.779-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:39.285-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:39.567-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:40.692-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:42.325-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:44.914-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:45.139-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:45.421-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:45.477-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:45.702-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:45.758-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:45.927-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:45.983-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:46.716-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 58 00": {
+    "name": "Deck B Beat Knob lifted",
+    "notes": "",
+    "raw_hex": "90 58 00",
+    "raw_bytes": [
+      144,
+      88,
+      0
+    ],
+    "address": "90 58",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:58:02",
+    "observed_at": "2026-10-19T17:57:46.716-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:38.779-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:39.285-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:39.567-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:40.692-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:42.325-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:44.914-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:45.139-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:45.421-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:45.477-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:45.702-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:45.758-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:45.927-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 7F",
+        "observed_at": "2026-10-19T17:57:45.983-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 58 00",
+        "observed_at": "2026-10-19T17:57:46.716-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 16 00": {
+    "name": "Deck B Beat released",
+    "notes": "",
+    "raw_hex": "80 16 00",
+    "raw_bytes": [
+      128,
+      22,
+      0
+    ],
+    "address": "80 16",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:21:16",
+    "observed_at": "2026-10-19T17:20:51.829-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 16 7F",
+        "observed_at": "2026-10-19T17:20:50.902-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 16 00",
+        "observed_at": "2026-10-19T17:20:51.829-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 12 00": {
+    "name": "Deck A Beat released",
+    "notes": "",
+    "raw_hex": "80 12 00",
+    "raw_bytes": [
+      128,
+      18,
+      0
+    ],
+    "address": "80 12",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:22:12",
+    "observed_at": "2026-10-19T17:21:48.635-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 12 7F",
+        "observed_at": "2026-10-19T17:21:48.309-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 12 00",
+        "observed_at": "2026-10-19T17:21:48.635-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 45 00": {
+    "name": "Channel 1 Low lifted",
+    "notes": "",
+    "raw_hex": "90 45 00",
+    "raw_bytes": [
+      144,
+      69,
+      0
+    ],
+    "address": "90 45",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:27:20",
+    "observed_at": "2026-10-19T17:27:00.614-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 45 7F",
+        "observed_at": "2026-10-19T17:27:00.276-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 45 00",
+        "observed_at": "2026-10-19T17:27:00.614-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 5F 00": {
+    "name": "Channel 1 Filter lifted",
+    "notes": "",
+    "raw_hex": "90 5F 00",
+    "raw_bytes": [
+      144,
+      95,
+      0
+    ],
+    "address": "90 5F",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:27:24",
+    "observed_at": "2026-10-19T17:27:01.241-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 5F 7F",
+        "observed_at": "2026-10-19T17:27:00.903-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 5F 00",
+        "observed_at": "2026-10-19T17:27:01.241-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4C 00": {
+    "name": "Channel 2 Trim lifted",
+    "notes": "",
+    "raw_hex": "90 4C 00",
+    "raw_bytes": [
+      144,
+      76,
+      0
+    ],
+    "address": "90 4C",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:27:45",
+    "observed_at": "2026-10-19T17:27:36.633-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4C 7F",
+        "observed_at": "2026-10-19T17:27:36.350-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4C 00",
+        "observed_at": "2026-10-19T17:27:36.633-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4B 00": {
+    "name": "Channel 2 High lifted",
+    "notes": "",
+    "raw_hex": "90 4B 00",
+    "raw_bytes": [
+      144,
+      75,
+      0
+    ],
+    "address": "90 4B",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:28:07",
+    "observed_at": "2026-10-19T17:27:37.033-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4B 7F",
+        "observed_at": "2026-10-19T17:27:36.809-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4B 00",
+        "observed_at": "2026-10-19T17:27:37.033-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4A 00": {
+    "name": "Channel 2 Mid lifted",
+    "notes": "",
+    "raw_hex": "90 4A 00",
+    "raw_bytes": [
+      144,
+      74,
+      0
+    ],
+    "address": "90 4A",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:29:27",
+    "observed_at": "2026-10-19T17:29:15.111-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4A 7F",
+        "observed_at": "2026-10-19T17:29:14.661-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4A 00",
+        "observed_at": "2026-10-19T17:29:15.111-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 49 00": {
+    "name": "Channel 2 Low lifted",
+    "notes": "",
+    "raw_hex": "90 49 00",
+    "raw_bytes": [
+      144,
+      73,
+      0
+    ],
+    "address": "90 49",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:29:47",
+    "observed_at": "2026-10-19T17:29:34.254-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 49 7F",
+        "observed_at": "2026-10-19T17:29:32.508-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 49 00",
+        "observed_at": "2026-10-19T17:29:33.015-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 49 7F",
+        "observed_at": "2026-10-19T17:29:33.860-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 49 00",
+        "observed_at": "2026-10-19T17:29:34.254-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 60 00": {
+    "name": "Channel 2 Filter lifted",
+    "notes": "",
+    "raw_hex": "90 60 00",
+    "raw_bytes": [
+      144,
+      96,
+      0
+    ],
+    "address": "90 60",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:28:43",
+    "observed_at": "2026-10-19T17:27:38.349-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 60 7F",
+        "observed_at": "2026-10-19T17:27:38.067-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 60 00",
+        "observed_at": "2026-10-19T17:27:38.349-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 50 00": {
+    "name": "Channel 4 Trim lifted",
+    "notes": "",
+    "raw_hex": "90 50 00",
+    "raw_bytes": [
+      144,
+      80,
+      0
+    ],
+    "address": "90 50",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:30:17",
+    "observed_at": "2026-10-19T17:29:58.218-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 50 7F",
+        "observed_at": "2026-10-19T17:29:57.653-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 50 00",
+        "observed_at": "2026-10-19T17:29:58.218-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4F 00": {
+    "name": "Channel 4 High lifted",
+    "notes": "",
+    "raw_hex": "90 4F 00",
+    "raw_bytes": [
+      144,
+      79,
+      0
+    ],
+    "address": "90 4F",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:30:28",
+    "observed_at": "2026-10-19T17:29:59.125-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4F 7F",
+        "observed_at": "2026-10-19T17:29:58.618-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4F 00",
+        "observed_at": "2026-10-19T17:29:59.125-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4E 00": {
+    "name": "Channel 4 Mid lifted",
+    "notes": "",
+    "raw_hex": "90 4E 00",
+    "raw_bytes": [
+      144,
+      78,
+      0
+    ],
+    "address": "90 4E",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:30:39",
+    "observed_at": "2026-10-19T17:30:00.146-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4E 7F",
+        "observed_at": "2026-10-19T17:29:59.526-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4E 00",
+        "observed_at": "2026-10-19T17:30:00.146-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 4D 00": {
+    "name": "Channel 4 Low lifted",
+    "notes": "",
+    "raw_hex": "90 4D 00",
+    "raw_bytes": [
+      144,
+      77,
+      0
+    ],
+    "address": "90 4D",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:30:50",
+    "observed_at": "2026-10-19T17:30:01.223-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 4D 7F",
+        "observed_at": "2026-10-19T17:30:00.603-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 4D 00",
+        "observed_at": "2026-10-19T17:30:01.223-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 61 00": {
+    "name": "Channel 4 Filter lifted",
+    "notes": "",
+    "raw_hex": "90 61 00",
+    "raw_bytes": [
+      144,
+      97,
+      0
+    ],
+    "address": "90 61",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:31:01",
+    "observed_at": "2026-10-19T17:30:02.129-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 61 7F",
+        "observed_at": "2026-10-19T17:30:01.680-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 61 00",
+        "observed_at": "2026-10-19T17:30:02.129-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "81 07 00": {
+    "name": "Deck 1 knob Sel released",
+    "notes": "",
+    "raw_hex": "81 07 00",
+    "raw_bytes": [
+      129,
+      7,
+      0
+    ],
+    "address": "81 07",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:33:26",
+    "observed_at": "2026-10-19T17:33:04.700-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "91 07 7F",
+        "observed_at": "2026-10-19T17:33:04.275-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 07 00",
+        "observed_at": "2026-10-19T17:33:04.700-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "91 07 7F",
+        "observed_at": "2026-10-19T17:33:08.979-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 07 00",
+        "observed_at": "2026-10-19T17:33:09.830-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "83 07 00": {
+    "name": "Deck 3 Knob Sel released",
+    "notes": "",
+    "raw_hex": "83 07 00",
+    "raw_bytes": [
+      131,
+      7,
+      0
+    ],
+    "address": "83 07",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:33:53",
+    "observed_at": "2026-10-19T17:33:34.802-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "93 07 7F",
+        "observed_at": "2026-10-19T17:33:33.651-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 07 00",
+        "observed_at": "2026-10-19T17:33:34.802-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "81 08 00": {
+    "name": "Deck 1 Panel released",
+    "notes": "",
+    "raw_hex": "81 08 00",
+    "raw_bytes": [
+      129,
+      8,
+      0
+    ],
+    "address": "81 08",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:35:06",
+    "observed_at": "2026-10-19T17:34:47.729-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "91 08 7F",
+        "observed_at": "2026-10-19T17:34:41.997-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 08 00",
+        "observed_at": "2026-10-19T17:34:42.923-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "91 08 7F",
+        "observed_at": "2026-10-19T17:34:43.649-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 08 00",
+        "observed_at": "2026-10-19T17:34:44.324-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "91 08 7F",
+        "observed_at": "2026-10-19T17:34:46.152-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 08 00",
+        "observed_at": "2026-10-19T17:34:46.577-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "91 08 7F",
+        "observed_at": "2026-10-19T17:34:47.278-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "81 08 00",
+        "observed_at": "2026-10-19T17:34:47.729-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "83 08 00": {
+    "name": "Deck 3 Panel released",
+    "notes": "",
+    "raw_hex": "83 08 00",
+    "raw_bytes": [
+      131,
+      8,
+      0
+    ],
+    "address": "83 08",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:35:57",
+    "observed_at": "2026-10-19T17:35:36.304-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "93 08 7F",
+        "observed_at": "2026-10-19T17:35:35.604-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "83 08 00",
+        "observed_at": "2026-10-19T17:35:36.304-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 5B 7F": {
+    "name": "Deck A Beat Knob pressed",
+    "notes": "",
+    "raw_hex": "90 5B 7F",
+    "raw_bytes": [
+      144,
+      91,
+      127
+    ],
+    "address": "90 5B",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:37:04",
+    "observed_at": "2026-10-19T17:36:38.116-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 5B 7F",
+        "observed_at": "2026-10-19T17:36:38.116-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 5B 00",
+        "observed_at": "2026-10-19T17:36:38.767-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 5B 00": {
+    "name": "Deck A Beat Knob released",
+    "notes": "",
+    "raw_hex": "80 5B 00",
+    "raw_bytes": [
+      128,
+      91,
+      0
+    ],
+    "address": "80 5B",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:37:13",
+    "observed_at": "2026-10-19T17:36:38.767-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 5B 7F",
+        "observed_at": "2026-10-19T17:36:38.116-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 5B 00",
+        "observed_at": "2026-10-19T17:36:38.767-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 40 7F": {
+    "name": "Cue Split On",
+    "notes": "",
+    "raw_hex": "90 40 7F",
+    "raw_bytes": [
+      144,
+      64,
+      127
+    ],
+    "address": "90 40",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:40:49",
+    "observed_at": "2026-10-19T17:40:39.383-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 40 7F",
+        "observed_at": "2026-10-19T17:40:39.383-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 40 00": {
+    "name": "Cue Split Off",
+    "notes": "",
+    "raw_hex": "80 40 00",
+    "raw_bytes": [
+      128,
+      64,
+      0
+    ],
+    "address": "80 40",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:41:03",
+    "observed_at": "2026-10-19T17:40:53.975-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 40 7F",
+        "observed_at": "2026-10-19T17:40:39.383-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 40 00",
+        "observed_at": "2026-10-19T17:40:53.975-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 24 00": {
+    "name": "Channel 1 FX A released",
+    "notes": "",
+    "raw_hex": "80 24 00",
+    "raw_bytes": [
+      128,
+      36,
+      0
+    ],
+    "address": "80 24",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:44:47",
+    "observed_at": "2026-10-19T17:44:33.787-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 24 7F",
+        "observed_at": "2026-10-19T17:44:31.734-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 24 00",
+        "observed_at": "2026-10-19T17:44:32.259-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 24 7F",
+        "observed_at": "2026-10-19T17:44:33.111-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 24 00",
+        "observed_at": "2026-10-19T17:44:33.787-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 25 00": {
+    "name": "Channel 1 FX B released",
+    "notes": "",
+    "raw_hex": "80 25 00",
+    "raw_bytes": [
+      128,
+      37,
+      0
+    ],
+    "address": "80 25",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:45:09",
+    "observed_at": "2026-10-19T17:44:54.991-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 25 7F",
+        "observed_at": "2026-10-19T17:44:54.190-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 25 00",
+        "observed_at": "2026-10-19T17:44:54.991-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 26 00": {
+    "name": "Channel 2 FX A released",
+    "notes": "",
+    "raw_hex": "80 26 00",
+    "raw_bytes": [
+      128,
+      38,
+      0
+    ],
+    "address": "80 26",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:45:33",
+    "observed_at": "2026-10-19T17:45:18.822-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 26 7F",
+        "observed_at": "2026-10-19T17:45:18.496-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 26 00",
+        "observed_at": "2026-10-19T17:45:18.822-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 27 00": {
+    "name": "Channel 2 FX B released",
+    "notes": "",
+    "raw_hex": "80 27 00",
+    "raw_bytes": [
+      128,
+      39,
+      0
+    ],
+    "address": "80 27",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:45:49",
+    "observed_at": "2026-10-19T17:45:19.473-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 27 7F",
+        "observed_at": "2026-10-19T17:45:19.172-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 27 00",
+        "observed_at": "2026-10-19T17:45:19.473-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 28 00": {
+    "name": "Channel 4 FX A released",
+    "notes": "",
+    "raw_hex": "80 28 00",
+    "raw_bytes": [
+      128,
+      40,
+      0
+    ],
+    "address": "80 28",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:46:20",
+    "observed_at": "2026-10-19T17:45:57.600-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 28 7F",
+        "observed_at": "2026-10-19T17:45:57.250-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 28 00",
+        "observed_at": "2026-10-19T17:45:57.600-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 29 00": {
+    "name": "Channel 4 FX B released",
+    "notes": "",
+    "raw_hex": "80 29 00",
+    "raw_bytes": [
+      128,
+      41,
+      0
+    ],
+    "address": "80 29",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:46:53",
+    "observed_at": "2026-10-19T17:46:33.823-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 29 7F",
+        "observed_at": "2026-10-19T17:46:30.618-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 29 00",
+        "observed_at": "2026-10-19T17:46:31.844-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 29 7F",
+        "observed_at": "2026-10-19T17:46:33.397-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 29 00",
+        "observed_at": "2026-10-19T17:46:33.823-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "92 04 7F": {
+    "name": "Deck 2 Slip pressed",
+    "notes": "",
+    "raw_hex": "92 04 7F",
+    "raw_bytes": [
+      146,
+      4,
+      127
+    ],
+    "address": "92 04",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:50:31",
+    "observed_at": "2026-10-19T17:49:58.728-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "92 04 7F",
+        "observed_at": "2026-10-19T17:49:44.287-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 04 00",
+        "observed_at": "2026-10-19T17:49:44.838-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "92 04 7F",
+        "observed_at": "2026-10-19T17:49:58.728-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 04 00",
+        "observed_at": "2026-10-19T17:49:59.104-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "82 04 00": {
+    "name": "Deck 2 Slip released",
+    "notes": "",
+    "raw_hex": "82 04 00",
+    "raw_bytes": [
+      130,
+      4,
+      0
+    ],
+    "address": "82 04",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:50:39",
+    "observed_at": "2026-10-19T17:49:59.104-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "92 04 7F",
+        "observed_at": "2026-10-19T17:49:44.287-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 04 00",
+        "observed_at": "2026-10-19T17:49:44.838-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "92 04 7F",
+        "observed_at": "2026-10-19T17:49:58.728-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 04 00",
+        "observed_at": "2026-10-19T17:49:59.104-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "92 08 7F": {
+    "name": "Deck 2 Panel pressed",
+    "notes": "",
+    "raw_hex": "92 08 7F",
+    "raw_bytes": [
+      146,
+      8,
+      127
+    ],
+    "address": "92 08",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:51:06",
+    "observed_at": "2026-10-19T17:50:55.233-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "92 08 7F",
+        "observed_at": "2026-10-19T17:50:49.252-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 08 00",
+        "observed_at": "2026-10-19T17:50:49.727-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "92 08 7F",
+        "observed_at": "2026-10-19T17:50:55.233-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 08 00",
+        "observed_at": "2026-10-19T17:50:56.484-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "82 08 00": {
+    "name": "Deck 2 Panel released",
+    "notes": "",
+    "raw_hex": "82 08 00",
+    "raw_bytes": [
+      130,
+      8,
+      0
+    ],
+    "address": "82 08",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:51:20",
+    "observed_at": "2026-10-19T17:50:56.484-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "92 08 7F",
+        "observed_at": "2026-10-19T17:50:49.252-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 08 00",
+        "observed_at": "2026-10-19T17:50:49.727-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "92 08 7F",
+        "observed_at": "2026-10-19T17:50:55.233-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 08 00",
+        "observed_at": "2026-10-19T17:50:56.484-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 63 7F": {
+    "name": "Deck B Sel Knob touched",
+    "notes": "",
+    "raw_hex": "90 63 7F",
+    "raw_bytes": [
+      144,
+      99,
+      127
+    ],
+    "address": "90 63",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:52:23",
+    "observed_at": "2026-10-19T17:52:16.849-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 63 7F",
+        "observed_at": "2026-10-19T17:52:16.849-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 63 00",
+        "observed_at": "2026-10-19T17:52:17.300-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 63 00": {
+    "name": "Deck B Sel Knob lifted",
+    "notes": "",
+    "raw_hex": "90 63 00",
+    "raw_bytes": [
+      144,
+      99,
+      0
+    ],
+    "address": "90 63",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:52:32",
+    "observed_at": "2026-10-19T17:52:17.300-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 63 7F",
+        "observed_at": "2026-10-19T17:52:16.849-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "90 63 00",
+        "observed_at": "2026-10-19T17:52:17.300-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "92 07 7F": {
+    "name": "Deck 2 knob Sel pressed",
+    "notes": "",
+    "raw_hex": "92 07 7F",
+    "raw_bytes": [
+      146,
+      7,
+      127
+    ],
+    "address": "92 07",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:54:26",
+    "observed_at": "2026-10-19T17:54:12.785-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "92 07 7F",
+        "observed_at": "2026-10-19T17:54:12.785-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 07 00",
+        "observed_at": "2026-10-19T17:54:12.961-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "82 07 00": {
+    "name": "Deck 2 knob Sel released",
+    "notes": "",
+    "raw_hex": "82 07 00",
+    "raw_bytes": [
+      130,
+      7,
+      0
+    ],
+    "address": "82 07",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:54:38",
+    "observed_at": "2026-10-19T17:54:12.961-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "92 07 7F",
+        "observed_at": "2026-10-19T17:54:12.785-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "82 07 00",
+        "observed_at": "2026-10-19T17:54:12.961-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "94 07 7F": {
+    "name": "Deck 4 knob Sel pressed",
+    "notes": "",
+    "raw_hex": "94 07 7F",
+    "raw_bytes": [
+      148,
+      7,
+      127
+    ],
+    "address": "94 07",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:55:10",
+    "observed_at": "2026-10-19T17:54:48.672-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "94 07 7F",
+        "observed_at": "2026-10-19T17:54:48.672-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "84 07 00",
+        "observed_at": "2026-10-19T17:54:49.247-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "84 07 00": {
+    "name": "Deck 4 knob Sel released",
+    "notes": "",
+    "raw_hex": "84 07 00",
+    "raw_bytes": [
+      132,
+      7,
+      0
+    ],
+    "address": "84 07",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:55:21",
+    "observed_at": "2026-10-19T17:54:49.247-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "94 07 7F",
+        "observed_at": "2026-10-19T17:54:48.672-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "84 07 00",
+        "observed_at": "2026-10-19T17:54:49.247-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "94 04 7F": {
+    "name": "Deck 4 Slip pressed",
+    "notes": "",
+    "raw_hex": "94 04 7F",
+    "raw_bytes": [
+      148,
+      4,
+      127
+    ],
+    "address": "94 04",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:55:45",
+    "observed_at": "2026-10-19T17:55:28.237-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "94 04 7F",
+        "observed_at": "2026-10-19T17:55:28.237-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "84 04 00",
+        "observed_at": "2026-10-19T17:55:29.138-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "84 04 00": {
+    "name": "Deck 4 Slip released",
+    "notes": "",
+    "raw_hex": "84 04 00",
+    "raw_bytes": [
+      132,
+      4,
+      0
+    ],
+    "address": "84 04",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:56:01",
+    "observed_at": "2026-10-19T17:55:29.138-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "94 04 7F",
+        "observed_at": "2026-10-19T17:55:28.237-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "84 04 00",
+        "observed_at": "2026-10-19T17:55:29.138-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "94 08 7F": {
+    "name": "Deck 4 Panel pressed",
+    "notes": "",
+    "raw_hex": "94 08 7F",
+    "raw_bytes": [
+      148,
+      8,
+      127
+    ],
+    "address": "94 08",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:56:43",
+    "observed_at": "2026-10-19T17:56:31.752-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "94 08 7F",
+        "observed_at": "2026-10-19T17:56:31.752-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "84 08 00",
+        "observed_at": "2026-10-19T17:56:32.052-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "84 08 00": {
+    "name": "Deck 4 Panel released",
+    "notes": "",
+    "raw_hex": "84 08 00",
+    "raw_bytes": [
+      132,
+      8,
+      0
+    ],
+    "address": "84 08",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:56:54",
+    "observed_at": "2026-10-19T17:56:32.052-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "94 08 7F",
+        "observed_at": "2026-10-19T17:56:31.752-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "84 08 00",
+        "observed_at": "2026-10-19T17:56:32.052-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "90 5C 7F": {
+    "name": "Deck B Beat Knob pressed",
+    "notes": "",
+    "raw_hex": "90 5C 7F",
+    "raw_bytes": [
+      144,
+      92,
+      127
+    ],
+    "address": "90 5C",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T17:58:14",
+    "observed_at": "2026-10-19T17:58:06.723-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 5C 7F",
+        "observed_at": "2026-10-19T17:58:06.723-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 5C 00",
+        "observed_at": "2026-10-19T17:58:07.324-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "80 5C 00": {
+    "name": "Deck B Beat Knob released",
+    "notes": "",
+    "raw_hex": "80 5C 00",
+    "raw_bytes": [
+      128,
+      92,
+      0
+    ],
+    "address": "80 5C",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T17:58:22",
+    "observed_at": "2026-10-19T17:58:07.324-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "90 5C 7F",
+        "observed_at": "2026-10-19T17:58:06.723-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "80 5C 00",
+        "observed_at": "2026-10-19T17:58:07.324-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 48 7F": {
+    "name": "Deck A Beat Knob Left",
+    "notes": "",
+    "raw_hex": "B0 48 7F",
+    "raw_bytes": [
+      176,
+      72,
+      127
+    ],
+    "address": "B0 48",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T18:00:06",
+    "observed_at": "2026-10-19T17:59:58.718-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:55.945-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:56.042-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:56.086-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:56.206-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:56.290-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:56.984-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:57.150-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:57.152-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:57.273-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:57.433-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:57.573-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:57.694-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:57.809-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:57.944-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.081-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.215-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.338-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.412-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.452-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.496-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.543-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.617-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.678-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 7F",
+        "observed_at": "2026-10-19T17:59:58.718-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 48 01": {
+    "name": "Deck A Beat Knob Right",
+    "notes": "",
+    "raw_hex": "B0 48 01",
+    "raw_bytes": [
+      176,
+      72,
+      1
+    ],
+    "address": "B0 48",
+    "value_hex": "01",
+    "value_decimal": 1,
+    "updated": "2026-10-19T18:00:18",
+    "observed_at": "2026-10-19T18:00:11.245-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:08.743-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:08.772-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:08.795-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:08.813-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:08.834-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:08.863-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:08.900-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:08.927-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:10.479-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:10.760-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:10.919-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:11.027-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:11.146-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 48 01",
+        "observed_at": "2026-10-19T18:00:11.245-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 4C 7F": {
+    "name": "Deck B Beat Knob Left",
+    "notes": "",
+    "raw_hex": "B0 4C 7F",
+    "raw_bytes": [
+      176,
+      76,
+      127
+    ],
+    "address": "B0 4C",
+    "value_hex": "7F",
+    "value_decimal": 127,
+    "updated": "2026-10-19T18:00:36",
+    "observed_at": "2026-10-19T18:00:25.439-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 4C 7F",
+        "observed_at": "2026-10-19T18:00:23.655-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 7F",
+        "observed_at": "2026-10-19T18:00:25.174-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 7F",
+        "observed_at": "2026-10-19T18:00:25.259-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 7F",
+        "observed_at": "2026-10-19T18:00:25.381-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 7F",
+        "observed_at": "2026-10-19T18:00:25.439-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 7F",
+        "observed_at": "2026-10-19T18:00:25.513-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 7F",
+        "observed_at": "2026-10-19T18:00:25.546-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 4C 01": {
+    "name": "Deck B Beat Knob Right",
+    "notes": "",
+    "raw_hex": "B0 4C 01",
+    "raw_bytes": [
+      176,
+      76,
+      1
+    ],
+    "address": "B0 4C",
+    "value_hex": "01",
+    "value_decimal": 1,
+    "updated": "2026-10-19T18:00:48",
+    "observed_at": "2026-10-19T18:00:39.884-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.776-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.799-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.813-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.827-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.838-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.852-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.866-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.884-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.900-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.917-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 4C 01",
+        "observed_at": "2026-10-19T18:00:39.933-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 61 01": {
+    "name": "Deck A D.View 1",
+    "notes": "",
+    "raw_hex": "B0 61 01",
+    "raw_bytes": [
+      176,
+      97,
+      1
+    ],
+    "address": "B0 61",
+    "value_hex": "01",
+    "value_decimal": 1,
+    "updated": "2026-10-19T18:02:41",
+    "observed_at": "2026-10-19T18:02:12.370-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 61 01",
+        "observed_at": "2026-10-19T18:02:12.370-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 61 02": {
+    "name": "Deck A D.View 2",
+    "notes": "",
+    "raw_hex": "B0 61 02",
+    "raw_bytes": [
+      176,
+      97,
+      2
+    ],
+    "address": "B0 61",
+    "value_hex": "02",
+    "value_decimal": 2,
+    "updated": "2026-10-19T18:02:57",
+    "observed_at": "2026-10-19T18:02:46.604-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 61 01",
+        "observed_at": "2026-10-19T18:02:12.370-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 61 02",
+        "observed_at": "2026-10-19T18:02:46.604-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 61 00",
+        "observed_at": "2026-10-19T18:02:47.780-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 61 00": {
+    "name": "Deck A D.View 0",
+    "notes": "",
+    "raw_hex": "B0 61 00",
+    "raw_bytes": [
+      176,
+      97,
+      0
+    ],
+    "address": "B0 61",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T18:03:03",
+    "observed_at": "2026-10-19T18:02:47.780-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 61 01",
+        "observed_at": "2026-10-19T18:02:12.370-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 61 02",
+        "observed_at": "2026-10-19T18:02:46.604-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 61 00",
+        "observed_at": "2026-10-19T18:02:47.780-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 62 00": {
+    "name": "Deck B D.View 0",
+    "notes": "",
+    "raw_hex": "B0 62 00",
+    "raw_bytes": [
+      176,
+      98,
+      0
+    ],
+    "address": "B0 62",
+    "value_hex": "00",
+    "value_decimal": 0,
+    "updated": "2026-10-19T18:03:51",
+    "observed_at": "2026-10-19T18:03:40.782-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 62 02",
+        "observed_at": "2026-10-19T18:03:40.331-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 62 00",
+        "observed_at": "2026-10-19T18:03:40.782-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 62 01",
+        "observed_at": "2026-10-19T18:03:41.257-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 62 01": {
+    "name": "Deck B D.View 1",
+    "notes": "",
+    "raw_hex": "B0 62 01",
+    "raw_bytes": [
+      176,
+      98,
+      1
+    ],
+    "address": "B0 62",
+    "value_hex": "01",
+    "value_decimal": 1,
+    "updated": "2026-10-19T18:04:07",
+    "observed_at": "2026-10-19T18:03:41.257-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 62 02",
+        "observed_at": "2026-10-19T18:03:40.331-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 62 00",
+        "observed_at": "2026-10-19T18:03:40.782-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 62 01",
+        "observed_at": "2026-10-19T18:03:41.257-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  },
+  "B0 62 02": {
+    "name": "Deck B D.View 2",
+    "notes": "",
+    "raw_hex": "B0 62 02",
+    "raw_bytes": [
+      176,
+      98,
+      2
+    ],
+    "address": "B0 62",
+    "value_hex": "02",
+    "value_decimal": 2,
+    "updated": "2026-10-19T18:04:13",
+    "observed_at": "2026-10-19T18:03:40.331-04:00",
+    "port": "in",
+    "direction": "IN",
+    "related_events": [
+      {
+        "raw_hex": "B0 62 02",
+        "observed_at": "2026-10-19T18:03:40.331-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 62 00",
+        "observed_at": "2026-10-19T18:03:40.782-04:00",
+        "port": "in",
+        "direction": "IN"
+      },
+      {
+        "raw_hex": "B0 62 01",
+        "observed_at": "2026-10-19T18:03:41.257-04:00",
+        "port": "in",
+        "direction": "IN"
+      }
+    ]
+  }
 }

@@ -1,0 +1,415 @@
+﻿direction,raw_hex,name,group,evidence,notes,source
+IN,80 12 00,Deck A Beat released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 16 00,Deck B Beat released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 22 00,Channel 3 FX A released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 23 00,Channel 3 FX B released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 24 00,Channel 1 FX A released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 25 00,Channel 1 FX B released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 26 00,Channel 2 FX A released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 27 00,Channel 2 FX B released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 28 00,Channel 4 FX A released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 29 00,Channel 4 FX B released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 2A 00,Master FX A released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 2B 00,Master FX B released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 31 00,CF Contour Smooth Fade,Learned inputs,User-labeled physical NV input,switch ,learned_commands.json
+IN,80 32 00,CF Start A Off,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,80 33 00,CF Start B Off,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,80 40 00,Cue Split Off,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 5B 00,Deck A Beat Knob released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,80 5C 00,Deck B Beat Knob released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,81 04 00,Deck 1 Slip released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,81 07 00,Deck 1 knob Sel released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,81 08 00,Deck 1 Panel released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,82 04 00,Deck 2 Slip released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,82 07 00,Deck 2 knob Sel released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,82 08 00,Deck 2 Panel released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,83 04 00,Deck 3 Slip released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,83 07 00,Deck 3 Knob Sel released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,83 08 00,Deck 3 Panel released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,84 04 00,Deck 4 Slip released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,84 07 00,Deck 4 knob Sel released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,84 08 00,Deck 4 Panel released,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 12 7F,Deck A Beat pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 16 7F,Deck B Beat pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 22 7F,Channel 3 FX A pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 23 7F,Channel 3 FX B pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 24 7F,Channel 1 FX A pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 25 7F,Channel 1 FX B pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 26 7F,Channel 2 FX A pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 27 7F,Channel 2 FX B pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 28 7F,Channel 4 FX A pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 29 7F,Channel 4 FX B pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 2A 7F,Master FX A pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 2B 7F,Master FX B pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 2D 00,PFL Channel 3 Off,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 2D 01,PFL Channel 3 A,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 2D 02,PFL Channel 3 B,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 2E 00,PFL Channel 1 Off,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 2E 01,PFL Channel 1 A,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 2E 02,PFL Channel 1 B,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 2F 00,PFL Channel 2 Off,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 2F 01,PFL Channel 2 A,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 2F 02,PFL Channel 2 B,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 30 00,PFL Channel 4 Off,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 30 01,PFL Channel 4 A,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 30 02,PFL Channel 4 B,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 31 7F,CF Contour Hard Cut,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 32 7F,CF Start A On,Learned inputs,User-labeled physical NV input,switch,learned_commands.json
+IN,90 33 7F,CF Start B On,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 40 7F,Cue Split On,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 41 00,Channel 3 Low lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 41 7F,Channel 3 Low touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 42 00,Channel 3 Mid lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 42 7F,Channel 3 Mid touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 43 00,Channel 3 High lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 43 7F,Channel 3 High touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 44 00,Channel 3 Trim lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 44 7F,Channel 3 Trim touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 45 00,Channel 1 Low lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 45 7F,Channel 1 Low touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 46 00,Channel 1 Mid lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 46 7F,Channel 1 Mid touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 47 00,Channel 1 High lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 47 7F,Channel 1 High touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 48 00,Channel 1 Trim lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 48 7F,Channel 1 Trim touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 49 00,Channel 2 Low lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 49 7F,Channel 2 Low touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4A 00,Channel 2 Mid lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4A 7F,Channel 2 Mid touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4B 00,Channel 2 High lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4B 7F,Channel 2 High touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4C 00,Channel 2 Trim lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4C 7F,Channel 2 Trim touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4D 00,Channel 4 Low lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4D 7F,Channel 4 Low touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4E 00,Channel 4 Mid lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4E 7F,Channel 4 Mid touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4F 00,Channel 4 High lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 4F 7F,Channel 4 High touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 50 00,Channel 4 Trim lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 50 7F,Channel 4 Trim touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 51 00,Deck A FX1 lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 51 7F,Deck A FX1 touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 52 00,Deck A FX2 lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 52 7F,Deck A FX2 touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 53 00,Deck A FX3 lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 53 7F,Deck A FX3 touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 54 00,Deck A Beat Knob lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 54 7F,Deck A Beat Knob touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 55 00,Deck B FX1 lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 55 7F,Deck B FX1 touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 56 00,Deck B FX2 lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 56 7F,Deck B FX2 touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 57 00,Deck B FX3 lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 57 7F,Deck B FX3 touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 58 00,Deck B Beat Knob lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 58 7F,Deck B Beat Knob touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 5B 7F,Deck A Beat Knob pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 5C 7F,Deck B Beat Knob pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 5E 00,Channel 3 Filter lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 5E 7F,Channel 3 Filter touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 5F 00,Channel 1 Filter lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 5F 7F,Channel 1 Filter touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 60 00,Channel 2 Filter lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 60 7F,Channel 2 Filter touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 61 00,Channel 4 Filter lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 61 7F,Channel 4 Filter touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 62 00,Deck A Sel Knob lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 62 7F,Deck A Sel Knob touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 63 00,Deck B Sel Knob lifted,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,90 63 7F,Deck B Sel Knob touched,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,91 04 7F,Deck 1 Slip pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,91 07 7F,Deck 1 knob Sel pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,91 08 7F,Deck 1 Panel pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,92 04 7F,Deck 2 Slip pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,92 07 7F,Deck 2 knob Sel pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,92 08 7F,Deck 2 Panel pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,93 04 7F,Deck 3 Slip pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,93 07 7F,Deck 3 Knob Sel pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,93 08 7F,Deck 3 Panel pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,94 04 7F,Deck 4 Slip pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,94 07 7F,Deck 4 knob Sel pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,94 08 7F,Deck 4 Panel pressed,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 48 01,Deck A Beat Knob Right,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 48 7F,Deck A Beat Knob Left,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 4C 01,Deck B Beat Knob Right,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 4C 7F,Deck B Beat Knob Left,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 61 00,Deck A D.View 0,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 61 01,Deck A D.View 1,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 61 02,Deck A D.View 2,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 62 00,Deck B D.View 0,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 62 01,Deck B D.View 1,Learned inputs,User-labeled physical NV input,,learned_commands.json
+IN,B0 62 02,Deck B D.View 2,Learned inputs,User-labeled physical NV input,,learned_commands.json
+OUT,90 0F 00,Left FX 1 OFF,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 0F 7F,Left FX 1 ON,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 10 00,Left FX 2 OFF,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 10 7F,Left FX 2 ON,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 11 00,Left FX 3 OFF,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 11 7F,Left FX 3 ON,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 13 00,Right FX 1 OFF,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 13 7F,Right FX 1 ON,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 14 00,Right FX 2 OFF,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 14 7F,Right FX 2 ON,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 15 00,Right FX 3 OFF,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 15 7F,Right FX 3 ON,FX slots,Mixxx + captured OUT,,LED mappings
+OUT,90 35 00,Channel 1 headphone cue OFF,PFL / headphones,Mixxx + captured OUT,,LED mappings
+OUT,90 35 7F,Channel 1 headphone cue ON,PFL / headphones,Mixxx + captured OUT,,LED mappings
+OUT,90 36 00,Channel 2 headphone cue OFF,PFL / headphones,Mixxx + captured OUT,,LED mappings
+OUT,90 36 7F,Channel 2 headphone cue ON,PFL / headphones,Mixxx + captured OUT,,LED mappings
+OUT,90 34 00,Channel 3 headphone cue OFF,PFL / headphones,Mixxx + captured OUT,,LED mappings
+OUT,90 34 7F,Channel 3 headphone cue ON,PFL / headphones,Mixxx + captured OUT,,LED mappings
+OUT,90 37 00,Channel 4 headphone cue OFF,PFL / headphones,Mixxx + captured OUT,,LED mappings
+OUT,90 37 7F,Channel 4 headphone cue ON,PFL / headphones,Mixxx + captured OUT,,LED mappings
+OUT,90 24 00,Channel 1 FX A OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 24 7F,Channel 1 FX A ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 25 00,Channel 1 FX B OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 25 7F,Channel 1 FX B ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 26 00,Channel 2 FX A OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 26 7F,Channel 2 FX A ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 27 00,Channel 2 FX B OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 27 7F,Channel 2 FX B ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 22 00,Channel 3 FX A OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 22 7F,Channel 3 FX A ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 23 00,Channel 3 FX B OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 23 7F,Channel 3 FX B ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 28 00,Channel 4 FX A OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 28 7F,Channel 4 FX A ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 29 00,Channel 4 FX B OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 29 7F,Channel 4 FX B ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 2A 00,Master FX A OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 2A 7F,Master FX A ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 2B 00,Master FX B OFF,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 2B 7F,Master FX B ON,FX assignment,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 59 00,Touch mode OFF,Mode lamps,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 59 7F,Touch mode ON,Mode lamps,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 5A 00,Filter / Roll mode OFF,Mode lamps,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 5A 7F,Filter / Roll mode ON,Mode lamps,New LED test1 capture [captured controller OUT],,LED mappings
+OUT,90 12 00,Left Beat LED OFF,Beat lamps,User reports ON=7F; OFF=00 was captured; different from Beatkeeper meter [captured controller OUT],,LED mappings
+OUT,90 12 7F,Left Beat LED ON,Beat lamps,User reports ON=7F; OFF=00 was captured; different from Beatkeeper meter [captured controller OUT],,LED mappings
+OUT,90 16 00,Right Beat LED OFF,Beat lamps,User reports ON=7F; OFF=00 was captured; different from Beatkeeper meter [captured controller OUT],,LED mappings
+OUT,90 16 7F,Right Beat LED ON,Beat lamps,User reports ON=7F; OFF=00 was captured; different from Beatkeeper meter [captured controller OUT],,LED mappings
+OUT,B0 47 00,Beatkeeper OFF,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 01,Beatkeeper left side; position 1/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 02,Beatkeeper left side; position 2/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 03,Beatkeeper left side; position 3/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 04,Beatkeeper left side; position 4/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 05,Beatkeeper left side; position 5/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 06,Beatkeeper center white (BPM matched),Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 07,Beatkeeper right side; position 7/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 08,Beatkeeper right side; position 8/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 09,Beatkeeper right side; position 9/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 0A,Beatkeeper right side; position 10/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,B0 47 0B,Beatkeeper right side; position 11/11 from left,Beatkeeper row,User verified all values 00..0B,,LED mappings
+OUT,91 0A 00,Deck 1 Slip OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 0A 7F,Deck 1 Slip ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 0B 00,Deck 1 Bleep / reverse OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 0B 7F,Deck 1 Bleep / reverse ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 0C 00,Deck 1 Vinyl / scratch mode OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 0C 7F,Deck 1 Vinyl / scratch mode ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 10 00,Deck 1 Pitch bend − OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 10 7F,Deck 1 Pitch bend − ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 11 00,Deck 1 Pitch bend + OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 11 7F,Deck 1 Pitch bend + ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1A 00,Deck 1 Hot Cue pad mode OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1A 7F,Deck 1 Hot Cue pad mode ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1B 00,Deck 1 Roll pad mode OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1B 7F,Deck 1 Roll pad mode ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1C 00,Deck 1 Loop pad mode OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1C 7F,Deck 1 Loop pad mode ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1D 00,Deck 1 Sampler pad mode OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1D 7F,Deck 1 Sampler pad mode ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1E 00,Deck 1 Slicer pad mode OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1E 7F,Deck 1 Slicer pad mode ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1F 00,Deck 1 Sync OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 1F 7F,Deck 1 Sync ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 20 00,Deck 1 Cue OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 20 7F,Deck 1 Cue ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 21 00,Deck 1 Play OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 21 7F,Deck 1 Play ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 51 00,Deck 1 Pitch at center OFF,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 51 7F,Deck 1 Pitch at center ON,Deck 1,Mixxx + captured OUT,,LED mappings
+OUT,91 47 00,Deck 1 Pad 1 RGB code OFF,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 47 0C,Deck 1 Pad 1 RGB code ON,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 48 00,Deck 1 Pad 2 RGB code OFF,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 48 0C,Deck 1 Pad 2 RGB code ON,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 49 00,Deck 1 Pad 3 RGB code OFF,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 49 0C,Deck 1 Pad 3 RGB code ON,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4A 00,Deck 1 Pad 4 RGB code OFF,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4A 0C,Deck 1 Pad 4 RGB code ON,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4B 00,Deck 1 Pad 5 RGB code OFF,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4B 0C,Deck 1 Pad 5 RGB code ON,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4C 00,Deck 1 Pad 6 RGB code OFF,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4C 0C,Deck 1 Pad 6 RGB code ON,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4D 00,Deck 1 Pad 7 RGB code OFF,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4D 0C,Deck 1 Pad 7 RGB code ON,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4E 00,Deck 1 Pad 8 RGB code OFF,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,91 4E 0C,Deck 1 Pad 8 RGB code ON,Deck 1 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 0A 00,Deck 2 Slip OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 0A 7F,Deck 2 Slip ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 0B 00,Deck 2 Bleep / reverse OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 0B 7F,Deck 2 Bleep / reverse ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 0C 00,Deck 2 Vinyl / scratch mode OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 0C 7F,Deck 2 Vinyl / scratch mode ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 10 00,Deck 2 Pitch bend − OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 10 7F,Deck 2 Pitch bend − ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 11 00,Deck 2 Pitch bend + OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 11 7F,Deck 2 Pitch bend + ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1A 00,Deck 2 Hot Cue pad mode OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1A 7F,Deck 2 Hot Cue pad mode ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1B 00,Deck 2 Roll pad mode OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1B 7F,Deck 2 Roll pad mode ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1C 00,Deck 2 Loop pad mode OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1C 7F,Deck 2 Loop pad mode ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1D 00,Deck 2 Sampler pad mode OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1D 7F,Deck 2 Sampler pad mode ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1E 00,Deck 2 Slicer pad mode OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1E 7F,Deck 2 Slicer pad mode ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1F 00,Deck 2 Sync OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 1F 7F,Deck 2 Sync ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 20 00,Deck 2 Cue OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 20 7F,Deck 2 Cue ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 21 00,Deck 2 Play OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 21 7F,Deck 2 Play ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 51 00,Deck 2 Pitch at center OFF,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 51 7F,Deck 2 Pitch at center ON,Deck 2,Mixxx + captured OUT,,LED mappings
+OUT,92 47 00,Deck 2 Pad 1 RGB code OFF,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 47 0C,Deck 2 Pad 1 RGB code ON,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 48 00,Deck 2 Pad 2 RGB code OFF,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 48 0C,Deck 2 Pad 2 RGB code ON,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 49 00,Deck 2 Pad 3 RGB code OFF,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 49 0C,Deck 2 Pad 3 RGB code ON,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4A 00,Deck 2 Pad 4 RGB code OFF,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4A 0C,Deck 2 Pad 4 RGB code ON,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4B 00,Deck 2 Pad 5 RGB code OFF,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4B 0C,Deck 2 Pad 5 RGB code ON,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4C 00,Deck 2 Pad 6 RGB code OFF,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4C 0C,Deck 2 Pad 6 RGB code ON,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4D 00,Deck 2 Pad 7 RGB code OFF,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4D 0C,Deck 2 Pad 7 RGB code ON,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4E 00,Deck 2 Pad 8 RGB code OFF,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,92 4E 0C,Deck 2 Pad 8 RGB code ON,Deck 2 pads,Existing Mixxx mapping; not in LED test1,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 0A 00,Deck 3 Slip OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 0A 7F,Deck 3 Slip ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 0B 00,Deck 3 Bleep / reverse OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 0B 7F,Deck 3 Bleep / reverse ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 0C 00,Deck 3 Vinyl / scratch mode OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 0C 7F,Deck 3 Vinyl / scratch mode ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 10 00,Deck 3 Pitch bend − OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 10 7F,Deck 3 Pitch bend − ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 11 00,Deck 3 Pitch bend + OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 11 7F,Deck 3 Pitch bend + ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1A 00,Deck 3 Hot Cue pad mode OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1A 7F,Deck 3 Hot Cue pad mode ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1B 00,Deck 3 Roll pad mode OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1B 7F,Deck 3 Roll pad mode ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1C 00,Deck 3 Loop pad mode OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1C 7F,Deck 3 Loop pad mode ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1D 00,Deck 3 Sampler pad mode OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1D 7F,Deck 3 Sampler pad mode ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1E 00,Deck 3 Slicer pad mode OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1E 7F,Deck 3 Slicer pad mode ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1F 00,Deck 3 Sync OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 1F 7F,Deck 3 Sync ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 20 00,Deck 3 Cue OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 20 7F,Deck 3 Cue ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 21 00,Deck 3 Play OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 21 7F,Deck 3 Play ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 51 00,Deck 3 Pitch at center OFF,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 51 7F,Deck 3 Pitch at center ON,Deck 3,Mixxx + captured OUT,,LED mappings
+OUT,93 47 00,Deck 3 Pad 1 RGB code OFF,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 47 0C,Deck 3 Pad 1 RGB code ON,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 48 00,Deck 3 Pad 2 RGB code OFF,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 48 0C,Deck 3 Pad 2 RGB code ON,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 49 00,Deck 3 Pad 3 RGB code OFF,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 49 0C,Deck 3 Pad 3 RGB code ON,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4A 00,Deck 3 Pad 4 RGB code OFF,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4A 0C,Deck 3 Pad 4 RGB code ON,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4B 00,Deck 3 Pad 5 RGB code OFF,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4B 0C,Deck 3 Pad 5 RGB code ON,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4C 00,Deck 3 Pad 6 RGB code OFF,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4C 0C,Deck 3 Pad 6 RGB code ON,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4D 00,Deck 3 Pad 7 RGB code OFF,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4D 0C,Deck 3 Pad 7 RGB code ON,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4E 00,Deck 3 Pad 8 RGB code OFF,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,93 4E 0C,Deck 3 Pad 8 RGB code ON,Deck 3 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 0A 00,Deck 4 Slip OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 0A 7F,Deck 4 Slip ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 0B 00,Deck 4 Bleep / reverse OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 0B 7F,Deck 4 Bleep / reverse ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 0C 00,Deck 4 Vinyl / scratch mode OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 0C 7F,Deck 4 Vinyl / scratch mode ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 10 00,Deck 4 Pitch bend − OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 10 7F,Deck 4 Pitch bend − ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 11 00,Deck 4 Pitch bend + OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 11 7F,Deck 4 Pitch bend + ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1A 00,Deck 4 Hot Cue pad mode OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1A 7F,Deck 4 Hot Cue pad mode ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1B 00,Deck 4 Roll pad mode OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1B 7F,Deck 4 Roll pad mode ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1C 00,Deck 4 Loop pad mode OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1C 7F,Deck 4 Loop pad mode ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1D 00,Deck 4 Sampler pad mode OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1D 7F,Deck 4 Sampler pad mode ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1E 00,Deck 4 Slicer pad mode OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1E 7F,Deck 4 Slicer pad mode ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1F 00,Deck 4 Sync OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 1F 7F,Deck 4 Sync ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 20 00,Deck 4 Cue OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 20 7F,Deck 4 Cue ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 21 00,Deck 4 Play OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 21 7F,Deck 4 Play ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 51 00,Deck 4 Pitch at center OFF,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 51 7F,Deck 4 Pitch at center ON,Deck 4,Mixxx + captured OUT,,LED mappings
+OUT,94 47 00,Deck 4 Pad 1 RGB code OFF,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 47 0C,Deck 4 Pad 1 RGB code ON,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 48 00,Deck 4 Pad 2 RGB code OFF,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 48 0C,Deck 4 Pad 2 RGB code ON,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 49 00,Deck 4 Pad 3 RGB code OFF,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 49 0C,Deck 4 Pad 3 RGB code ON,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4A 00,Deck 4 Pad 4 RGB code OFF,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4A 0C,Deck 4 Pad 4 RGB code ON,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4B 00,Deck 4 Pad 5 RGB code OFF,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4B 0C,Deck 4 Pad 5 RGB code ON,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4C 00,Deck 4 Pad 6 RGB code OFF,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4C 0C,Deck 4 Pad 6 RGB code ON,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4D 00,Deck 4 Pad 7 RGB code OFF,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4D 0C,Deck 4 Pad 7 RGB code ON,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4E 00,Deck 4 Pad 8 RGB code OFF,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,94 4E 0C,Deck 4 Pad 8 RGB code ON,Deck 4 pads,Mixxx + captured OUT,RGB pad uses captured palette code rather than 7F,LED mappings
+OUT,B0 4A 00,Deck 3 (outer left) VU level 0,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4A 01,Deck 3 (outer left) VU level 1,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4A 02,Deck 3 (outer left) VU level 2,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4A 03,Deck 3 (outer left) VU level 3,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4A 04,Deck 3 (outer left) VU level 4,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4A 05,Deck 3 (outer left) VU level 5,Six VU meters,Mapping-derived; physical confirmation pending,Level 5/red remains hardware candidate,VU mappings
+OUT,B0 4B 00,Deck 1 (inner left) VU level 0,Six VU meters,USB capture: values 0..4,,VU mappings
+OUT,B0 4B 01,Deck 1 (inner left) VU level 1,Six VU meters,USB capture: values 0..4,,VU mappings
+OUT,B0 4B 02,Deck 1 (inner left) VU level 2,Six VU meters,USB capture: values 0..4,,VU mappings
+OUT,B0 4B 03,Deck 1 (inner left) VU level 3,Six VU meters,USB capture: values 0..4,,VU mappings
+OUT,B0 4B 04,Deck 1 (inner left) VU level 4,Six VU meters,USB capture: values 0..4,,VU mappings
+OUT,B0 4B 05,Deck 1 (inner left) VU level 5,Six VU meters,USB capture: values 0..4,Level 5/red remains hardware candidate,VU mappings
+OUT,B0 4C 00,Deck 2 (inner right) VU level 0,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4C 01,Deck 2 (inner right) VU level 1,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4C 02,Deck 2 (inner right) VU level 2,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4C 03,Deck 2 (inner right) VU level 3,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4C 04,Deck 2 (inner right) VU level 4,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4C 05,Deck 2 (inner right) VU level 5,Six VU meters,Mapping-derived; physical confirmation pending,Level 5/red remains hardware candidate,VU mappings
+OUT,B0 4D 00,Deck 4 (outer right) VU level 0,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4D 01,Deck 4 (outer right) VU level 1,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4D 02,Deck 4 (outer right) VU level 2,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4D 03,Deck 4 (outer right) VU level 3,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4D 04,Deck 4 (outer right) VU level 4,Six VU meters,Mapping-derived; physical confirmation pending,,VU mappings
+OUT,B0 4D 05,Deck 4 (outer right) VU level 5,Six VU meters,Mapping-derived; physical confirmation pending,Level 5/red remains hardware candidate,VU mappings
+OUT,B0 48 00,Master Left VU level 0,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 48 01,Master Left VU level 1,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 48 02,Master Left VU level 2,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 48 03,Master Left VU level 3,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 48 04,Master Left VU level 4,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 48 05,Master Left VU level 5,Six VU meters,USB capture: values 0..3,Level 5/red remains hardware candidate,VU mappings
+OUT,B0 49 00,Master Right VU level 0,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 49 01,Master Right VU level 1,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 49 02,Master Right VU level 2,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 49 03,Master Right VU level 3,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 49 04,Master Right VU level 4,Six VU meters,USB capture: values 0..3,,VU mappings
+OUT,B0 49 05,Master Right VU level 5,Six VU meters,USB capture: values 0..3,Level 5/red remains hardware candidate,VU mappings

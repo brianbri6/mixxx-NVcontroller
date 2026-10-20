@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-2.0-only
- * Original Numark NV controls test v0.5.7 for BiteDJ / Mixxx 2.5.
+ * Original Numark NV controls test v0.5.8 for BiteDJ / Mixxx 2.5.
  * MIDI addresses: Hidetsugu Takahashi's Numark-NV preset, revision
  * 6e999daaf62322e351169b364f071dfb1df4e4c1, and NumarkNVVDJ.pcapng.
  * This script replaces the older preset's broken/undefined handlers.
@@ -152,7 +152,7 @@ BiteDJNV.cc = {
 };
 // Original-NV bank addresses are pinned in reference/nv; colors/meters in
 // docs/control-feedback-evidence.json. Palette codes are not RGB triplets.
-BiteDJNV.padPalette = [0, 3, 6, 12, 21, 48, 52];
+BiteDJNV.padPalette = [0, 3, 4, 6, 12, 16, 21, 48, 52];
 BiteDJNV.padDefaults = [12, 52, 48, 21, 6, 3, 52, 21];
 BiteDJNV.padColors = BiteDJNV.padDefaults.slice();
 BiteDJNV.fxPressed = {};
@@ -183,7 +183,7 @@ BiteDJNV.fxButton = function(channel, control, value, status) {
         engine.setValue(group, 'enabled', enable ? 1 : 0);
         if (enable) {
             engine.setValue(target.unit, 'enabled', 1);
-            engine.setValue(target.unit, 'group_[Channel' + deck + ']_enable', 1);
+            BiteDJNV.ensureFxRoute(target.unit, deck);
         }
         // Preserve wet/dry and existing routes; Shift + first knob sets wet/dry.
     }
@@ -281,6 +281,9 @@ BiteDJNV.releaseDeck = function(d) {
     if (engine.isScratching(d)) { engine.scratchDisable(d, true); }
     BiteDJNV.touchStats[d - 1] = null;
     BiteDJNV.shift[d - 1] = false;
+    delete BiteDJNV.learnedDown[d + ':4'];
+    delete BiteDJNV.learnedDown[d + ':7'];
+    BiteDJNV.updateTransportLEDs(d);
 };
 BiteDJNV.selectDeck = function(d) {
     // Infer a layer from existing deck-channel traffic; no guessed button IDs.
@@ -292,6 +295,7 @@ BiteDJNV.selectDeck = function(d) {
     BiteDJNV.jogCounters[d - 1] = { low: null, previous: null };
     delete BiteDJNV.bytes['p' + d];
     BiteDJNV.updatePads(d, true);
+    BiteDJNV.updateBeatkeeper(true);
 };
 BiteDJNV.relative = function(value) {
     // Browse remains a relative encoder. The platter uses jogCounters instead.
@@ -304,6 +308,8 @@ BiteDJNV.highres = function(id, value, lsb) {
     return (128 * b.msb + b.lsb) / 16383;
 };
 BiteDJNV.mixer = function(channel, control, value, status, group) {
+    if (control === 0x12) { engine.setParameter('[Main]', 'headMix', value / 127); return; }
+    if (control === 0x32) { return; }
     var low = control >= 0x27 && control <= 0x3c;
     var cc = low ? control - 0x20 : control;
     var target = BiteDJNV.cc[cc];
@@ -390,12 +396,12 @@ BiteDJNV.button = function(channel, control, value, status, group) {
     if (control === 0x0b) {
         if (!down) {
             BiteDJNV.hold('reverse' + d, group, 'reverseroll', false);
-            BiteDJNV.sendLED(0x90 + d, 0x0b, engine.getValue(group, 'reverse') ? 127 : 0);
+            BiteDJNV.updateTransportLEDs(d);
             return;
         }
         if (shift) { if (down) { BiteDJNV.toggle(group, 'reverse'); } }
         else { BiteDJNV.hold('reverse' + d, group, 'reverseroll', true); }
-        BiteDJNV.sendLED(0x90 + d, 0x0b, 127);
+        BiteDJNV.updateTransportLEDs(d);
         return;
     }
     if (control === 0x10 || control === 0x11) {
@@ -685,12 +691,18 @@ BiteDJNV.learnedNames = {
 BiteDJNV.fxAssignmentNotes = [[0x24,0x25],[0x26,0x27],[0x22,0x23],[0x28,0x29]];
 BiteDJNV.nvView = [-1,-1];
 BiteDJNV.learnedSeen = {};
+BiteDJNV.learnedDown = {};
+BiteDJNV.inputState = {};
+BiteDJNV.fxRouteExplicit = {};
 BiteDJNV.updateFxAssignmentLEDs = function() {
     BiteDJNV.fxAssignmentNotes.forEach(function(notes,i) {
         var key = 'group_[Channel' + (i+1) + ']_enable';
         [1,2].forEach(function(unitNumber,side) {
             BiteDJNV.sendLED(0x90,notes[side], engine.getValue('[EffectRack1_EffectUnit'+unitNumber+']',key)?127:0);
         });
+    });
+    [1,2].forEach(function(n) {
+        BiteDJNV.sendLED(0x90,0x29+n,engine.getValue('[EffectRack1_EffectUnit'+n+']','group_[Main]_enable')?127:0);
     });
 };
 BiteDJNV.assignChannelFx = function(control) {
@@ -699,11 +711,11 @@ BiteDJNV.assignChannelFx = function(control) {
     var target=targets[control];
     if(!target)return;
     var key='group_[Channel'+target[0]+']_enable',n=target[1];
-    var unit='[EffectRack1_EffectUnit'+n+']',other='[EffectRack1_EffectUnit'+(3-n)+']';
+    var unit='[EffectRack1_EffectUnit'+n+']';
+    BiteDJNV.fxRouteExplicit[unit] = true;
     var enable=!engine.getValue(unit,key);
     engine.setValue(unit,key,enable?1:0);
     if(enable) {
-        engine.setValue(other,key,0);
         engine.setValue(unit,'enabled',1);
     }
     BiteDJNV.updateFxAssignmentLEDs();
@@ -713,25 +725,50 @@ BiteDJNV.testDiscoveredLED = function(number,on) {
     if(safe.indexOf(number)<0)throw new Error('Unverified LED address');
     BiteDJNV.sendLED(0x90,number,on?127:0,true);
 };
-// B0 47 01 and B0 62 02 remain read-only; LCD USB function is separate.
-// Master FX A/B and hardware CF/PFL switches are named, not assigned guessed audio behavior.
+// AI-generated integration notes: Direction and exact values are required.
+// Unassigned sensors/view states remain observations. End AI-generated notes.
+BiteDJNV.ensureFxRoute = function(unit, deck) {
+    var routed = engine.getValue(unit, 'group_[Main]_enable');
+    for (var d=1; d<=4; d++) { routed = routed || engine.getValue(unit, 'group_[Channel'+d+']_enable'); }
+    if (!routed && !BiteDJNV.fxRouteExplicit[unit]) {
+        engine.setValue(unit, 'group_[Channel'+deck+']_enable', 1);
+    }
+};
+BiteDJNV.updateTransportLEDs = function(deck) {
+    var group='[Channel'+deck+']';
+    BiteDJNV.sendLED(0x90+deck,0x0b,(engine.getValue(group,'reverse') || engine.getValue(group,'reverseroll'))?127:0);
+    [0x10,0x11].forEach(function(note) {
+        BiteDJNV.sendLED(0x90+deck,note,BiteDJNV.holds['bend'+deck+':'+note]?127:0);
+    });
+};
 BiteDJNV.handleLearnedInput = function(channel,control,value,status,group) {
     var raw=[status,control,value].map(function(x){return ('0'+x.toString(16)).slice(-2).toUpperCase();}).join(' ');
     var label=BiteDJNV.learnedNames[raw];
     if(!label)return false;
     var count=BiteDJNV.learnedSeen[raw]||0;
-    BiteDJNV.learnedSeen[raw]=count+1;
+    BiteDJNV.learnedSeen[raw]=Math.min(8,count+1);
     if(count<8)console.info('BiteDJNV learned IN '+raw+' '+label);
-    var kind=status&0xf0,deck=status&0x0f;
-    if((kind===0x90||kind===0x80)&&deck>=1&&deck<=4&&control===0x04) {
-        BiteDJNV.button(channel,control,value,status,'[Channel'+deck+']');
+    BiteDJNV.inputState[status+':'+control]=value;
+    var kind=status&0xf0,deck=status&0x0f,down=BiteDJNV.pressed(value,status);
+    if((kind===0x90||kind===0x80)) {
+        var id=deck+':'+control;
+        if(!down) { delete BiteDJNV.learnedDown[id]; return true; }
+        if(BiteDJNV.learnedDown[id])return true;
+        BiteDJNV.learnedDown[id]=true;
+        if(deck>=1&&deck<=4&&control===0x04) {
+            BiteDJNV.button(channel,control,value,status,'[Channel'+deck+']');
+        } else if(deck>=1&&deck<=4&&control===0x07) {
+            BiteDJNV.sidebar(channel,control,value,status,'[Channel'+deck+']');
+        } else if(deck===0&&control>=0x22&&control<=0x29) {
+            BiteDJNV.assignChannelFx(control);
+        } else if(deck===0&&(control===0x2a||control===0x2b)) {
+            var unit='[EffectRack1_EffectUnit'+(control-0x29)+']';
+            BiteDJNV.fxRouteExplicit[unit]=true;
+            BiteDJNV.toggle(unit,'group_[Main]_enable');
+            if(engine.getValue(unit,'group_[Main]_enable'))engine.setValue(unit,'enabled',1);
+            BiteDJNV.updateFxAssignmentLEDs();
+        }
     }
-    if(kind===0x90&&value&&deck>=1&&deck<=4&&control===0x07) {
-        BiteDJNV.selectDeck(deck);
-        if(engine.getValue('[Library]','focused_widget')===2)BiteDJNV.pulse('[Library]','GoToItem');
-        else engine.setValue('[Library]','focused_widget',2);
-    }
-    if(status===0x90&&value&&control>=0x22&&control<=0x29)BiteDJNV.assignChannelFx(control);
     if(status===0xb0&&(control===0x61||control===0x62)&&value<=2)BiteDJNV.nvView[control-0x61]=value;
     return true;
 };
@@ -763,7 +800,7 @@ BiteDJNV.updateMeters = function() {
     // 200 ms Beatkeeper updates; sendLED caches unchanged values.
     if (BiteDJNV.meterTicks % 4 === 0) { BiteDJNV.updateBeatkeeper(); }
     if (BiteDJNV.meterTicks % 2 === 0) {
-        for (var padDeck = 1; padDeck <= 4; padDeck++) { BiteDJNV.updatePads(padDeck); }
+        for (var padDeck = 1; padDeck <= 4; padDeck++) { BiteDJNV.updatePads(padDeck); BiteDJNV.updateTransportLEDs(padDeck); }
         BiteDJNV.updateFxLEDs();
         BiteDJNV.updateFxAssignmentLEDs();
     }
@@ -833,7 +870,7 @@ BiteDJNV.readSettings = function() {
 };
 BiteDJNV.init = function() {
     BiteDJNV.readSettings();
-    console.info('BiteDJNV controls v0.5.7: scratchSensitivity=' + BiteDJNV.scratchSensitivity +
+    console.info('BiteDJNV controls v0.5.8: scratchSensitivity=' + BiteDJNV.scratchSensitivity +
         ' jogSensitivity=' + BiteDJNV.jogSensitivity + ' vuFollowFader=' + BiteDJNV.vuFollowFader +
         ' vuSilenceThreshold=' + BiteDJNV.vuSilenceThreshold + ' vuPeakLevel=' + BiteDJNV.vuPeakLevel +
         ' vuTest=' + BiteDJNV.vuTest);
@@ -844,7 +881,8 @@ BiteDJNV.init = function() {
     BiteDJNV.meterMotion = [];
     BiteDJNV.inputDiagnostics = {};
     BiteDJNV.inputDiagnosticCount = 0;
-    BiteDJNV.learnedSeen = {}; BiteDJNV.nvView = [-1,-1];
+    BiteDJNV.learnedSeen = {}; BiteDJNV.learnedDown = {}; BiteDJNV.inputState = {};
+    BiteDJNV.fxRouteExplicit = {}; BiteDJNV.nvView = [-1,-1];
     BiteDJNV.fxPressed = {};
     BiteDJNV.bytes = {};
     BiteDJNV.holds = {};

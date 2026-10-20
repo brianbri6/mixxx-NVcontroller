@@ -1,5 +1,7 @@
 from pathlib import Path
 import unittest
+import json
+import re
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +19,21 @@ def bindings(path):
 
 
 class MappingTests(unittest.TestCase):
-    def test_diagnostics_preserve_every_existing_control_and_cannot_send_output(self):
+    def test_all_learned_inputs_have_exact_bindings_and_metadata(self):
+        learned = json.loads((ROOT/'controller/NV_learned_commands.json').read_text())
+        self.assertEqual(len(learned), 142)
+        current = bindings(ROOT/'controller/Numark-NV-BiteDJ-Test.midi.xml')
+        source = (ROOT/'controller/BiteDJ-Numark-NV.js').read_text()
+        labels = json.loads(re.search(r'BiteDJNV.learnedNames = (\{.*?\});', source, re.S)[1])
+        self.assertEqual(labels, {k:v['name'] for k,v in learned.items()})
+        for raw, record in learned.items():
+            data = bytes.fromhex(raw)
+            self.assertEqual(list(data), record['raw_bytes'])
+            self.assertIn((data[0],data[1]), current)
+        for cc in (0x48, 0x4c):
+            self.assertEqual(current[(0xb0,cc)][1], 'BiteDJNV.observeInput')
+
+    def test_diagnostics_preserve_every_existing_control(self):
         previous = bindings(ROOT/'baseline_sources/v04/sources/payload/Numark-NV-BiteDJ-Test.midi.xml')
         current = bindings(ROOT/'controller/Numark-NV-BiteDJ-Test.midi.xml')
         for address, target in previous.items():

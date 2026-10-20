@@ -12,7 +12,7 @@ from pathlib import Path
 import re
 
 NV_CONFIG = 'root/.mixxx/mixxx.cfg'
-NV_JOURNAL = 'usr/local/share/bitedj-nv-v057-backup/settings.json'
+NV_JOURNAL = 'usr/local/share/bitedj-nv-v058-backup/settings.json'
 NV_OPTIONS = 'boot/firmware/BiteDJ_NV_settings.json'
 NV_STATUS = 'tmp/bitedj-nv/settings-status.json'
 NV_MAPPING = '/usr/share/mixxx/controllers/Numark-NV-BiteDJ-Test.midi.xml'
@@ -20,9 +20,10 @@ NV_CONTROL_NAMES = ('NV Control MIDI 1', 'NV MIDI 1', 'Numark NV MIDI 1')
 NV_DISPLAY_KEYS = ('NV_Audio_MIDI_1', 'NV_Graphics_MIDI_1')
 NV_NUMBERS = {'scratchSensitivity': (0.25, 8), 'jogSensitivity': (0.05, 2),
               'vuSilenceThreshold': (0.0002, 0.1), 'vuPeakLevel': (4, 5)}
+NV_NUMBERS.update({'beatkeeperMatchPercent': (0, 2), 'beatkeeperPercentPerStep': (0.1, 5)})
 NV_NUMBERS.update({'padColor' + str(i): (0, 52) for i in range(1, 9)})
-NV_PAD_PALETTE = (0, 3, 6, 12, 21, 48, 52)
-NV_BOOLEANS = ('vuFollowFader', 'vuTest')
+NV_PAD_PALETTE = (0, 3, 4, 6, 12, 16, 21, 48, 52)
+NV_BOOLEANS = ('vuFollowFader', 'vuTest', 'beatkeeperEnabled')
 
 
 def nv_setting_group(name):
@@ -188,7 +189,7 @@ def nv_apply_settings(root=Path('/'), writer=nv_atomic_write):
         # Journal is durable first; rollback merges only owned keys and keeps later edits.
         writer(root/NV_JOURNAL, (json.dumps(state, indent=2) + '\n').encode(), 0o600)
         writer(path, updated.encode(), path.stat().st_mode & 0o777)
-    status = {'version': '0.5.7', 'options_from_boot': options,
+    status = {'version': '0.5.8', 'options_from_boot': options,
               'display_midi_enabled': {key: nv_get(updated, '[Controller]', key) for key in NV_DISPLAY_KEYS},
               'audio_routing_changed': False}
     writer(root/NV_STATUS, (json.dumps(status, indent=2) + '\n').encode())
@@ -223,7 +224,7 @@ if __name__ == '__main__':
     try:
         print('BiteDJ NV settings: ' + json.dumps(nv_apply_settings()), flush=True)
     except Exception as error:
-        status = {'version': '0.5.7', 'error': str(error), 'previous_settings_retained': True}
+        status = {'version': '0.5.8', 'error': str(error), 'previous_settings_retained': True}
         print('BiteDJ NV settings: ' + json.dumps(status), flush=True)
         try:
             nv_atomic_write(Path('/')/NV_STATUS, json.dumps(status).encode())

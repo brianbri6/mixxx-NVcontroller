@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <MixxxControllerPreset mixxxVersion="2.5.0" schemaVersion="1">
     <info>
-        <name>Numark NV (BiteDJ Pi4 Controls Test v0.5.7)</name>
+        <name>Numark NV (BiteDJ Pi4 Controls Test v0.5.8)</name>
         <author>Hidetsugu Takahashi; BiteDJ test mapping contributors</author>
         <description>Original NV: adjustable scratch rotation, VU/peak test and existing absolute platter, pitch and layer fixes. Enable only on NV Control. LCD bridge uses NV Audio/Graphics MIDI separately. See README.</description>
         <wiki>https://github.com/manzyun/mixxx</wiki>
@@ -30,7 +30,7 @@
                 <description>Send VU values 0,1,2,3,4,5,0 for one second each without changing audio. The red value 5 needs hardware confirmation.</description>
             </option>
         </group>
-        <group label="Pad palette (codes 0,3,6,12,21,48,52 only)">
+        <group label="Pad palette (codes 0,3,4,6,12,16,21,48,52 only)">
             <option variable="padColor1" type="integer" min="0" max="52" default="12" label="Pad 1 captured color code" />
             <option variable="padColor2" type="integer" min="0" max="52" default="52" label="Pad 2 captured color code" />
             <option variable="padColor3" type="integer" min="0" max="52" default="48" label="Pad 3 captured color code" />

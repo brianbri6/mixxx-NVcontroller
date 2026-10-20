@@ -1,7 +1,7 @@
 #!/bin/sh
 # Preserve the appliance wrapper's arguments, settings and CPU affinity.
 set -eu
-SLOT=/usr/local/lib/bitedj-nv-v057
+SLOT=/usr/local/lib/bitedj-nv-v058
 ORIGINAL_BIN=$1
 shift
 MODE=full

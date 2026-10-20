@@ -44,3 +44,5 @@ MIDI direction matters: e.g. `B0 48` controller IN is a Beat encoder, while `B0 
 Test (1) all four channel FX A/B pairs against real LED and FX audio routing; (2) master FX A/B LED separately; (3) Touch/Filter-Roll LEDs and possible Beat indicators; (4) Slip, Sel-center and D.VIEW across layers; (5) no unintended audio side effects. No physical test result is claimed yet.
 
 Do **not** merge this working branch to main until those hardware checks pass.
+
+AI-generated v058 correction, 2026-10-20: this is the preserved diagnostic-branch report. See NV_INTEGRATION_V058.md for the subsequent tested source integration. Channel A/B is now independent (manual specifies A and/or B), master routing is implemented, Sel uses normal/Shift mixed-folder navigation, held reverse/bend LEDs clear on layer changes, and CueBlend is single7-bit. Full142 input metadata replaces the labels-only JSON, with LF line endings. Touch/switch/Beat-divisor observations remain available without unverified audio actions. End AI-generated correction.

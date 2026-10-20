@@ -300,9 +300,9 @@ test('paused stationary decks clear a stuck meter and refresh zero, but scratchi
 
 test('unmapped diagnostics are bounded and never send MIDI or change transport', () => {
     const h = harness(), n = h.nv;
-    for (let i = 0; i < 1000; i++) n.observeInput(1, 4, 127, 0x91, '[Channel1]');
+    for (let i = 0; i < 1000; i++) n.observeInput(1, 0x7e, 127, 0x91, '[Channel1]');
     assert.equal(n.inputDiagnosticCount, 12);
-    n.observeInput(1, 4, 0, 0x91, '[Channel1]');
+    n.observeInput(1, 0x7e, 0, 0x91, '[Channel1]');
     assert.equal(n.inputDiagnosticCount, 12);
     for (let cc = 0; cc < 128; cc++) {
         for (let i = 0; i < 12; i++) n.observeInput(0, cc, 127, 0xb0, '[Master]');
@@ -378,12 +378,13 @@ test('pad colors follow cue availability, loop state and sampler playback; silen
     n.padMode(1,30,127,0x91,g); n.meterTicks=10; n.updatePads(1); assert.equal(led(),0);
 });
 test('pad palette rejects uncaptured values and refreshes deck layers with captured output only', () => {
-    const h=harness({padColor1:0,padColor2:4,padColor3:'52',padColor4:Infinity}),n=h.nv; n.init();
+    const h=harness({padColor1:0,padColor2:5,padColor3:'52',padColor4:Infinity}),n=h.nv; n.init();
     assert.deepEqual(Array.from(n.padColors),[0,52,48,21,6,3,52,21]);
     h.engine.setValue('[Channel3]','track_loaded',1); h.engine.setValue('[Channel3]','hotcue_2_enabled',1); n.selectDeck(3);
     assert.deepEqual(h.messages.filter(m=>m[0]===0x93&&m[1]===0x48).at(-1),[0x93,0x48,52]);
     const evidence=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../docs/control-feedback-evidence.json')));
-    const captured=[...new Set(evidence.records.filter(r=>r.category==='pad_palette').flatMap(r=>Object.keys(r.counts).map(Number)))].sort((a,b)=>a-b);
+    const extra=JSON.parse(fs.readFileSync(path.resolve(__dirname,'../docs/HANDOFF_EVIDENCE.json'))).pad_palette;
+    const captured=[...new Set(extra.concat(evidence.records.filter(r=>r.category==='pad_palette').flatMap(r=>Object.keys(r.counts).map(Number))))].sort((a,b)=>a-b);
     assert.deepEqual(Array.from(n.padPalette),captured);
     for(const m of h.messages.filter(m=>m[0]>=0x91&&m[0]<=0x94&&m[1]>=0x47&&m[1]<=0x4e)) assert.ok(n.padPalette.includes(m[2]));
     n.shutdown(); assert.equal(h.messages.filter(m=>m[0]===0x93&&m[1]===0x48).at(-1)[2],0);
@@ -410,6 +411,94 @@ test('browser enters sidebar leaves, returns to folders and never implicitly loa
     assert.ok(writes.some(v=>v[0]==='[Playlist]'&&v[1]==='ToggleSelectedSidebarItem'&&v[2]===1));
     n.browse(0,3,1); assert.equal(h.engine.getValue('[Library]','focused_widget'),2); assert.equal(h.engine.getValue('[Library]','MoveVertical'),1);
     h.engine.setValue('[Library]','focused_widget',0); n.browse(0,3,127); assert.equal(h.engine.getValue('[Library]','focused_widget'),3); assert.equal(h.engine.getValue('[Library]','MoveVertical'),-1);
+});
+
+test('learned Sel push uses mixed-folder navigation and Shift expansion without loading', () => {
+    const h=harness(), n=h.nv, e=h.engine, calls=[];
+    const set=e.setValue; e.setValue=(g,k,v)=>{calls.push([g,k,v]);set(g,k,v);};
+    const press=()=>n.observeInput(1,7,127,0x91,'[Channel1]');
+    const release=()=>n.observeInput(1,7,0,0x81,'[Channel1]');
+    e.setValue('[Library]','focused_widget',2); press(); press();
+    assert.equal(calls.filter(c=>c[1]==='GoToItem'&&c[2]===1).length,1);
+    release(); n.shift[0]=true; press(); release();
+    assert.ok(calls.some(c=>c[1]==='ToggleSelectedSidebarItem'&&c[2]===1));
+    e.setValue('[Library]','focused_widget',3); press(); release();
+    assert.equal(e.getValue('[Sidebar]','sidebar_visible'),1);
+    assert.equal(e.getValue('[Library]','focused_widget'),2);
+    assert.ok(!calls.some(c=>c[1]==='LoadSelectedTrack'));
+});
+
+test('learned Slip handles release, duplicate down and layer return', () => {
+    const h=harness(), n=h.nv, e=h.engine;
+    n.observeInput(1,4,127,0x91,'[Channel1]');
+    n.observeInput(1,4,127,0x91,'[Channel1]');
+    assert.equal(e.getValue('[Channel1]','slip_enabled'),1);
+    n.observeInput(1,4,0,0x81,'[Channel1]');
+    assert.equal(e.getValue('[Channel1]','slip_enabled'),1);
+    n.selectDeck(3); n.selectDeck(1);
+    n.observeInput(1,4,127,0x91,'[Channel1]');
+    assert.equal(e.getValue('[Channel1]','slip_enabled'),0);
+});
+
+test('channel and master FX A+B route independently and honor explicit unroute', () => {
+    const h=harness(), n=h.nv, e=h.engine, a='[EffectRack1_EffectUnit1]', b='[EffectRack1_EffectUnit2]';
+    e.setValue(a,'mix',.37);
+    function press(note) { n.observeInput(0,note,127,0x90,'[Master]'); n.observeInput(0,note,0,0x80,'[Master]'); }
+    press(0x24); press(0x25);
+    assert.equal(e.getValue(a,'group_[Channel1]_enable'),1);
+    assert.equal(e.getValue(b,'group_[Channel1]_enable'),1);
+    press(0x2a); press(0x2b);
+    assert.equal(e.getValue(a,'group_[Main]_enable'),1);
+    assert.equal(e.getValue(b,'group_[Main]_enable'),1);
+    press(0x24); press(0x2a);
+    n.fxButton(0,0x0f,127,0x90);
+    assert.equal(e.getValue(a,'group_[Channel1]_enable'),0);
+    assert.equal(e.getValue(a,'mix'),.37);
+    assert.ok(h.messages.some(m=>m[0]===0x90&&m[1]===0x2a&&m[2]===0));
+});
+
+test('reverse and pitch-bend feedback clears on layer change and follows toggles', () => {
+    const h=harness(), n=h.nv;
+    n.button(1,0x0b,127,0x91,'[Channel1]');
+    n.button(1,0x10,127,0x91,'[Channel1]');
+    n.selectDeck(3);
+    assert.equal(n.ledValues['145:11'],0);
+    assert.equal(n.ledValues['145:16'],0);
+    n.selectDeck(1); n.shift[0]=true;
+    n.button(1,0x0b,127,0x91,'[Channel1]');
+    n.button(1,0x0b,127,0x91,'[Channel1]');
+    assert.equal(n.ledValues['145:11'],0);
+});
+
+test('D.VIEW and Beat encoder inputs never echo unverified output commands', () => {
+    const h=harness(), n=h.nv;
+    for (let cc of [0x61,0x62]) for(let value=0;value<=2;value++)n.observeInput(0,cc,value,0xb0,'[Master]');
+    for (let cc of [0x48,0x4c]) for(let value of [1,127])n.observeInput(0,cc,value,0xb0,'[Master]');
+    assert.deepEqual(Array.from(n.nvView),[2,2]);
+    assert.equal(h.messages.length,0);
+    assert.equal(h.engine.getValue('[Main]','gain'),0);
+});
+
+test('Beatkeeper position is bounded, tempo relative, active-layer aware and cached', () => {
+    const h=harness(), n=h.nv, e=h.engine;
+    for (let d of [1,2,3]) {e.setValue('[Channel'+d+']','track_loaded',1);e.setValue('[Channel'+d+']','bpm',120);}
+    n.updateBeatkeeper(); assert.deepEqual(h.messages.at(-1),[0xb0,0x47,6]);
+    const count=h.messages.length; n.updateBeatkeeper(); assert.equal(h.messages.length,count);
+    e.setValue('[Channel3]','bpm',150); n.selectDeck(3);
+    assert.equal(n.ledValues['176:71'],1);
+    assert.equal(n.beatkeeperPosition(80,120,.1,.5),11);
+    assert.equal(n.beatkeeperPosition(NaN,120,.1,.5),0);
+    n.beatkeeperEnabled=false; n.updateBeatkeeper(); assert.equal(n.ledValues['176:71'],0);
+});
+
+test('Cue Blend uses one 7-bit value and ignores speculative fine byte', () => {
+    const h=harness();
+    for(const value of [0,64,127]) {
+        h.nv.mixer(0,0x12,value,0xb0,'[Master]');
+        assert.equal(h.engine.getValue('[Main]','headMix'),value/127);
+    }
+    h.nv.mixer(0,0x32,0,0xb0,'[Master]');
+    assert.equal(h.engine.getValue('[Main]','headMix'),1);
 });
 
 console.log(JSON.stringify({tests: passed, result: 'passed', hardware_tested: false}));

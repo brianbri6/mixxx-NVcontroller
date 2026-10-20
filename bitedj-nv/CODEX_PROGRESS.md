@@ -1,16 +1,9 @@
 # BiteDJ / original Numark NV — project progress
 
-Last updated: 2026-10-11 UTC. This file is updated at working milestones.
-
-**Current work (2026-10-11):** user confirmed the v0.5.5 SD MUSIC fix works. v0.5.6 FX buttons/knobs, captured-palette pad feedback, stereo master-meter output and browser focus navigation are implemented and software-validated: **69 Python + 26 JS tests, 4,328 LCD capture records and 37 actual-payload upgrade/recovery/rollback cases pass.** Release and complete recovery are saved; see newest milestone for receipts. New physical NV behavior still needs testing.
-
-**v0.5.5 mounting milestone:** the guarded helper and startup integration are implemented. Fourteen SD-specific tests pass, including actual launcher execution with failed mount/settings helpers in every display mode. No physical mount was attempted. The expanded upgrade matrix now passes after correcting a versioned preference journal; v0.5.5 is now delivered alongside the unchanged v054 release.
-
-**Previous delivered state (preserved baseline):** v0.5.4 FX/browser integration is built and software-validated. **54 Python + 19 JS tests pass; 4,328 captured LCD messages validate; the ARM64 executable passes the 127-file dependency audit and QEMU --version using original Pi runtime libraries.** **All 20 updater install/idempotence/rollback scenarios also pass.** v0.5.4 is now packaged from source milestone **e25398a**; the previous v0.5.3 archive stays unchanged. Both the new release and native/package recovery checkpoint have been saved.
-
-Native SHA-256: `edb43515380e9395745746abf2b09f565641792e7c8091471a423e96a000f9e7` (19,448,160 bytes). This current build replaces the unsaved historical build; it has matching native-build.json evidence. Checkpoints can retain the executable and validated updater so they do not need rebuilding after a reset.
-
-FX names/metaknob percentages and HDMI browser title/artist/BPM, heading and folders update at 5 Hz. Full waveforms, adjustable scratch gain and VU clearing are preserved. D. VIEW switching, cue/loop overlays, detailed FX indicators and artwork remain incomplete. No physical Pi/NV, live socket, GUI or audio pass is claimed.
+AI-generated current status, 2026-10-20 UTC.
+**Current milestone: v0.5.8 diagnostic + handoff integration, release archive built; publication/save underway.** Restored v057 from recovery v26 after workspace cleanup; preserved native browser/SD/audio/HDMI fixes. Imported diagnostic branch 6ef68728 and GitHub handoff from main fe7285ee6. New controller behavior and bounded display-only 60 Hz transport are implemented. Latest tests: 78 Python +33 JS pass; 4,458 LCD packets validate. Native executable is byte-identical to v057 (`9083092b6908ecb54ef8fda2f89e8bab9c92b9352974c1996021e93d74d9f685` unstripped). Physical acceptance has not been performed.
+See the latest milestone below for package/save receipts and exact remaining steps. Earlier chronological entries are historical.
+End AI-generated current status.
 
 ## Goal
 
@@ -660,3 +653,43 @@ git diff --check
 - Release saved successfully: libfile_27671c0941708191917df7cb39e8fc7f version0, BiteDJ_Pi4_NV_Display_Test_v0_5_7.zip, SHA ee028b53112635468dbccb4010ce5549cafa4a478398e83bba675e958c60d970, 24,650,131 bytes. Local identity metadata applied.
 - Full recovery saved successfully: libfile_5ce7b9ccc09c8191b0a53b70932cc2aa version25, source e60b123, SHA fc1625da87ea7d91543cffe18d4bf46c625c5e74332cf282a39278ee349e3eb2, 61,090,429 bytes. Local metadata applied. Contains full history, original captures/manual, fresh native executable/evidence, validated initramfs and logs.
 - Refreshing recovery once with this receipt and publishing final source/test notes to GitHub. Resolve the newest recovery version for the next replacement; 25 is the confirmed guard before this documentation refresh. No further implementation work is needed before the user's mixed-folder hardware test.
+
+
+### 2026-10-20 restoration and handoff integration
+
+AI-generated progress note.
+- Goal: original NV on Pi4 4GB; integrate diagnostic inputs and Serato/VDJ display timing findings while preserving v057 mixed-folder/SD fixes, HDMI waveform setting and audio configuration.
+- Workspace maintenance removed the previous local checkout, including unsaved controller work. Restored recovery v26/source 36724e6 and compared current GitHub main fe7285ee6 plus diagnostic branch 6ef68728. No surviving working changes were overwritten.
+- Imported branch mapping/XML/learned labels and handoff verbatim. Prior interrupted edits described in conversation are not present in the saved checkpoint and will be reconstructed explicitly.
+- Handoff confirms command05 timing as host display output, not jog input or physical LCD refresh rate. Implement fast bounded interpolation in the existing separate Python sender; leave native waveform snapshots at 20 Hz, no DSP change or native rebuild required.
+- Known gaps remain: physical D.VIEW output cycle, artwork, cue/loop overlays, master VU/color confirmation, hardware acceptance.
+- Files changed at restoration: controller JS/XML/learned labels; two evidence documents; ignore rules; this progress file.
+- Tests: historical v057 results 71 Python /26 JS /4328 captured LCD records; current integration not yet tested. Native binary/evidence recovered unchanged.
+- Attempt failures: initial filename/folder-scoped recovery searches empty; simpler title search found verified v26. Prior partial v058 work was not saved and is not claimed complete.
+- Next: controller corrections + fast transport regression tests, v058 package validation, milestone commits and durable recovery. Commands: node tests/test_controller.js; python3 -m unittest discover -s tests -v; python3 scripts/verify_captures.py; git diff --check.
+End AI-generated progress note.
+
+### v058 implementation and regression milestone — 2026-10-20
+
+AI-generated progress note.
+- Completed: separate Python command05 scheduler (target60Hz, maximum50ms playing prediction/16ms paused-motion prediction, bounded +/-4x display speed). Pause transitions, seek/loop discontinuities, track generation, unload and producer loss reset/stop prediction. Native snapshot timer stays50ms; metadata/waveform work is not moved to60Hz; no audio-thread changes.
+- Queue correction: wait for full-record token budget before beginning a tile, prioritizing new playheads; real partial SysEx still completes atomically. Same45,000 bytes/s,6,000 burst,48 records. F12 reports target cadence/ticks/discontinuities; counters mean host writes, not visible refresh.
+- Controller: retained GitHub142 exact learned inputs and all30 added releases; full input metadata preserved (line endings normalized to LF). Sel07 uses v057 open/Shift-expand path, Slip04 debounced, channel/masterFX independent A+B, explicit unroute preserved, reverse/bend LEDs follow releases/layer changes, CueBlend single7-bit. Beatkeeper settings now accepted through BOOT. Added captured pad codes4/16; no RGB/color-name guesses.
+- Captures: old4328+new130=4458 valid LCD records. Reproduced1952 command05 messages/15.80596ms median and202 command09/126.50299ms in audio capture. New LED capture resolves112 controller OUT addresses using its15e4:1005 descriptor; input/output aliases remain separate. Full414-row diagnostic catalog retained in reference/diagnostic-v015.
+- Files changed: controller JS/XML/settings/learned JSON; nvdisplay telemetry/service/queue; versioned runtime/preference/installer and build/package/checkpoint helpers; tests; INPUTS; handoff/diagnostic documentation/evidence. Native sources and browser_navigation.patch unchanged.
+- Tests: 78 Python and33 JS passing, including two moving layers at~60Hz under waveform backfill, bounded lost-producer prediction, pause/reverse/seek/loop/unload, partial-message framing, exact142 bindings, FX routing, Sel navigation, Slip and learned direction. Native source/evidence verification passes. Package58 actual-payload cases are running; not yet claiming delivered image.
+- Failed attempts retained: first watchdog retry test exposed equal-clock stale snapshots invalidating blank tiles; fixed. First full-cadence test only reached19 updates because tiles consumed partial token budgets; fixed queue admission. Old unknown-input/palette fixtures needed new known addresses/codes; an intermediate test edit had a syntax error and was corrected. Recovery searches and prior unsaved work loss noted above.
+- Still incomplete: D.VIEW outgoing3-view selection, artwork/beat/cue/loop graphics, master VU/red physical confirmation, touch-mode/FilterRoll/Beat-divisor/audio switches beyond observed labels, sustained audio/headless acceptance. Raw observations/catalog retained, not presented as completed DSP mappings. Serato encrypted DSP/stems were not extracted or ported.
+- Next: complete58 updater scenarios, immutable v0.5.8 release, publish working GitHub branch, save recovery, record receipts. Commands: node tests/test_controller.js; python3 -m unittest discover -s tests -v; python3 scripts/verify_captures.py; python3 scripts/analyze_handoff.py; sh -n runtime/launch.sh; python3 scripts/build_update.py --native-binary work/build-arm/mixxx; git diff --check; commit; python3 scripts/package_release.py; python3 scripts/checkpoint.py --with-native-build --with-package.
+End AI-generated progress note.
+
+### v058 package validation passed — 2026-10-20
+
+AI-generated validation note.
+- PASS all58 actual-payload install/idempotence/upgrade/rollback/fault cases, including nine v057 histories and write-error/power-loss recovery. All990 unrelated CPIO members retained; FAT copies agree/zero crosslinks; shell checks pass. Native stripped SHA2d176dfd90d2031bb1f14fc9ca653ecf4816a2ce20bab4dda1697d38a3e9fa23 is exactly v057.
+- Initramfs23997478 bytes; SHAa773556838485f1cca6483dbf489c2ccf8d14768f7af591c0ad3645057343dac. No native rebuild or evidence restamp.
+- Source635a35a produced immutable dist/BiteDJ_Pi4_NV_Display_Test_v0_5_8.zip:24701285 bytes, SHA12ae1a431ca7457542deb1f00b7f167f259b8a3fc98b4a03334f93fa6f54447a. All source/payload gates, ZIP CRC and manifest hashes passed. Do not overwrite this ZIP; progress inside it predates this receipt.
+- Publishing source to diagnostic working branch next; main remains unchanged until physical acceptance. Runtime code is complete for this milestone, hardware checks listed in NV_INTEGRATION_V058.md remain open.
+- Recovery now supports --github-source-ref: pins/verifies every source byte against the published GitHub commit and stores build outputs/captures, avoiding a duplicate of Git-backed source/history. Restore GITHUB_SOURCE.json first; older checkpoint format remains supported. Release ZIP includes required native/source/license material for the binary distribution.
+- Next: finish branch publication and ordered release/checkpoint save, record authoritative receipt. No further native builds or optional broad testing required.
+End AI-generated validation note.

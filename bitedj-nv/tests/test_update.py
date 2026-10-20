@@ -14,7 +14,7 @@ class UpdateTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        spec = importlib.util.spec_from_file_location('nv_update_v057', SOURCE)
+        spec = importlib.util.spec_from_file_location('nv_update_v058', SOURCE)
         self.u = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(self.u)
         self.u.COMPATIBILITY = {}

@@ -1,0 +1,113 @@
+status,number,known_mapped,classification,suggested_label,observations,value_min,value_max,example,usb_vidpid,direction
+90,0F,True,mapped,,1,0,0,90 0F 00,15E4:1005,OUT
+90,10,True,mapped,,1,0,0,90 10 00,15E4:1005,OUT
+90,11,True,mapped,,1,0,0,90 11 00,15E4:1005,OUT
+90,12,False,missing_led_feedback,Left Beat indicator (zero captured only),1,0,0,90 12 00,15E4:1005,OUT
+90,13,True,mapped,,1,0,0,90 13 00,15E4:1005,OUT
+90,14,True,mapped,,1,0,0,90 14 00,15E4:1005,OUT
+90,15,True,mapped,,1,0,0,90 15 00,15E4:1005,OUT
+90,16,False,missing_led_feedback,Right Beat indicator (zero captured only),1,0,0,90 16 00,15E4:1005,OUT
+90,22,False,missing_led_feedback,Channel 3 FX A,3,0,127,90 22 7F,15E4:1005,OUT
+90,23,False,missing_led_feedback,Channel 3 FX B,3,0,127,90 23 00,15E4:1005,OUT
+90,24,False,missing_led_feedback,Channel 1 FX A,3,0,127,90 24 7F,15E4:1005,OUT
+90,25,False,missing_led_feedback,Channel 1 FX B,3,0,127,90 25 00,15E4:1005,OUT
+90,26,False,missing_led_feedback,Channel 2 FX A,3,0,127,90 26 7F,15E4:1005,OUT
+90,27,False,missing_led_feedback,Channel 2 FX B,3,0,127,90 27 00,15E4:1005,OUT
+90,28,False,missing_led_feedback,Channel 4 FX A,3,0,127,90 28 00,15E4:1005,OUT
+90,29,False,missing_led_feedback,Channel 4 FX B,3,0,127,90 29 7F,15E4:1005,OUT
+90,2A,False,missing_led_feedback,Master FX A,3,0,127,90 2A 00,15E4:1005,OUT
+90,2B,False,missing_led_feedback,Master FX B,3,0,127,90 2B 00,15E4:1005,OUT
+90,34,True,mapped,,1,127,127,90 34 7F,15E4:1005,OUT
+90,35,True,mapped,,1,0,0,90 35 00,15E4:1005,OUT
+90,36,True,mapped,,1,0,0,90 36 00,15E4:1005,OUT
+90,37,True,mapped,,1,0,0,90 37 00,15E4:1005,OUT
+90,59,False,missing_led_feedback,Touch Mode lamp,7,0,127,90 59 00,15E4:1005,OUT
+90,5A,False,missing_led_feedback,Filter/Roll Mode lamp,7,0,127,90 5A 00,15E4:1005,OUT
+91,0A,True,mapped,,9,0,127,91 0A 00,15E4:1005,OUT
+91,0B,False,unimplemented_existing_control_LED,Bleep/Reverse feedback,7,0,127,91 0B 00,15E4:1005,OUT
+91,0C,True,mapped,,3,0,127,91 0C 7F,15E4:1005,OUT
+91,10,False,unimplemented_existing_control_LED,Pitch bend minus indicator,1,0,0,91 10 00,15E4:1005,OUT
+91,11,False,unimplemented_existing_control_LED,Pitch bend plus indicator,1,0,0,91 11 00,15E4:1005,OUT
+91,1A,True,mapped,,3,0,127,91 1A 7F,15E4:1005,OUT
+91,1B,True,mapped,,3,0,127,91 1B 00,15E4:1005,OUT
+91,1C,True,mapped,,3,0,127,91 1C 00,15E4:1005,OUT
+91,1D,True,mapped,,3,0,127,91 1D 00,15E4:1005,OUT
+91,1E,True,mapped,,3,0,127,91 1E 00,15E4:1005,OUT
+91,1F,True,mapped,,1,0,0,91 1F 00,15E4:1005,OUT
+91,20,True,mapped,,1,0,0,91 20 00,15E4:1005,OUT
+91,21,True,mapped,,1,0,0,91 21 00,15E4:1005,OUT
+91,47,True,mapped,,5,0,16,91 47 04,15E4:1005,OUT
+91,48,True,mapped,,5,0,52,91 48 04,15E4:1005,OUT
+91,49,True,mapped,,5,0,48,91 49 04,15E4:1005,OUT
+91,4A,True,mapped,,5,0,21,91 4A 04,15E4:1005,OUT
+91,4B,True,mapped,,5,0,16,91 4B 04,15E4:1005,OUT
+91,4C,True,mapped,,5,0,4,91 4C 04,15E4:1005,OUT
+91,4D,True,mapped,,5,0,4,91 4D 04,15E4:1005,OUT
+91,4E,True,mapped,,5,0,21,91 4E 04,15E4:1005,OUT
+91,51,True,mapped,,1,0,0,91 51 00,15E4:1005,OUT
+92,0A,True,mapped,,9,0,127,92 0A 00,15E4:1005,OUT
+92,0B,False,unimplemented_existing_control_LED,Bleep/Reverse feedback,7,0,127,92 0B 00,15E4:1005,OUT
+92,0C,True,mapped,,3,0,127,92 0C 7F,15E4:1005,OUT
+92,10,False,unimplemented_existing_control_LED,Pitch bend minus indicator,1,0,0,92 10 00,15E4:1005,OUT
+92,11,False,unimplemented_existing_control_LED,Pitch bend plus indicator,1,0,0,92 11 00,15E4:1005,OUT
+92,1A,True,mapped,,1,127,127,92 1A 7F,15E4:1005,OUT
+92,1B,True,mapped,,1,0,0,92 1B 00,15E4:1005,OUT
+92,1C,True,mapped,,1,0,0,92 1C 00,15E4:1005,OUT
+92,1D,True,mapped,,1,0,0,92 1D 00,15E4:1005,OUT
+92,1E,True,mapped,,1,0,0,92 1E 00,15E4:1005,OUT
+92,1F,True,mapped,,1,0,0,92 1F 00,15E4:1005,OUT
+92,20,True,mapped,,1,0,0,92 20 00,15E4:1005,OUT
+92,21,True,mapped,,1,0,0,92 21 00,15E4:1005,OUT
+92,51,True,mapped,,1,0,0,92 51 00,15E4:1005,OUT
+93,0A,True,mapped,,1,0,0,93 0A 00,15E4:1005,OUT
+93,0B,False,unimplemented_existing_control_LED,Bleep/Reverse feedback,1,0,0,93 0B 00,15E4:1005,OUT
+93,0C,True,mapped,,1,127,127,93 0C 7F,15E4:1005,OUT
+93,10,False,unimplemented_existing_control_LED,Pitch bend minus indicator,1,127,127,93 10 7F,15E4:1005,OUT
+93,11,False,unimplemented_existing_control_LED,Pitch bend plus indicator,1,0,0,93 11 00,15E4:1005,OUT
+93,1A,True,mapped,,1,127,127,93 1A 7F,15E4:1005,OUT
+93,1B,True,mapped,,1,0,0,93 1B 00,15E4:1005,OUT
+93,1C,True,mapped,,1,0,0,93 1C 00,15E4:1005,OUT
+93,1D,True,mapped,,1,0,0,93 1D 00,15E4:1005,OUT
+93,1E,True,mapped,,1,0,0,93 1E 00,15E4:1005,OUT
+93,1F,True,mapped,,1,0,0,93 1F 00,15E4:1005,OUT
+93,20,True,mapped,,1,0,0,93 20 00,15E4:1005,OUT
+93,21,True,mapped,,1,0,0,93 21 00,15E4:1005,OUT
+93,47,True,mapped,,1,12,12,93 47 0C,15E4:1005,OUT
+93,48,True,mapped,,1,52,52,93 48 34,15E4:1005,OUT
+93,49,True,mapped,,1,48,48,93 49 30,15E4:1005,OUT
+93,4A,True,mapped,,1,21,21,93 4A 15,15E4:1005,OUT
+93,4B,True,mapped,,1,6,6,93 4B 06,15E4:1005,OUT
+93,4C,True,mapped,,1,3,3,93 4C 03,15E4:1005,OUT
+93,4D,True,mapped,,1,0,0,93 4D 00,15E4:1005,OUT
+93,4E,True,mapped,,1,21,21,93 4E 15,15E4:1005,OUT
+93,51,True,mapped,,1,127,127,93 51 7F,15E4:1005,OUT
+94,0A,True,mapped,,1,0,0,94 0A 00,15E4:1005,OUT
+94,0B,False,unimplemented_existing_control_LED,Bleep/Reverse feedback,1,0,0,94 0B 00,15E4:1005,OUT
+94,0C,True,mapped,,1,127,127,94 0C 7F,15E4:1005,OUT
+94,10,False,unimplemented_existing_control_LED,Pitch bend minus indicator,1,0,0,94 10 00,15E4:1005,OUT
+94,11,False,unimplemented_existing_control_LED,Pitch bend plus indicator,1,127,127,94 11 7F,15E4:1005,OUT
+94,1A,True,mapped,,1,127,127,94 1A 7F,15E4:1005,OUT
+94,1B,True,mapped,,1,0,0,94 1B 00,15E4:1005,OUT
+94,1C,True,mapped,,1,0,0,94 1C 00,15E4:1005,OUT
+94,1D,True,mapped,,1,0,0,94 1D 00,15E4:1005,OUT
+94,1E,True,mapped,,1,0,0,94 1E 00,15E4:1005,OUT
+94,1F,True,mapped,,1,0,0,94 1F 00,15E4:1005,OUT
+94,20,True,mapped,,1,0,0,94 20 00,15E4:1005,OUT
+94,21,True,mapped,,1,0,0,94 21 00,15E4:1005,OUT
+94,47,True,mapped,,1,12,12,94 47 0C,15E4:1005,OUT
+94,48,True,mapped,,1,52,52,94 48 34,15E4:1005,OUT
+94,49,True,mapped,,1,48,48,94 49 30,15E4:1005,OUT
+94,4A,True,mapped,,1,21,21,94 4A 15,15E4:1005,OUT
+94,4B,True,mapped,,1,6,6,94 4B 06,15E4:1005,OUT
+94,4C,True,mapped,,1,3,3,94 4C 03,15E4:1005,OUT
+94,4D,True,mapped,,1,0,0,94 4D 00,15E4:1005,OUT
+94,4E,True,mapped,,1,21,21,94 4E 15,15E4:1005,OUT
+94,51,True,mapped,,1,127,127,94 51 7F,15E4:1005,OUT
+B0,47,False,unknown_or_unmapped,Unknown startup CC,1,1,1,B0 47 01,15E4:1005,OUT
+B0,48,True,mapped,,1,0,0,B0 48 00,15E4:1005,OUT
+B0,49,True,mapped,,1,0,0,B0 49 00,15E4:1005,OUT
+B0,4A,True,mapped,,1,0,0,B0 4A 00,15E4:1005,OUT
+B0,4B,True,mapped,,1,0,0,B0 4B 00,15E4:1005,OUT
+B0,4C,True,mapped,,1,0,0,B0 4C 00,15E4:1005,OUT
+B0,4D,True,mapped,,1,0,0,B0 4D 00,15E4:1005,OUT
+B0,62,False,unknown_or_unmapped,Possible display view feedback (captured once),1,2,2,B0 62 02,15E4:1005,OUT

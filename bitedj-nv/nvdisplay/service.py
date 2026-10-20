@@ -17,6 +17,7 @@ import time
 
 from . import __version__, protocol
 from .transport import AlsaOutput, OutputQueue, discover
+from .telemetry import TransportTelemetry
 
 SOCKET_PATH = '/tmp/bitedj-nv/state.sock'
 # All 480 columns exported by the native producer. Fill around the playhead
@@ -105,7 +106,7 @@ def validate(data):
 
 
 class Screen:
-    def __init__(self, side, output, now, mode='info', browser_view='preserve'):
+    def __init__(self, side, output, now, mode='info', browser_view='preserve', transport_hz=60):
         self.side, self.mode = side, mode
         self.numbers = (1, 3) if side == 'left' else (2, 4)
         self.queue = OutputQueue(output, now)
@@ -123,18 +124,19 @@ class Screen:
         self.aux_records = []
         self.aux_status = {}
         self.next_auxiliary = now
+        self.telemetry = TransportTelemetry(transport_hz)
         for i, packet in enumerate(protocol.startup(side)):
-            self.queue.put(('startup', i), packet, now, ttl=10, priority=4)
+            self.queue.put(('startup', i), packet, now, ttl=10, priority=5)
         visibility = protocol.browser_visibility(side, browser_view)
         if visibility is not None:
-            self.queue.put(('startup', 'browser'), visibility, now, ttl=10, priority=4)
+            self.queue.put(('startup', 'browser'), visibility, now, ttl=10, priority=5)
 
     def record(self, deck, kind, index, raw, now, ttl=2, priority=None, packet=None):
         key = (deck, kind, index)
         if packet is None:
             packet = protocol.encode(self.side, kind, raw)
         if priority is None:
-            priority = 3 if kind in (1, 4, 5) else 0
+            priority = 4 if kind == 5 else (3 if kind in (1, 4) else 0)
         if self.queue.pending_data(key) == packet:
             self.queue.prioritize(key, priority)
             return False
@@ -170,23 +172,15 @@ class Screen:
         generation = (deck['generation'], deck['loaded'])
         changed = previous is None or previous['generation'] != generation
         position = deck.get('position_ms', 0) if deck['loaded'] else 0
-        speed = 0
+        discontinuity = self.telemetry.observe(deck, clock, now)
         if changed:
             self.invalidate(number)
-        elif previous is not None:
-            dt = clock - previous['clock']
-            delta = position - previous['position']
-            if abs(delta) > 750:
-                self.invalidate(number, detail_only=True)
-            elif 0 < dt < 500:
-                # A paused deck still moves while scratching or nudging.
-                speed = delta / dt
+        elif discontinuity:
+            self.invalidate(number, detail_only=True)
         if not deck['loaded']:
             deck = {'deck': number, 'loaded': False, 'generation': deck['generation']}
         self.record(number, 1, 0, protocol.metadata(deck), now)
         self.record(number, 4, 0, protocol.numeric(deck), now)
-        # Latest playhead replaces the queued one; long queue residence is useless.
-        self.record(number, 5, 0, protocol.playhead(deck, clock, speed), now, ttl=0.15)
         if self.mode in ('overview', 'full'):
             overview = (protocol.decode_peaks(deck['overview'], 240)
                         if deck.get('overview_ready') else bytes(960))
@@ -255,6 +249,10 @@ class Screen:
                 sent[kind] += 1
         return {'sent': self.queue.sent, 'bytes': self.queue.bytes_sent,
                 'dropped': self.queue.dropped, 'stale': self.stale, 'decks': decks,
+                'transport': {'target_hz': 1 / self.telemetry.interval,
+                              'ticks': self.telemetry.ticks,
+                              'discontinuities': self.telemetry.discontinuities,
+                              'prediction_limit_ms': 50},
                 'auxiliary': {**self.aux_status, 'browser_view_test': self.browser_view,
                               'effects_sent': bool(sent[10]), 'heading_sent': bool(sent[34]),
                               'folder_rows_sent': sent[33], 'song_rows_sent': sent[36]}}
@@ -300,6 +298,7 @@ class Screen:
             for number in self.numbers:
                 self.invalidate(number)
             self.states.clear()
+            self.telemetry.clear()
             self.invalidate('aux')
             self.auxiliary = None
         self.session = state['session']
@@ -316,6 +315,7 @@ class Screen:
     def tick(self, now):
         if now-self.last_received > 1 and not self.stale:
             self.stale = True
+            self.telemetry.clear()
             self.next_stale_refresh = now
             for number in self.numbers:
                 self.invalidate(number)
@@ -330,6 +330,8 @@ class Screen:
                 self.update_deck({'deck': number, 'loaded': True, 'generation': -2,
                                   'title': 'BiteDJ data unavailable', 'playing': False},
                                  (self.last_clock or 0)+1000, now)
+        for deck, clock, speed in self.telemetry.due(now):
+            self.record(deck['deck'], 5, 0, protocol.playhead(deck, clock, speed), now, ttl=0.1)
         self.queue.pump(now)
 
 
@@ -368,7 +370,8 @@ def run(args):
                         screens.pop(side).queue.close()
                     if side not in screens and ports[side]:
                         try:
-                            screens[side] = Screen(side, AlsaOutput(ports[side]), now, args.mode, args.browser_view)
+                            screens[side] = Screen(side, AlsaOutput(ports[side]), now, args.mode,
+                                                   args.browser_view, args.transport_hz)
                             names[side] = ports[side]
                             errors.pop(side, None)
                             if latest is not None and now-latest_time < 1:
@@ -414,7 +417,8 @@ def run(args):
                 tmp.write_text(json.dumps(status, indent=2)+'\n')
                 tmp.replace(path.parent / 'status.json')
                 next_status = now+5
-            time.sleep(0.01)
+            deadline = min((s.telemetry.next_tick for s in screens.values()), default=now+0.01)
+            time.sleep(max(0.001, min(0.01, deadline-time.monotonic())))
     finally:
         for screen in screens.values():
             screen.queue.close()
@@ -427,6 +431,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--socket', default=SOCKET_PATH)
     parser.add_argument('--mode', choices=('info', 'overview', 'full'), default='full')
+    parser.add_argument('--transport-hz', type=int, choices=range(20, 61), default=60,
+                        help='Display-only command-05 cadence; native waveform snapshots stay at 20 Hz')
     parser.add_argument('--browser-view', choices=('preserve', 'performance', 'left', 'right', 'both'),
                         default='preserve', help='Opt-in captured browser visibility experiment; not D. VIEW mapping')
     parser.add_argument('--list', action='store_true', help='Identify ports without opening them')

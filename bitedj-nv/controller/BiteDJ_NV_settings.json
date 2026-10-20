@@ -12,5 +12,8 @@
   "padColor5": 6,
   "padColor6": 3,
   "padColor7": 52,
-  "padColor8": 21
+  "padColor8": 21,
+  "beatkeeperEnabled": true,
+  "beatkeeperMatchPercent": 0.1,
+  "beatkeeperPercentPerStep": 0.5
 }

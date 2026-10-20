@@ -1,0 +1,65 @@
+{
+  "schema": "numark_nv_mapping_v1",
+  "revision": "0.15",
+  "controller": "Numark NV ORIGINAL (not NVII)",
+  "usb": {
+    "main_midi": "15E4:1005",
+    "left_lcd_audio": "15E4:1033",
+    "right_lcd": "15E4:2033"
+  },
+  "learned": {
+    "input_direction": "IN",
+    "bundled_resource": "nvdiag/resources/learned_commands.json",
+    "editable_file": "learned_commands.json",
+    "label_matching": "exact complete raw MIDI value first, legacy address fallback",
+    "bundled_exact_messages": 142,
+    "bundled_unique_addresses": 98,
+    "user_overrides_have_priority": true
+  },
+  "output": {
+    "direction": "OUT",
+    "led_catalog": "nvdiag/leds.py",
+    "meter_catalog": "nvdiag/meters.py",
+    "hardware_results_file": "led_test_results.json",
+    "beat_lamps": {
+      "left": {
+        "on": "90 12 7F",
+        "off": "90 12 00"
+      },
+      "right": {
+        "on": "90 16 7F",
+        "off": "90 16 00"
+      }
+    },
+    "beatkeeper": {
+      "status": "B0",
+      "cc": "47",
+      "off": 0,
+      "leftmost": 1,
+      "center_white": 6,
+      "rightmost": 11,
+      "positions": 11,
+      "source": "hardware owner confirmed"
+    }
+  },
+  "input_resolutions": {
+    "single7": [
+      "FX knobs B0 04-06 / B0 49-4B",
+      "cue blend B0 12",
+      "browser encoders B0 03 / B0 4D"
+    ],
+    "paired14": [
+      "channel faders/EQ",
+      "pitch",
+      "jog platter CC 00 (fine) / 20 (coarse)",
+      "filters B0 5A-5D with speculative B0 7A-7D"
+    ]
+  },
+  "safety": {
+    "no_automatic_midi_on_startup": true,
+    "learned_inputs_not_output_commands": true,
+    "beatkeeper_position_not_bitmask": true,
+    "lcd_and_audio_use_separate_usb_functions": true
+  },
+  "mixxx_branch": "nv-learned-inputs-led-discovery-20261019"
+}

@@ -74,3 +74,4 @@
          emit leafItemActivated(idx.data(Qt::DisplayRole).toString());
          ControlObject::set(ConfigKey(QStringLiteral("[Sidebar]"),
                                     QStringLiteral("sidebar_visible")),
+

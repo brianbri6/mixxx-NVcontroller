@@ -113,3 +113,7 @@ F12 `screens.<side>.auxiliary` includes effects/browser availability, folder/tra
 ## Manual behavior reference (2026-10-11)
 
 The supplied original NV User Guide v1.2 confirms Performance 1, Performance 2 and Library views. D. VIEW advances views; Sel opens Library and Load returns to the prior performance view. Shift+D. VIEW changes the host software view. See [NV_MANUAL.md](NV_MANUAL.md), pages 11 and 13–18. This guide supplies no MIDI addresses or packet layouts, so it does not resolve the missing three-view command. It documents no artwork field.
+
+## v058 handoff integration (2026-10-20)
+
+AI-generated update. The native snapshot remains20Hz; a separate Python display-only scheduler targets60Hz command05 using at most50ms position prediction (16ms for paused motion). Full-record token admission keeps low-budget tiles from delaying newer playheads while preserving indivisible partial SysEx. Existing byte/queue caps and stale retry behavior remain. See NV_INTEGRATION_V058.md for limits and checks. D.VIEW IN B061/62 values0/1/2 and Sel07 are now identified; outgoing full view selection remains unconfirmed. The LED capture adds130 LCD records, making4458 validated across four captures. End AI-generated update.

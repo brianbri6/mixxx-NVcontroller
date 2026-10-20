@@ -40,7 +40,7 @@ def angle_fit(rows):
 
 expected = json.loads((ROOT/'INPUTS.json').read_text())
 coverage = {'03-numarknvplatterwithaudio.pcapng': 2154,
-            '04-numarknvplatter.pcapng': 1377, '05-NumarkNVVDJ.pcapng': 797}
+            '04-numarknvplatter.pcapng': 1377, '05-NumarkNVVDJ.pcapng': 797, '10-led-test1.pcapng': 130}
 results = []
 for file in sorted((ROOT/'project_sources').glob('*.pcapng')):
     relative = str(file.relative_to(ROOT))
@@ -85,7 +85,7 @@ for file in sorted((ROOT/'project_sources').glob('*.pcapng')):
                     'records': [{'side': k[0], 'command': hex(k[1]), 'bytes': k[2], 'count': n}
                                 for k, n in sorted(counts.items())]})
 total = sum(r['validated'] for r in results)
-if len(results) != 3 or total != 4328:
+if len(results) != 4 or total != 4458:
     raise SystemExit('Capture coverage differs from the recovered baseline')
 (ROOT/'work').mkdir(exist_ok=True)
 (ROOT/'work/capture-validation.json').write_text(json.dumps(results, indent=2)+'\n')

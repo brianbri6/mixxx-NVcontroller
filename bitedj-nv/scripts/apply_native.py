@@ -57,3 +57,4 @@ if check.returncode == 0:
 else:
     subprocess.run(['git', '-C', str(source), 'apply', '--reverse', '--check', str(patch)], check=True)
 print('Native NV exporter and mixed-folder fix applied to', pin)
+

@@ -125,6 +125,15 @@ class OutputQueue:
                 # backfill. Equal priorities keep insertion order. An active
                 # partial record is still indivisible, regardless of priority.
                 key = max(self.queue, key=lambda k: self.queue[k][6])
+                # AI-generated queue note: Wait for a whole record's budget
+                # before starting it, so a tile cannot consume a few tokens
+                # and block newer playheads for the next 55 ms. Real partial
+                # writes still finish without interleaving. Tiny test budgets
+                # and records larger than burst retain incremental writes.
+                # End AI-generated queue note.
+                length = len(self.queue[key][1])
+                if budget < length <= self.burst:
+                    return
                 self.active = self.queue.pop(key)
             entry = self.active
             key, data, deadline, done, offset, began, _ = entry

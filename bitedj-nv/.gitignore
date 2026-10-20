@@ -13,3 +13,10 @@ __pycache__/
 /node_modules/
 /.codex/
 /.cache/
+
+/downloads/
+/project_sources/*.apk
+/project_sources/*.z01
+/project_sources/*.zip
+/project_sources/.*
+/project_sources/07-learned_commands.json

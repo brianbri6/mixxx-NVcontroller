@@ -88,7 +88,7 @@ class SettingsTests(unittest.TestCase):
 
     def test_reject_invalid_data_before_any_preference_changes(self):
         for values in ({'scratchSensitivity': 0}, {'scratchSensitivity': '4'}, {'scratchSensitivity': True},
-                       {'scratchSensitivity': float('nan')}, {'vuTest': 1}, {'vuPeakLevel': 4.5}, {'padColor1': 4}, {'padColor2': 3.5}, {'padColor8': True}, {'command': 'anything'}):
+                       {'scratchSensitivity': float('nan')}, {'vuTest': 1}, {'vuPeakLevel': 4.5}, {'padColor1': 5}, {'padColor2': 3.5}, {'padColor8': True}, {'command': 'anything'}):
             self.options.write_text(json.dumps(values))
             with self.assertRaises(ValueError):
                 s.nv_apply_settings(self.root)
