@@ -6,6 +6,8 @@ AI-generated revision notes.
 **v0.5.8 integrates the diagnostic mappings and the 2026-10-20 Serato/VirtualDJ handoff.** The separate display process now targets 60 lightweight position/platter messages per second per deck, using bounded prediction from the existing native 20 Hz snapshots. Waveform analysis and text sampling rates stay unchanged. The queue reserves enough budget to begin a whole tile, so partial budget cannot stall newer position messages. Actual USB backpressure can still reduce update cadence; physical smoothness needs Pi/NV testing.
 
 Preserves v0.5.7 parent-folder songs alongside subfolders, the working SD music helper, scratch tuning, VU clearing, HDMI waveform preferences and audio settings. The physical Sel press now uses the same navigation path: normal push opens the selected folder's songs, Shift+push expands/collapses children, and push from tracks returns to folders. This release does not contain recovered Serato DSP or stems algorithms.
+
+**Delivery status, 2026-10-20:** v0.5.8 source is published on `nv-learned-inputs-led-discovery-20261019`. The first validated ZIP was lost during workspace cleanup before it was saved or delivered. The replacement archive is reserved as `BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip` (same runtime version), but has not been built yet: recovery downloads currently fail with HTTP 403. The latest saved installable release remains v0.5.7. The installation instructions below apply when the replacement archive is available; source publication alone is not a hardware test.
 End AI-generated revision notes.
 
 ## What changed
@@ -29,7 +31,7 @@ This revision uses the exact source-verified v0.5.7 ARM64 executable. Native exp
 ## Install
 
 1. Shut down the Pi, insert its SD card in your computer, and back up BOOT's existing `initramfs.img`, `BiteDJ_NV_display_mode.txt` and `BiteDJ_NV_browser_view.txt` / `BiteDJ_SD_music.txt` (if present) to your computer.
-2. Extract `BiteDJ_Pi4_NV_Display_Test_v0_5_8.zip`. Copy **`install/initramfs.img`** directly onto BOOT, replacing the backed-up file. Keep your existing display mode. If you also want to enable full NV waveforms, optionally copy `install/BiteDJ_NV_display_mode.txt` to BOOT; it contains `full`.
+2. Extract `BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip`. Copy **`install/initramfs.img`** directly onto BOOT, replacing the backed-up file. Keep your existing display mode. If you also want to enable full NV waveforms, optionally copy `install/BiteDJ_NV_display_mode.txt` to BOOT; it contains `full`.
 3. For easy tuning, also copy **`settings/BiteDJ_NV_settings.json`** directly onto BOOT. This is optional: without it, the new mapping defaults to 2× scratch response. Preserve any settings file you previously customized.
 4. Keep `config.txt`, `cmdline.txt`, audio routing and HDMI waveform settings unchanged. Keep HDMI waveforms disabled as in the smooth Pi4 setup. Safely eject and boot with the NV powered and connected.
 5. If installation is skipped, read **`BiteDJ_NV_v058_update.txt`** on BOOT. Unrecognized/customized program or mapping files are not overwritten. An interrupted older update must recover using its own saved updater before upgrading.

@@ -1,7 +1,7 @@
 # BiteDJ / original Numark NV — project progress
 
 AI-generated current status, 2026-10-20 UTC.
-**Current milestone: v0.5.8 diagnostic + handoff integration, release archive built; publication/save underway.** Restored v057 from recovery v26 after workspace cleanup; preserved native browser/SD/audio/HDMI fixes. Imported diagnostic branch 6ef68728 and GitHub handoff from main fe7285ee6. New controller behavior and bounded display-only 60 Hz transport are implemented. Latest tests: 78 Python +33 JS pass; 4,458 LCD packets validate. Native executable is byte-identical to v057 (`9083092b6908ecb54ef8fda2f89e8bab9c92b9352974c1996021e93d74d9f685` unstripped). Physical acceptance has not been performed.
+**Current milestone: v0.5.8 integration published; replacement ZIP blocked by recovery download access.** Source commit `ad4a003306fd0b54e763035228e5a72f70a78ec9` is safe on `nv-learned-inputs-led-discovery-20261019`. A second workspace cleanup removed the first validated ZIP and local build outputs before they were saved. This run restored that published source without changing the runtime. Fresh checks: 78 Python +33 JS pass; 3,531 LCD messages validate in the two currently attached captures. Earlier four-capture (4,458 messages), native and 58-scenario package results remain historical; they have not been reproduced after this cleanup. Library recovery is still version26 and downloads fail with HTTP403. Latest saved installable release remains v0.5.7. The pending repack uses `BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip`; it has not been built. No physical acceptance has been performed.
 See the latest milestone below for package/save receipts and exact remaining steps. Earlier chronological entries are historical.
 End AI-generated current status.
 
@@ -46,14 +46,14 @@ The saved `BiteDJ_Pi4_NV_Controls_Update_v0_4.zip` and `BiteDJ_Pi4_4GB_HDMI_NV_T
 
 ## Known bugs and incomplete work
 
-- SD music visibility is not hardware verified. A missing mount is the leading explanation. The v055 helper requires the supported root layout and a MUSIC label; it preserves existing custom mount paths and does not migrate saved library/playlist paths. New F12 evidence is needed if the browser is still empty.
+- The user confirmed the v055 SD MUSIC fix works. The helper preserves custom mount paths and does not migrate library/playlist paths; collect F12 if the issue recurs.
 - User diagnostics now verify native snapshots reach the renderer. Local AF_UNIX integration testing remains blocked by the executor. Physical LCD opens failed in v0.5.1; the user now reports some LCD data with the subsequent update. v0.5.4 output is not yet hardware tested.
 - LCD protocol is reverse engineered. Track text, numeric fields and indexed waveform formats are capture-grounded; playhead timing, deck selection and startup behavior still need hardware confirmation.
-- D. VIEW input/output are unverified; cue/loop overlays, detailed FX indicators and artwork remain unimplemented. Basic FX/browser text is now integrated but needs hardware verification. Command 0x31 is not artwork.
+- D. VIEW inputs B0 61/62 values00/01/02 are learned and observed. Outgoing three-view selection, cue/loop overlays, detailed FX graphics and artwork remain unresolved. Basic FX/browser text is integrated and still needs physical verification. Command0x31 is not confirmed artwork.
 - The supplied NV manual (pages 11, 13–18) confirms the intended three views and controls but supplies no MIDI protocol. It does not document an artwork field.
 - Recovered display queue now acknowledges completed writes, retries dropped tiles and invalidates queued tiles on track changes/seeks. Software regression tests pass; hardware behavior is unverified.
 - Pi4 performance with both NV waveforms active is unmeasured. Keep audio/controller real-time scheduling intact and bound background USB work.
-- Advanced FX, touch EQ/filter, slicer, pad RGB, some layer transitions and pickups remain incomplete.
+- Channel/master FX routes and captured-palette pad feedback are implemented. Touch EQ/filter, FilterRoll, Beat/divisor audio behavior, slicer and arbitrary RGB remain incomplete. Do not infer these behaviors from labels alone.
 - User feedback confirms some VU segments respond. VU values 0..4 are capture-grounded; proposed red value 5 and white pitch-center LED note 0x51 still require physical confirmation. Full fader position alone is not a clipping signal.
 
 ## Hardware / test results
@@ -79,7 +79,8 @@ User-supplied `BiteDJ_Pi4_diagnostics_20261008_174715.zip` now confirms v0.5.1 i
 
 ## Exact commands (current repository)
 
-v0.5.5 reuses the verified v0.5.4 native binary. Restore the exact baseline archives in INPUTS.json and matching native/package checkpoint. README contains base extraction; NEXT_TASK contains native-only rebuild commands if needed. Do not rebuild native code for this SD-only change.
+AI-generated current build instructions.
+v0.5.8 reuses the verified v0.5.7 native binary. Restore the exact baseline archives in INPUTS.json and matching native evidence from recoveryv26 before package commands. The native binary and baseline archives are currently absent because downloads fail. The v058 runtime is unchanged from the previously validated payload; do not rebuild native code or bypass provenance gates. NEXT_TASK.md has exact restoration and continuation steps.
 
 ```sh
 git status --short
@@ -87,23 +88,27 @@ git diff
 git log --oneline -6
 python3 scripts/apply_native.py
 PYTHONPATH=scripts python3 -c 'from native_build_evidence import verify; print(verify("work/build-arm/mixxx"))'
-python3 -m unittest discover -s tests -v > work/test-v055.log 2>&1
-node tests/test_controller.js > work/test-controller-v055.log 2>&1
+python3 -m unittest discover -s tests -v > work/test-v058.log 2>&1
+node tests/test_controller.js > work/test-controller-v058.log 2>&1
 python3 scripts/verify_captures.py
+python3 scripts/analyze_handoff.py > work/test-handoff-v058.log
 sh -n runtime/launch.sh
-python3 scripts/build_update.py --native-binary work/build-arm/mixxx > work/test-package-v055.log 2>&1
+python3 scripts/build_update.py --native-binary work/build-arm/mixxx > work/test-package-v058.log 2>&1
 git diff --check
 # Commit tracked source before packaging; never overwrite a released ZIP.
 python3 scripts/package_release.py
-python3 scripts/checkpoint.py --with-native-build --with-package
+python3 scripts/checkpoint.py --with-native-build --with-package --github-source-ref PUBLISHED_COMMIT
 ```
+End AI-generated current build instructions.
 
 ## Next steps
 
-1. v055 is saved. Test SD music visibility on the Pi and collect F12. See README and docs/SD_MUSIC_INVESTIGATION.md. The checkpoint must retain both the verified native executable and validated updater.
-2. Preserve completed build/test results; do not repeat unchanged software builds.
-3. On hardware, test waveform/FX text and the optional right-browser experiment against HDMI, then collect F12. D. VIEW needs identified input events plus a working-software capture of the three views; see docs/NV_MANUAL.md.
-4. Correlate paused/fader-down green VU with diagnostics and the silent lamp test; preserve adjustable scratch gain. Do not guess off/red encoding or view commands.
+AI-generated current next steps.
+1. Restore the saved native evidence, four captures and pinned release archives when recovery downloads work. Do not reconstruct or restamp the native build.
+2. Recreate and validate the v058 package, then produce the distinct r1 ZIP. Save release plus recovery before claiming delivery; record exact hashes and receipts.
+3. Follow docs/NV_INTEGRATION_V058.md for Pi/NV checks: parent and child songs, Sel/Shift+Sel, transport motion, FX routes, pad palette, masterVU/red, sustained audio and HDMI-disconnected boot.
+4. Capture labelled working-software D.VIEW output and artwork/overlay evidence before implementing unknown fields. Preserve current scratch/VU tuning and HDMI/audio settings.
+End AI-generated current next steps.
 
 The milestones below are historical; the current summary and newest milestone take precedence.
 
@@ -693,3 +698,17 @@ AI-generated validation note.
 - Recovery now supports --github-source-ref: pins/verifies every source byte against the published GitHub commit and stores build outputs/captures, avoiding a duplicate of Git-backed source/history. Restore GITHUB_SOURCE.json first; older checkpoint format remains supported. Release ZIP includes required native/source/license material for the binary distribution.
 - Next: finish branch publication and ordered release/checkpoint save, record authoritative receipt. No further native builds or optional broad testing required.
 End AI-generated validation note.
+
+### v058 source restored after second cleanup — 2026-10-20
+
+AI-generated progress note.
+- Current goal: deliver the already integrated handoff and diagnostic mappings on the original NV/Pi4 while retaining all v057 browser, SD, scratch, VU, FX and audio/HDMI fixes.
+- Inspection found no local Git checkout or surviving build outputs. Restored exact published branch commit ad4a003306fd0b54e763035228e5a72f70a78ec9; main remains fe7285ee679afdff677a634ecc96a1112ef0e88f. Root resource mapping copies match the Pi mapping. Local restoration milestone8320215 contains all110 published Pi project files. No runtime code was reverted or reconstructed.
+- Working source includes bounded target60Hz display transport, existing20Hz native snapshots, independent channel/masterFX routing, learned Sel/Slip inputs, Beatkeeper options, CueBlend scaling and captured pad palette. D.VIEW output, artwork and other limits remain as listed above.
+- Fresh results: all78 Python tests (no skips) and33 JS tests pass, including the patched C++ mixed-folder eligibility test and two-layer transport stress test. Revalidated the attached2 captures:2154+1377=3531 LCD records with matching input hashes and seven-bit repacking. Shell syntax and Python warning-as-error compilation pass. No native build, Pi/USB, audio, GUI or AF_UNIX test was performed.
+- Recovery access failed twice: the current Library skill download helper returned “hosted apps tools/list request failed with HTTP status403”. No approval rejection was received; no access-control workaround was attempted. Recovery metadata confirms version26, and no v058 ZIP was found. The old first-build hash12ae1a43... is historical and is not a download or current artifact.
+- Files changed this continuation: CODEX_PROGRESS.md, NEXT_TASK.md, README.md; scripts/package_release.py reserves v0_5_8_r1.zip and corrects source attribution; scripts/checkpoint.py describes GitHub-reference recovery accurately. GitHub root progress/continuation pointers also updated. No runtime, native or controller changes.
+- Minor failed edit: the conditional RESTORE text initially missed a string concatenation operator; warning-as-error compilation caught it and the operator was added. Compilation now passes. The full checkpoint-with-native/package operation is still pending recovered inputs; no checkpoint success is claimed.
+- Latest saved release remains v057 and recovery remainsv26. There is no local v058 initramfs/ZIP and no new durable recovery checkpoint. Keep the original unsaved v058 ZIP identity distinct; r1 is a packaging recovery, not a native or runtime version change.
+- Next: resolve recovery-file access; restore exact native evidence/captures/baselines, regenerate the58-scenario package, build the immutable r1 ZIP, publish any final source/docs, create a GitHub-reference checkpoint, save release+checkpoint and record authoritative receipts. Exact commands are in NEXT_TASK.md. Current passing logs: work/test-v058-resume.log, work/test-controller-v058-resume.log, work/test-capture-v058-resume.log.
+End AI-generated progress note.

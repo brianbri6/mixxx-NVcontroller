@@ -86,13 +86,15 @@ def main():
             for name in build_files:
                 z.write(ROOT/name, 'build-artifacts/'+name)
             z.writestr('RESTORE.txt',
-                       'Commit: ' + commit + '\n' +
+                       'AI-generated recovery instructions.\nCommit: ' + commit + '\n' +
                        ('Restore source at the exact repository/commit/project_path in GITHUB_SOURCE.json.\n'
                         'Source hashes are included; no Git-backed source/history is duplicated here.\n'
                         if source_record is not None else 'git clone repository.bundle bitedj-nv\n') +
                        'Copy source/project_sources/*.pcapng and *.pdf into bitedj-nv/project_sources/.\n'
-                       'Read CODEX_PROGRESS.md and NEXT_TASK.md before continuing.\n'
-                       'source/ is a directly readable copy of the committed files.\n'
+                       'Read CODEX_PROGRESS.md and NEXT_TASK.md before continuing.\n' +
+                       ('source/ is a directly readable copy of the committed files.\n'
+                        if source_record is None else
+                        'source/ contains original capture inputs; project source is on GitHub.\n') +
                        'Large baseline images and dependency trees are rebuilt/downloaded.\n' +
                        ('The verified native binary/evidence is included in build-artifacts/work/.\n'
                         'Copy build-artifacts/work/ into bitedj-nv/work/ preserving relative paths.\n'
@@ -101,7 +103,8 @@ def main():
                         'Only rebuild if native sources changed or binary/evidence is absent.\n'
                         'When work/package/ is included, package_release.py rechecks its hashes\n'
                         'against current sources before reusing the validated updater.\n'
-                        if build_files else ''))
+                        if build_files else '') +
+                       'End AI-generated recovery instructions.\n')
     print(OUT)
     print('sha256=' + hashlib.sha256(OUT.read_bytes()).hexdigest())
     print('bytes=' + str(OUT.stat().st_size))

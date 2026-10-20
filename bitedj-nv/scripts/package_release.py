@@ -10,7 +10,7 @@ from saved_release import load_v05
 from native_build_evidence import verify as verify_native
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT/'dist/BiteDJ_Pi4_NV_Display_Test_v0_5_8.zip'
+OUT = ROOT/'dist/BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip'
 PIN = '78074e05c8bf99ede6fedd755aa68bd222ba343c'
 
 
@@ -85,7 +85,8 @@ def main():
     patch_text = (previous.read('source/bitedj-nv.patch').decode() if validation['native_reused_from_v05']
                   else ''.join(patch))
     (package/'bitedj-nv.patch').write_text(patch_text)
-    attribution = f'''BiteDJ official source: https://github.com/TeamDeckshark/bitedj
+    attribution = f'''AI-generated source attribution and revision notes.
+BiteDJ official source: https://github.com/TeamDeckshark/bitedj
 Base commit: {PIN}
 Upstream Mixxx base: 2.5.6
 Apply source/bitedj-nv.patch to this exact source revision.
@@ -95,7 +96,9 @@ Its source archive SHA-256: 4f10e9e5673d948776e47e78273fa4d61408155cb0e210af1538
 Binary links against the unmodified Pi4 runtime libraries; no runtime shared libraries are replaced.
 The original image and mapping authors retain their licenses and attribution.
 Generated Python bridge/integration code: MIT. Native exporter: GPL-2.0-or-later.
-Full project Git history and supplied captures are in BiteDJ_NV_Recovery_Checkpoint.zip.
+Full project Git history is at https://github.com/brianbri6/mixxx-NVcontroller.
+Recovery instructions and supplied captures are in BiteDJ_NV_Recovery_Checkpoint.zip.
+The r1 archive repack retains the v0.5.8 runtime and separate v058 journal.
 v0.5.8 adds bounded 60 Hz display telemetry and diagnostic controller mappings.
 Preserves v0.5.7 native mixed-folder activation and Shift-navigation expansion.
 Retains v0.5.6 controls and the user-confirmed v0.5.5 SD MUSIC fix.
@@ -110,6 +113,7 @@ The optional browser-view test uses captured B0 16 00/01; preserve is the defaul
 v0.5.8 has its own slot and journal. Rollback returns to the previous version,
 including v0.5.7. No physical NV/Pi test was performed. D. VIEW cycling, cue/loop
 overlays, detailed LCD FX enable/parameter graphics and artwork remain unresolved.
+End AI-generated source attribution and revision notes.
 '''
     paths = subprocess.check_output(['git', 'ls-files', '-z'], cwd=ROOT).decode().split('\0')
     OUT.parent.mkdir(exist_ok=True)

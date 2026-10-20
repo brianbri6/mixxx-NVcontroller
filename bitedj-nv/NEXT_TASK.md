@@ -2,19 +2,62 @@
 
 AI-generated continuation notes.
 
-Continue the original Numark NV + BiteDJ Pi4 4GB project from the newest recovery checkpoint and GitHub working branch `nv-learned-inputs-led-discovery-20261019`. Inspect `git status --short`, `git diff`, recent history and `CODEX_PROGRESS.md` before editing. Preserve v057 native mixed-folder activation, working SD MUSIC mounts, audio settings, HDMI waveforms disabled, scratch/VU/FX/browser fixes. Maintain progress and milestone commits. Do not spawn subagents, bypass AF_UNIX restrictions, overwrite released ZIPs, or copy proprietary IPA/APK/music into source.
+Continue the original Numark NV + BiteDJ Pi4 4GB project from the latest GitHub branch `nv-learned-inputs-led-discovery-20261019`. Inspect status, diff, history and CODEX_PROGRESS.md first. Preserve the v057 mixed-folder fix, working SD MUSIC mounts, scratch/VU/FX/browser fixes, audio settings and HDMI waveforms disabled. Maintain progress and milestone commits. Do not spawn subagents, bypass AF_UNIX/access restrictions, overwrite released ZIPs or commit proprietary IPA/APK/music.
 
-## Current work
+## Current state
 
-v058 implements the handoff `docs/NV_SERATO_IOS_HANDOFF_2026-10-20.md` from main fe7285ee6 and diagnostic branch6ef68728. See `docs/NV_INTEGRATION_V058.md`. Python command05 target60Hz uses bounded fresh-snapshot prediction while native waveform sampling remains20Hz. Whole-record token admission prevents a tile from blocking new transport for lack of tokens; real partial SysEx stays atomic. No native change/rebuild. Inputs:142 exact learned messages,30 release bindings; Sel07 +Slip04, independent channel/masterFXA/B, preserved explicit unroute, held LED cleanup, CueBlend7-bit, Beatkeeper BOOT options, pad codes4/16.
+Runtime integration is already published in ad4a003306fd0b54e763035228e5a72f70a78ec9. Subsequent continuation changes affect documentation and packaging only. Main fe7285ee679afdff677a634ecc96a1112ef0e88f stays separate pending hardware acceptance. Read docs/NV_INTEGRATION_V058.md and docs/NV_SERATO_IOS_HANDOFF_2026-10-20.md. No runtime reconstruction or native rebuild is needed.
 
-Known gaps: D.VIEW outgoing3-view commands, artwork/beat/cue/loop overlays, physical masterVU/red confirmation, touch/filter-roll/Beat-divisor/switch audio behavior beyond recorded labels, sustained Pi audio and HDMI-disconnected boot. Handoff's Serato architecture is static evidence, not recovered DSP. The separate Android project is not modified in this workspace.
+The second workspace cleanup removed the validated v058 ZIP and build outputs before their durable save. Its recorded ZIP SHA12ae1a43... and initramfs SHAa7735568... are historical, not available artifacts. Current packager reserves BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip for a new immutable repack with the same runtime0.5.8/slotv058. No r1 ZIP has been built.
 
-The prior interrupted v058 changes were pruned before a checkpoint; this run restored recoveryv26/source36724e6 and reconstructed the delivered subset explicitly. Look at the latest progress receipts for packaged release, recovery version and GitHub commit. Do not assume old recovery25/26 guards remain current when saving again. Preserve all source, full learned metadata and four captures.
+Latest saved release is v057 (libfile_27671c0941708191917df7cb39e8fc7f). Latest recovery is version26 (libfile_5ce7b9ccc09c8191b0a53b70932cc2aa). The current Library helper failed twice with “hosted apps tools/list request failed with HTTP status403”. Resolve this access failure before building; do not bypass it or claim a new checkpoint. Refresh metadata/version guards before saving. If access remains blocked, preserve source/progress on GitHub and report it.
 
-## Exact validation/package commands
+Fresh tests:78Python +33JS pass with no skips;2 attached captures validate3531 LCD records. Logs: work/test-v058-resume.log, work/test-controller-v058-resume.log, work/test-capture-v058-resume.log. Earlier4458/four-capture and58 actual-payload results remain historical until missing inputs/output evidence are recovered. No physical hardware, GUI, audio or AF_UNIX test.
 
-Run from the project root (GitHub checkout uses `bitedj-nv/`).
+## Restore required inputs
+
+Use the current Library skill to download recovery, original v03 and v05 throughv057 releases, plus led test1.pcapng. v04 baseline sources are already in Git; its release ZIP is not required by the current builder. Put the baseline ZIPs under baseline/ with exact filenames from INPUTS.json. Copy led test1.pcapng to project_sources/10-led-test1.pcapng. All hashes must match.
+
+Recoveryv26 contains older source36724e6. Keep current GitHub source and restore ONLY its captures/manual and build-artifacts/work, using fresh writes rather than copy2. The third capture05-NumarkNVVDJ.pcapng is in recoveryv26. If a newer checkpoint has GITHUB_SOURCE.json, restore that exact published commit instead of assuming source/history is embedded.
+
+Run from the Pi project root (bitedj-nv/ inside the full fork). Example for the materialized old checkpoint:
+
+```sh
+python3 - <<'PY'
+from pathlib import Path
+from zipfile import ZipFile
+p=Path('downloads/mixxx numark nv/BiteDJ_NV_Recovery_Checkpoint.zip')
+with ZipFile(p) as z:
+    for item in z.infolist():
+        name=item.filename
+        if name.startswith('build-artifacts/work/'):
+            target=Path(name.removeprefix('build-artifacts/'))
+        elif name.startswith('source/project_sources/') and name.endswith(('.pcapng','.pdf')):
+            target=Path(name.removeprefix('source/'))
+        else:
+            continue
+        if item.is_dir():
+            continue
+        assert '..' not in target.parts and not target.is_absolute()
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_bytes(z.read(item))
+        mode=(item.external_attr >> 16) & 0o777
+        if mode:
+            target.chmod(mode)
+PY
+# Clone only if vendor/bitedj is absent.
+git clone --filter=blob:none --no-checkout https://github.com/TeamDeckshark/bitedj.git vendor/bitedj
+git -C vendor/bitedj checkout 78074e05c8bf99ede6fedd755aa68bd222ba343c
+python3 scripts/apply_native.py
+PYTHONPATH=scripts python3 -c 'from native_build_evidence import verify; print(verify("work/build-arm/mixxx")["native_sha256"])'
+python3 scripts/extract_image.py baseline/BiteDJ_Pi4_4GB_HDMI_NV_Test_v0_3.zip --output work/base
+mkdir -p work/rootfs
+debugfs -R 'rdump / work/rootfs' work/base/root.img
+```
+
+Unstripped SHA9083092b6908ecb54ef8fda2f89e8bab9c92b9352974c1996021e93d74d9f685 and stripped SHA2d176dfd90d2031bb1f14fc9ca653ecf4816a2ce20bab4dda1697d38a3e9fa23 must match saved native evidence. Do not restamp the executable. No toolchain/native build is needed for this runtime-only change.
+
+## Exact test/build/package commands
 
 ```sh
 git status --short
@@ -25,31 +68,27 @@ python3 -m unittest discover -s tests -v > work/test-v058.log 2>&1
 python3 scripts/verify_captures.py
 python3 scripts/analyze_handoff.py > work/test-handoff-v058.log
 sh -n runtime/launch.sh
+python3 -W error -m py_compile scripts/checkpoint.py scripts/package_release.py
 git diff --check
-PYTHONPATH=scripts python3 -c 'from native_build_evidence import verify; print(verify("work/build-arm/mixxx")["native_sha256"])'
 python3 scripts/build_update.py --native-binary work/build-arm/mixxx > work/test-package-v058.log 2>&1
-# Commit tracked source/docs before packaging; never overwrite a delivered ZIP.
+# Commit tracked source/docs first; never overwrite a delivered ZIP.
 python3 scripts/package_release.py
+# Publish source and fetch that exact commit into work/github first.
 python3 scripts/checkpoint.py --with-native-build --with-package --github-source-ref PUBLISHED_COMMIT
 ```
 
-Expected current suite:78Python +33JS,4458 captured LCD messages,112 control OUT addresses,142 learned input bindings. Updater58 paths include all v057 upgrade histories and write-error/power-loss recovery. Latest progress states whether package validation/delivery completed. Existing native unstripped SHA9083092b6908ecb54ef8fda2f89e8bab9c92b9352974c1996021e93d74d9f685 and stripped SHA2d176dfd90d2031bb1f14fc9ca653ecf4816a2ce20bab4dda1697d38a3e9fa23 must remain matched to saved evidence.
+Expected full results:78Python +33JS,4458 captured LCD messages,112 controller OUT addresses,142 learned inputs,58 actual-payload install/upgrade/rollback/fault cases. Regenerate package proof because outputs were lost; runtime source remains unchanged. Builder copies the exact stripped native executable from pinned v057 after checking evidence.
 
-## Restore after cleanup
+The actual checkpoint-with-native/package operation is pending recovery; its newest text has only passed syntax compilation. New GitHub-reference checkpoints preserve original captures and verified binaries/logs without duplicating Git-backed source/history. The checkout at work/github must contain the exact published commit matching every tracked project byte.
 
-Restore newest `BiteDJ_NV_Recovery_Checkpoint.zip` (identity libfile_5ce7b9ccc09c8191b0a53b70932cc2aa; resolve current version). New checkpoints use GITHUB_SOURCE.json: clone the exact published repository commit, use its bitedj-nv/ subdirectory as project root, then restore source/project_sources capture inputs and build-artifacts/work with fresh writes, not historical-mtime copy2. Older checkpoints contain repository.bundle/source instead. Git-backed source is preserved on GitHub; build outputs and original captures stay in the checkpoint. Preserve newer surviving edits first. Baseline release ZIPs v05 throughv057 and original v03 are pinned in INPUTS.json. Latest GitHub main may have additional handoff documents; compare before publishing.
+Save r1 release and recovery as one ordered Library batch. Use the resolved current recovery version guard, create a separate release item and inspect every result before claiming delivery. Then publish authoritative receipts. CLI push lacked credentials; authorized GitHub tree/commit/ref writes worked. Use an expected-head guard and preserve newer remote changes. Keep the root Mixxx fork intact and both res/controllers mapping copies identical to the Pi mapping. No PR/issues.
 
-```sh
-git clone --filter=blob:none --no-checkout https://github.com/TeamDeckshark/bitedj.git vendor/bitedj
-git -C vendor/bitedj checkout 78074e05c8bf99ede6fedd755aa68bd222ba343c
-python3 scripts/apply_native.py
-python3 scripts/extract_image.py baseline/BiteDJ_Pi4_4GB_HDMI_NV_Test_v0_3.zip --output work/base
-mkdir -p work/rootfs
-debugfs -R 'rdump / work/rootfs' work/base/root.img
-```
+## Hardware/protocol gaps
 
-v058 builder copies the exact stripped executable from hash-pinned v057 after matching recovered native source/build evidence. No toolchain is needed. Native edits require a new build, ABI/version evidence and a future version; do not relabel old evidence. Preserve original GitHub fork root; sync the Pi project under bitedj-nv plus two res/controllers mapping copies. Keep this diagnostic working branch separate from main until hardware checks recorded.
+Already implemented: separate Python command05 target60Hz with bounded fresh-snapshot prediction, native waveform snapshots20Hz, whole-record queue token admission and atomic partial SysEx. Controller changes: Sel07, Slip04, independent channel/masterFX A+B, explicit-unroute preservation, reverse/bend LED cleanup, CueBlend7-bit, Beatkeeper BOOT options and captured pad codes4/16.
 
-Next hardware evidence: video of NV transport under play/pause/scratch/reverse/seek/loop and heavy browsing, parent/child song navigation using Sel/Shift+Sel, FX independent channel/master routes, Beatkeeper and pad colors, F12 export. Use the supplied reversible update and leave audio/HDMI settings unchanged. No physical hardware result is implied by offline tests.
+Still open: outgoing D.VIEW three-view commands, artwork/beat/cue/loop overlays, physical masterVU/red confirmation, touch/filter-roll/Beat-divisor/switch audio behavior beyond labels, sustained audio and HDMI-disconnected boot. Serato static names are not recovered DSP/stems. The separate Android project is untouched.
+
+After delivery, obtain Pi/NV video/F12: transport under play/pause/scratch/reverse/seek/loop and browsing; parent/child songs using Sel/Shift+Sel; independent FX routes; Beatkeeper/pad colors/master lamp test. Do not infer physical success from offline tests.
 
 End AI-generated continuation notes.
