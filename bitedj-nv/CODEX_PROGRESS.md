@@ -1,7 +1,7 @@
 # BiteDJ / original Numark NV — project progress
 
 AI-generated current status, 2026-10-20 UTC.
-**Current milestone: v0.5.8 Pi integration published; new source ZIP being packaged.** Source commit `ad4a003306fd0b54e763035228e5a72f70a78ec9` is safe on `nv-learned-inputs-led-discovery-20261019`. A second workspace cleanup removed the first validated ZIP and local build outputs before they were saved. This run restored that published source without changing the runtime. Fresh checks: 78 Python +33 JS pass; 3,531 LCD messages validate in the two currently attached captures. Earlier four-capture (4,458 messages), native and 58-scenario package results remain historical; they have not been reproduced after this cleanup. Library recovery is still version26 and downloads fail with HTTP403. Latest saved installable release remains v0.5.7. The pending repack uses `BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip`; it has not been built. No physical acceptance has been performed.
+**Current milestone: v0.5.8 Pi source ZIP verified and ready.** Source commit `ad4a003306fd0b54e763035228e5a72f70a78ec9` is safe on `nv-learned-inputs-led-discovery-20261019`. A second workspace cleanup removed the first validated ZIP and local build outputs before they were saved. This run restored that published source without changing the runtime. Fresh checks: 78 Python +33 JS pass; 3,531 LCD messages validate in the two currently attached captures. Earlier four-capture (4,458 messages), native and 58-scenario package results remain historical; they have not been reproduced after this cleanup. Library recovery is still version26 and downloads fail with HTTP403. Latest saved installable release remains v0.5.7. The pending repack uses `BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip`; it has not been built. No physical acceptance has been performed.
 See the latest milestone below for package/save receipts and exact remaining steps. Earlier chronological entries are historical.
 End AI-generated current status.
 
@@ -733,3 +733,15 @@ AI-generated progress note.
 - Fixed archive execution to use the repository root for the already-scoped project tree. Added a mandatory nonempty exact comparison between archived names and git ls-files so every tracked project file must be present before writing/verification.
 - The source ZIP will be rebuilt from the corrected published commit. The failed artifact is not an installable release or a valid source package. Native/controller/runtime code remains unchanged.
 End AI-generated progress note.
+
+### Pi v0.5.8 source ZIP verified — 2026-10-20
+
+AI-generated delivery note.
+- New requested source-only package: BiteDJ_Pi4_NV_v0_5_8_Source_2026-10-20_r1.zip,411176 bytes, SHA25674809d0ffab009e33b7cc66e29537aca43fab488f4eda1672ee4b9fd91ecf56d.
+- Archive source is published GitHub commit2114fb55819b1577d1303a65d09d59374041ae33, project bitedj-nv/. Includes all112 tracked project files plus SOURCE_ORIGIN.json and SOURCE_SHA256SUMS.txt (114 ZIP members). Every committed file was independently compared byte-for-byte, every manifest hash and ZIP CRC passed. Repository-root packaging and existing-file refusal checks also pass.
+- Controller/native/runtime bytes remain identical to integration commitad4a0033. All existing Pi fixes are preserved; no Android changes. Existing78 Python/33 JS and3531-record checks apply to that unchanged runtime. No new physical Pi/NV test.
+- The earlier zero-file attempt remains an invalid diagnostic artifact and is not delivered. A later filename collision with that old failed file was correctly refused; used the distinct r1 source filename.
+- Source package can be downloaded now and recreated from its published commit with: python3 scripts/package_source.py --output dist/BiteDJ_Pi4_NV_v0_5_8_Source_2026-10-20_r1.zip. SOURCE_README.md provides the exact upstream checkout, tests, native/image prerequisites and commands. SOURCE_MANIFEST.json is historical; use SOURCE_SHA256SUMS.txt for this archive.
+- GitHub preserves the source and packaging command; this Git-backed source archive is not duplicated into Library. No new binary release or full native recovery checkpoint was created. The installable BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip remains pending recovery access, with v057 still the latest saved installable version.
+- Next: resolve original recovery downloads to rebuild the installable update, then complete the documented physical NV/Pi checks and labelled protocol work (D.VIEW output/artwork/overlays/masterVU). This source-delivery milestone is complete.
+End AI-generated delivery note.

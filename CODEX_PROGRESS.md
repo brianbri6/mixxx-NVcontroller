@@ -1,3 +1,15 @@
+# Pi source ZIP delivery — 2026-10-20
+
+AI-generated delivery note at the repository owner's request.
+
+Created and independently verified **BiteDJ_Pi4_NV_v0_5_8_Source_2026-10-20_r1.zip**:411176 bytes, SHA25674809d0ffab009e33b7cc66e29537aca43fab488f4eda1672ee4b9fd91ecf56d. Source commit2114fb55819b1577d1303a65d09d59374041ae33, subtree bitedj-nv;112 tracked source files plus2 provenance/checksum files. Every committed byte, manifest hash and ZIP CRC passes.
+
+This completes the source ZIP request for the Pi build. Existing runtime fixes are preserved; no Android changes or physical acceptance claimed. The installable SD update still requires recovery inputs. See bitedj-nv/CODEX_PROGRESS.md, bitedj-nv/SOURCE_README.md and bitedj-nv/NEXT_TASK.md for exact continuation.
+
+End AI-generated delivery note.
+
+---
+
 # Pi source archive continuation — 2026-10-20
 
 AI-generated progress note at the repository owner's request.

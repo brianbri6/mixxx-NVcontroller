@@ -6,6 +6,8 @@ Continue the original Numark NV + BiteDJ Pi4 4GB project from the latest GitHub 
 
 ## Current state
 
+Source-only delivery is complete: BiteDJ_Pi4_NV_v0_5_8_Source_2026-10-20_r1.zip (411176 bytes; SHA25674809d0ffab009e33b7cc66e29537aca43fab488f4eda1672ee4b9fd91ecf56d) packages all112 tracked Pi files from published commit2114fb55819b1577d1303a65d09d59374041ae33. All file bytes, manifest hashes and ZIP CRC were independently verified. Check out that exact commit to recreate that source snapshot; use a new filename for any later snapshot. The source ZIP is separate from the still-blocked installable v058_r1 update. See the newest CODEX_PROGRESS.md receipt and SOURCE_README.md.
+
 User confirms this is the Pi project; the temporary Android instruction was withdrawn. The current request is a source ZIP containing all existing Pi changes. Start with SOURCE_README.md. scripts/package_source.py produces the source archive independently of the blocked installable-image recovery. Preserve the runtime and record the archive's source commit, hash and verification receipt; do not imply that a source ZIP is an installable update.
 
 Runtime integration is already published in ad4a003306fd0b54e763035228e5a72f70a78ec9. Subsequent continuation changes affect documentation and packaging only. Main fe7285ee679afdff677a634ecc96a1112ef0e88f stays separate pending hardware acceptance. Read docs/NV_INTEGRATION_V058.md and docs/NV_SERATO_IOS_HANDOFF_2026-10-20.md. No runtime reconstruction or native rebuild is needed.

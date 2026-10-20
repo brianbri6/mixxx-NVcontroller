@@ -1,3 +1,9 @@
+AI-generated current source-delivery receipt.
+
+Source-only delivery is complete: BiteDJ_Pi4_NV_v0_5_8_Source_2026-10-20_r1.zip (411176 bytes; SHA25674809d0ffab009e33b7cc66e29537aca43fab488f4eda1672ee4b9fd91ecf56d) packages all112 tracked Pi files from published commit2114fb55819b1577d1303a65d09d59374041ae33. All file bytes, manifest hashes and ZIP CRC were independently verified. Check out that exact commit to recreate that source snapshot; use a new filename for any later snapshot. The source ZIP is separate from the still-blocked installable v058_r1 update. See the newest CODEX_PROGRESS.md receipt and SOURCE_README.md.
+
+End AI-generated current source-delivery receipt.
+
 # Current Pi source ZIP request
 
 AI-generated continuation notes.
