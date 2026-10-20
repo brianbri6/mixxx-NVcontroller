@@ -1,3 +1,17 @@
+# Pi source archive continuation — 2026-10-20
+
+AI-generated progress note at the repository owner's request.
+
+User confirms this is the Pi build; the temporary Android instruction was withdrawn. The requested deliverable is the complete Pi integration source ZIP. All current runtime/controller/native fixes are preserved.
+
+The source package is independent of missing installable-image inputs. See bitedj-nv/SOURCE_README.md and run bitedj-nv/scripts/package_source.py from the published subtree to create the immutable source ZIP with commit/tree provenance and per-file checksums. Verification compares every member to its committed bytes.
+
+The installable v058_r1 binary update is still pending recovery. No APK, SD image or new hardware success is claimed. Current source tests remain78 Python +33 JS passing, with3531 LCD messages revalidated from2 available captures. The newest project progress milestone records archive delivery separately from binary recovery.
+
+End AI-generated progress note.
+
+---
+
 # Current NV integration status — 2026-10-20
 
 AI-generated progress note at the repository owner's request.

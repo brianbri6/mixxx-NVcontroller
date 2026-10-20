@@ -1,3 +1,11 @@
+# Current Pi source ZIP request
+
+AI-generated continuation notes.
+
+Continue the Pi build; the user withdrew the temporary Android instruction. Follow bitedj-nv/SOURCE_README.md for the source ZIP and bitedj-nv/CODEX_PROGRESS.md for authoritative receipts. scripts/package_source.py archives the committed Pi subtree, refuses overwrite and verifies all members. Source packaging is independent of the blocked binary recovery. Preserve existing fixes; do not claim that source ZIP delivery supplies an installable SD update.
+
+End AI-generated continuation notes.
+
 # NV project continuation
 
 AI-generated continuation notes at the repository owner's request.

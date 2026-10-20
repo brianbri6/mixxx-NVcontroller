@@ -6,6 +6,8 @@ Continue the original Numark NV + BiteDJ Pi4 4GB project from the latest GitHub 
 
 ## Current state
 
+User confirms this is the Pi project; the temporary Android instruction was withdrawn. The current request is a source ZIP containing all existing Pi changes. Start with SOURCE_README.md. scripts/package_source.py produces the source archive independently of the blocked installable-image recovery. Preserve the runtime and record the archive's source commit, hash and verification receipt; do not imply that a source ZIP is an installable update.
+
 Runtime integration is already published in ad4a003306fd0b54e763035228e5a72f70a78ec9. Subsequent continuation changes affect documentation and packaging only. Main fe7285ee679afdff677a634ecc96a1112ef0e88f stays separate pending hardware acceptance. Read docs/NV_INTEGRATION_V058.md and docs/NV_SERATO_IOS_HANDOFF_2026-10-20.md. No runtime reconstruction or native rebuild is needed.
 
 The second workspace cleanup removed the validated v058 ZIP and build outputs before their durable save. Its recorded ZIP SHA12ae1a43... and initramfs SHAa7735568... are historical, not available artifacts. Current packager reserves BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip for a new immutable repack with the same runtime0.5.8/slotv058. No r1 ZIP has been built.
@@ -70,6 +72,7 @@ python3 scripts/analyze_handoff.py > work/test-handoff-v058.log
 sh -n runtime/launch.sh
 python3 -W error -m py_compile scripts/checkpoint.py scripts/package_release.py
 git diff --check
+python3 scripts/package_source.py --output dist/BiteDJ_Pi4_NV_v0_5_8_Source_2026-10-20.zip
 python3 scripts/build_update.py --native-binary work/build-arm/mixxx > work/test-package-v058.log 2>&1
 # Commit tracked source/docs first; never overwrite a delivered ZIP.
 python3 scripts/package_release.py

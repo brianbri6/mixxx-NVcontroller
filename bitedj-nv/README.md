@@ -8,6 +8,7 @@ AI-generated revision notes.
 Preserves v0.5.7 parent-folder songs alongside subfolders, the working SD music helper, scratch tuning, VU clearing, HDMI waveform preferences and audio settings. The physical Sel press now uses the same navigation path: normal push opens the selected folder's songs, Shift+push expands/collapses children, and push from tracks returns to folders. This release does not contain recovered Serato DSP or stems algorithms.
 
 **Delivery status, 2026-10-20:** v0.5.8 source is published on `nv-learned-inputs-led-discovery-20261019`. The first validated ZIP was lost during workspace cleanup before it was saved or delivered. The replacement archive is reserved as `BiteDJ_Pi4_NV_Display_Test_v0_5_8_r1.zip` (same runtime version), but has not been built yet: recovery downloads currently fail with HTTP 403. The latest saved installable release remains v0.5.7. The installation instructions below apply when the replacement archive is available; source publication alone is not a hardware test.
+For the new source-only archive, start with **SOURCE_README.md**. It contains all tracked Pi integration changes and reproducible setup/package commands. Building this source ZIP does not require the missing native binary or SD image; those inputs are only needed to create the installable update.
 End AI-generated revision notes.
 
 ## What changed

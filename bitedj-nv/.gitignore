@@ -20,3 +20,5 @@ __pycache__/
 /project_sources/*.zip
 /project_sources/.*
 /project_sources/07-learned_commands.json
+/SOURCE_ORIGIN.json
+/SOURCE_SHA256SUMS.txt
